@@ -1,6 +1,6 @@
 const solution = require('./main');
 
-describe('solution', () => {
+describe('centuryFromYear', () => {
     it('year 1905 to be century 20', () => {
         expect(solution(1905)).toBe(20);
     });
