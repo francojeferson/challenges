@@ -1,6 +1,6 @@
 const solution = require('./main');
 
-describe('solution', function () {
+describe('add', function () {
     it('adds 1 + 2 to equal 3', function () {
         expect(solution(1, 2)).toEqual(3);
     });
