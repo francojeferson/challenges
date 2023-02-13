@@ -1,6 +1,6 @@
 const solution = require('./main');
 
-describe('solution', () => {
+describe('checkPalindrome', () => {
     it('should return true for "aabaa"', () => {
         expect(solution('aabaa')).toBe(true);
     });
