@@ -1,27 +1,21 @@
-const solution = require('./main.js');
+const solution = require('./main');
 
 describe('solution', function () {
-    // test 1 + 2 = 3
     it('adds 1 + 2 to equal 3', function () {
         expect(solution(1, 2)).toEqual(3);
     });
-    // test 0 + 1000 = 1000
     it('adds 0 + 1000 to equal 1000', function () {
         expect(solution(0, 1000)).toEqual(1000);
     })
-    // test 2 + -39 = -37
     it('adds 2 + -39 to equal -37', function () {
         expect(solution(2, -39)).toEqual(-37);
     })
-    // test 99 + 100 = 199
     it('adds 99 + 100 to equal 199', function () {
         expect(solution(99, 100)).toEqual(199);
     })
-    // test -100 + 100 = 0
     it('adds -100 + 100 to equal 0', function () {
         expect(solution(-100, 100)).toEqual(0);
     })
-    // test -1000 + -1000 = -2000
     it('adds -1000 + -1000 to equal -2000', function () {
         expect(solution(-1000, -1000)).toEqual(-2000);
     })
