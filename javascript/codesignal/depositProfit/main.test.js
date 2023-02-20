@@ -1,6 +1,6 @@
 const solution = require('./main');
 
-describe('Solution', () => {
+describe('depositProfit', () => {
     it('should return 3 for deposit: 100 rate: 20 threshold: 170', () => {
         expect(solution(100, 20, 170)).toBe(3);
     });
