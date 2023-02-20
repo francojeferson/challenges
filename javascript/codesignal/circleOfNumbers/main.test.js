@@ -1,6 +1,6 @@
 const solution = require('./main');
 
-describe('Solution', () => {
+describe('circleOfNumbers', () => {
     it('should return 7 for n: 10 firstNumber: 2', () => {
         expect(solution(10, 2)).toBe(7);
     });
