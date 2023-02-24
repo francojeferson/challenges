@@ -1,32 +1,50 @@
-// This code checks for a sequence of words in the array "a" where each word is different from the previous one by only one character. The function "solution" controls the loop that checks each element of the array and calls the function "findNext" to check if there is another word that is different from the current one by only one character. If it finds it, the function recursively calls itself, passing the new word as parameter and the remaining array elements. The function "differsByOneChar" checks if two strings are different by only one character. If the entire array is traversed and no word is found, the program returns 'false'. If any word is found, the program returns 'true'.
-// Esse código verifica se existe uma sequência de palavras na matriz "a" onde cada palavra seja diferente da anterior por apenas um caractere. A função "solution" controla o loop que verifica cada elemento da matriz e chama a função "findNext" para verificar se existe outra palavra diferente da atual por apenas um caractere. Se encontrar, a função chama recursivamente a si mesma, passando a nova palavra como parâmetro e os elementos restantes da matriz. A função "differsByOneChar" verifica se duas strings são diferentes por apenas um caractere. Se a matriz inteira for percorrida e nenhuma palavra for encontrada, o programa retornará 'false'. Se alguma palavra for encontrada, o programa retornará 'true'.
+// This function checks whether a given set of words can be made into a string of words, where each word is only one letter different from the previous word. For example, the input sets "cat", "cot", "cog", "dog" can be transformed into a string: "cat" -> "cot" -> "cog" -> "dog". The function uses the depth-first search (DFS) algorithm to traverse all possible paths between words. If the algorithm finds a path that connects all the words, the function returns true; otherwise, false.
+// Esta função verifica se um dado conjunto de palavras pode ser transformado em uma cadeia de palavras, onde cada palavra seja apenas uma letra diferente da palavra anterior. Por exemplo, os conjuntos de entrada "cat", "cot", "cog", "dog" podem ser transformados em uma cadeia: "cat" -> "cot" -> "cog" -> "dog". A função usa o algoritmo de busca em profundidade (DFS) para percorrer todos os possíveis caminhos entre as palavras. Se o algoritmo encontrar um caminho que conecta todas as palavras, a função retornará true; caso contrário, false.
 
-function solution(a) {
-    for (let i = 0; i < a.length; i++) {
-        let remaining = findNext(a[i], a);
-        if (remaining.length === 0) return true;
-    }
-    return false;
-}
-
-function findNext(current, a) {
-    if (a.length === 0) return a;
-    for (let i = 0; i < a.length; i++) {
-        if (differsByOneChar(current, a[i])) {
-            let remaining = findNext(a[i], a.slice(0, i).concat(a.slice(i + 1)));
-            if (remaining.length === 0) return remaining;
+function solution(inputArray) {
+    const n = inputArray.length;
+    const m = inputArray[0].length;
+    const g = Array(n).fill(0).map(() => Array(n).fill(0));
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            if (i != j) {
+                let diff = 0;
+                for (let k = 0; k < m; k++) {
+                    if (inputArray[i][k] != inputArray[j][k]) {
+                        diff++;
+                    }
+                }
+                if (diff == 1) {
+                    g[i][j] = 1;
+                }
+            }
         }
     }
-    return a;
-}
-
-function differsByOneChar(s1, s2) {
-    let mismatches = 0;
-    for (let i = 0; i < s1.length; i++) {
-        if (s1[i] !== s2[i]) mismatches++;
-        if (mismatches > 1) break;
+    const used = Array(n).fill(false);
+    const path = [];
+    const dfs = (v) => {
+        used[v] = true;
+        path.push(v);
+        if (path.length == n) {
+            return true;
+        }
+        for (let i = 0; i < n; i++) {
+            if (g[v][i] && !used[i]) {
+                if (dfs(i)) {
+                    return true;
+                }
+            }
+        }
+        used[v] = false;
+        path.pop();
+        return false;
+    };
+    for (let i = 0; i < n; i++) {
+        if (dfs(i)) {
+            return true;
+        }
     }
-    return mismatches === 1;
+    return false;
 }
 
 // unit test
