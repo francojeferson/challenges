@@ -7,10 +7,8 @@ function solution(inputArray, k) {
     });
 }
 
-// jest test
-module.exports = solution;
-
 // unit test
+// teste unitário
 const assert = require('assert');
 
 function testSolution() {
