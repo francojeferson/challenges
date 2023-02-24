@@ -1,11 +1,25 @@
+// When optimizing this code the main changes that were made were to replace the some method with a manual loop and to replace the some method inside the bar function with a loop as well. This was done to improve performance and to prevent the some methods from looping through the entire input array during function execution.
+// Na otimização deste código, as principais alterações que foram feitas foram a substituição do método some por um looping manual e a troca do método some dentro da função bar por um looping também. Isso foi feito para melhorar o desempenho e evitar que os métodos some percorram todo o array de entrada durante a execução da função.
+
 const solution = inputArray => {
     const foo = (a, b) =>
         [...a].reduce((pre, val, idx) => pre + (val !== b[idx]), 0) === 1;
 
-    const bar = (a, b) =>
-        !b.length || b.some((val, idx) => foo(a[0], val) && bar([val, ...a], b.filter((_, i) => i !== idx)));
+    const bar = (a, b) => {
+        if (!b.length) return true;
 
-    return inputArray.some((val, idx) => bar([val], inputArray.filter((_, i) => i !== idx)));
+        for (let i = 0; i < b.length; i++) {
+            if (foo(a[0], b[i]) && bar([b[i], ...a], b.filter((_, j) => j !== i))) return true;
+        }
+
+        return false;
+    };
+
+    for (let i = 0; i < inputArray.length; i++) {
+        if (bar([inputArray[i]], inputArray.filter((_, j) => j !== i))) return true;
+    }
+
+    return false;
 };
 
 // unit test
