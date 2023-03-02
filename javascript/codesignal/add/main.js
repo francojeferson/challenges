@@ -4,8 +4,6 @@ function solution(param1, param2) {
     return param1 += param2;
 }
 
-// The code executed without any errors. The function testSolution() was called and six tests were run. Each test passed the assert.deepStrictEqual() check and printed out the result of the solution() function with the given parameters.
-
 const assert = require('assert');
 function testSolution() {
     let param1 = 1;
