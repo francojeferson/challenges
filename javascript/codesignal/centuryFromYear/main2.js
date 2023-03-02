@@ -1,10 +1,6 @@
-// This code defines a function called "solution" that takes a parameter called "year" and returns the result of dividing "year" by 100 rounded up. For example, if the parameter is 2020, the function will return 21.
-// Esse código define uma função chamada "solution" que recebe um parâmetro chamado "year" e retorna o resultado da divisão de "year" por 100 arredondado para cima. Por exemplo, se o parâmetro for 2020, a função retornará 21.
+// This code defines a function called solution that takes one argument, year. The function then returns the result of dividing the argument by 100 and rounding up to the nearest whole number.
 
 const solution = year => Math.ceil(year / 100);
-
-// Test 1: 20 Test 2: 17 Test 3: 20 Test 4: 20 Test 5: 21 Test 6: 2 Test 7: 4 Test 8: 1 Test 9: 1 No errors occurred and the code was compiled and executed. The test results are printed on the console.
-// Test 1: 20 Test 2: 17 Test 3: 20 Test 4: 20 Test 5: 21 Test 6: 2 Test 7: 4 Test 8: 1 Test 9: 1 Nenhum erro ocorreu e o código foi compilado e executado. Os resultados dos testes foram impressos no console.
 
 const assert = require('assert');
 function testSolution() {
