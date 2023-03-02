@@ -1,14 +1,10 @@
-// This function returns the square of the sum of two consecutive numbers. For example, if the number is 3, the function returns 16 (3² + 2²).
-// Essa função retorna o quadrado da soma de dois números consecutivos. Por exemplo, se o número for 3, a função retornará 16 (3² + 2²).
+// This code is a function that takes in a number (n) as an argument and returns the sum of the square of n and the square of n minus 1. In other words, it returns n2 + (n-1)2.
 
 function solution(n) {
     return n * n + (n - 1) * (n - 1);
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let n = 2;
     assert.deepStrictEqual(solution(n), 5);
