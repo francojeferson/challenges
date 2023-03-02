@@ -1,31 +1,16 @@
-// This function calculates the sum of all positive elements of a 2D array. It goes through each element of the array and checks to see if it is greater than zero. If it is, it adds the value to the variable sum. At the end, the function returns the value of the variable sum.
-// Esta função calcula a soma de todos os elementos positivos de uma matriz 2D. Ela percorre cada elemento da matriz e verifica se é maior que zero. Se for, adiciona o valor à variável sum. Ao final, a função retorna o valor da variável sum.
+// This code is a function that takes in a matrix as an argument. It iterates through the matrix, starting with the first column, and adds up all of the elements in the column until it finds a 0. Then it moves to the next column and does the same thing. It returns the sum of all of the elements in each column until it finds a 0.
 
-function solution(m) {
-    let sum = 0;
-
-    for (let i = 0; i < m.length; i++) {
-        for (let j = 0; j < m[i].length; j++) {
-            let valid = true;
-
-            for (let k = 0; k < i; k++) {
-                if (m[k][j] <= 0) {
-                    valid = false;
-                    break;
-                }
-            }
-
-            if (valid) sum += m[i][j];
+function solution(matrix) {
+    for (var r = 0, j = 0; j < matrix[0].length; j++) {
+        for (var i = 0; i < matrix.length; i++) {
+            if (matrix[i][j] === 0) break;
+            else r += matrix[i][j];
         }
     }
-
-    return sum;
+    return r;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let matrix = [
         [0, 1, 1, 2],
