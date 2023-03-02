@@ -1,27 +1,19 @@
-// This function takes an array as parameter and returns the sum of all elements of the array. However, if an element is equal to zero, the element below it in the same column will be set to zero.
-// Esta função recebe uma matriz como parâmetro e retorna a soma de todos os elementos da matriz. No entanto, se um elemento for igual a zero, o elemento abaixo dele na mesma coluna será definido como zero.
+// This code is a function that takes in a matrix (an array of arrays) as an argument. It iterates through the matrix, and if it finds a 0 in the current row, it sets the value in the same column of the next row to 0. It then adds up all of the values in the matrix and returns the sum.
 
 function solution(matrix) {
     let s = 0;
-    for (let i = 0; i < matrix.length; i++) {
-        for (let j = 0; j < matrix[0].length; j++) {
-            if (matrix[i][j] == 0) {
-                if (i + 1 < matrix.length) {
-                    matrix[i + 1][j] = 0;
-                }
-            } else {
-                s += matrix[i][j];
+    for (var i = 0; i < matrix.length; i++) {
+        for (var j = 0; j < matrix[0].length; j++) {
+            if (matrix[i][j] == 0 && i + 1 < matrix.length) {
+                matrix[i + 1][j] = 0;
             }
+            s += matrix[i][j];
         }
     }
-
     return s;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let matrix = [
         [0, 1, 1, 2],
