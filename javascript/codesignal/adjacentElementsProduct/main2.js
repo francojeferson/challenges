@@ -1,20 +1,10 @@
-// This function takes an array of numbers as input and returns the greatest product of two consecutive numbers in the array. First, the variable prod is set to the product of the first two elements of the array. Next, a for loop is used to loop through the remainder of the array. At each iteration, the largest value between prod and the product of the current consecutive numbers is stored in the variable prod. When all elements have been traversed, the function returns the value of the variable prod, which contains the largest product of two consecutive numbers in the array.
-// Esta função recebe um array de números como entrada e retorna o maior produto de dois números consecutivos no array. Primeiro, a variável prod é definida como o produto dos dois primeiros elementos do array. Em seguida, um loop for é usado para percorrer o restante do array. A cada iteração, o maior valor entre prod e o produto dos números consecutivos atuais é armazenado na variável prod. Quando todos os elementos são percorridos, a função retorna o valor da variável prod, que contém o maior produto de dois números consecutivos no array.
+// This code takes an array of numbers as an argument (inputArray) and returns the maximum product of two adjacent elements in the array. It does this by slicing off the first element of the array, mapping over the remaining elements, and multiplying each element by its corresponding element in the original array. The spread operator (...) is then used to spread out the mapped values into individual arguments for Math.max(), which returns the maximum value.
 
 function solution(inputArray) {
-    let prod = inputArray[0] * inputArray[1];
-
-    for (let i = 1; i < inputArray.length - 1; i++) {
-        prod = Math.max(prod, inputArray[i] * inputArray[i + 1]);
-    }
-
-    return prod;
+    return Math.max(...inputArray.slice(1).map((x, i) => [x * inputArray[i]]));
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let inputArray = [3, 6, -2, -5, 7, 3];
     assert.deepStrictEqual(solution(inputArray), 21);
