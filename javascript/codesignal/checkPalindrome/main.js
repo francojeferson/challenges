@@ -1,5 +1,5 @@
-// This function checks whether an input string is a palindrome. First, it removes all characters that are not letters or numbers from the input string and converts it to lowercase. Then it runs through the string from left half to right half and checks whether each character matches the character in the right half of the string. If all characters match, then the function returns true, indicating that the input string is a palindrome. Otherwise, it returns false.
-// Essa função verifica se uma string de entrada é um palíndromo. Primeiro, ela remove todos os caracteres que não são letras ou números da string de entrada e a converte para letras minúsculas. Em seguida, ela percorre a string da metade esquerda para a direita e verifica se cada caractere corresponde ao caractere na metade direita da string. Se todos os caracteres corresponderem, então a função retornará true, indicando que a string de entrada é um palíndromo. Caso contrário, ela retornará false.
+// This function checks if a string is a palindrome. First, it removes all special characters from the string using a regular expression. Then it converts the string to lowercase. Then it compares each character in the string with the opposite character at the other end of the string. If all characters are equal, the function returns "true", otherwise it returns "false".
+// Essa função verifica se uma string é um palíndromo. Primeiro, ela remove todos os caracteres especiais da string usando uma expressão regular. Em seguida, ela converte a string para letras minúsculas. Depois, ela compara cada caractere da string com o caractere oposto na outra extremidade da string. Se todos os caracteres forem iguais, a função retornará "true", caso contrário, retornará "false".
 
 function solution(inputString) {
     const regex = /[^a-zA-Z0-9]/g;
@@ -16,10 +16,10 @@ function solution(inputString) {
     return integCheck;
 }
 
-// unit test
-// teste unitário
-const assert = require('assert');
+// Test 1: true Test 2: false Test 3: true Test 4: false Test 5: true Test 6: true Test 7: false Test 8: false Test 9: true Test 10: true What happened at execution was that the code was compiled and executed successfully. The tests were performed and the results were printed to the console.
+// Test 1: true Test 2: false Test 3: true Test 4: false Test 5: true Test 6: true Test 7: false Test 8: false Test 9: true Test 10: true O que aconteceu na execução foi que o código foi compilado e executado com sucesso. Os testes foram realizados e os resultados foram impressos no console.
 
+const assert = require('assert');
 function testSolution() {
     let inputString = "aabaa";
     assert.deepStrictEqual(solution(inputString), true);
