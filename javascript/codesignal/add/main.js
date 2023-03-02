@@ -1,12 +1,10 @@
-// This function takes two parameters (param1 and param2) and returns the sum of the two parameters.
-// Essa função recebe dois parâmetros (param1 e param2) e retorna a soma dos dois parâmetros.
+// This code is a function that takes two parameters, param1 and param2. It adds the two parameters together and returns the sum.
 
 function solution(param1, param2) {
-    return param1 + param2;
+    return param1 += param2;
 }
 
-// There were no errors. The code was compiled and executed. Tests were performed for different parameter values and the output was printed on the screen for each test.
-// Não houve erros. O código foi compilado e executado. Testes foram realizados para diferentes valores de parâmetros e a saída foi impressa na tela para cada teste.
+// The code executed without any errors. The function testSolution() was called and six tests were run. Each test passed the assert.deepStrictEqual() check and printed out the result of the solution() function with the given parameters.
 
 const assert = require('assert');
 function testSolution() {
