@@ -1,10 +1,8 @@
-// This code is a function that takes two parameters (param1 and param2) and returns the sum of the two. The variable "solution" stores the function that performs this operation.
-// Esse código é uma função que recebe dois parâmetros (param1 e param2) e retorna a soma dos dois. A variável "solution" armazena a função que realiza essa operação.
+// This code defines a function called "solution" that takes two parameters (param1 and param2) and returns the sum of the two parameters.
 
 const solution = (param1, param2) => param1 + param2;
 
-// There were no errors. The code was compiled and executed. The testSolution() function was called and parameters were passed to the solution() function. The results were compared with the assert.deepStrictEqual() method and printed to the screen using console.log().
-// Não houve erros. O código foi compilado e executado. A função testSolution() foi chamada e os parâmetros foram passados para a função solution(). Os resultados foram comparados com o método assert.deepStrictEqual() e imprimidos na tela usando o console.log().
+// No errors, the code ran and tested 6 different cases of the solution function. For each case, it printed out the result of the solution function with the given parameters, and then compared it to an expected result using assert.deepStrictEqual.
 
 const assert = require('assert');
 function testSolution() {
