@@ -1,16 +1,13 @@
-// This function checks whether a sequence of integers can be transformed into an increasing sequence by adding or removing exactly one element. It does this by checking whether the sequence has two consecutive elements that are equal or decreasing. If it finds two consecutive elements that are equal or decreasing, it checks whether the adjacent elements on the left and right are less than or equal to the element between them. If they are, the function returns true, indicating that the sequence can be made into an increasing sequence. Otherwise, it returns false.
-// Esta função verifica se uma sequência de números inteiros pode ser transformada em uma sequência crescente, adicionando ou removendo exatamente um elemento. Ela faz isso verificando se a sequência tem dois elementos consecutivos que são iguais ou decrescentes. Se encontrar dois elementos consecutivos iguais ou decrescentes, ela verifica se os elementos adjacentes à esquerda e à direita são menores ou iguais ao elemento entre eles. Se forem, a função retornará true, indicando que a sequência pode ser transformada em uma sequência crescente. Caso contrário, ela retornará false.
+// This code is a function that checks if an array is a valid sequence. It checks if each element in the array is greater than or equal to the previous element. If it finds an element that is not, it will check if it can be made into a valid sequence by changing the value of the previous element. If it cannot, then it will return false; otherwise, it will return true.
 
 function solution(sequence) {
     let found = false;
-    for (let i = 1; i < sequence.length; i++) {
+    for (let i = 0; i < sequence.length; i++) {
         if (sequence[i] <= sequence[i - 1]) {
             if (found) {
                 return false;
             }
-
             found = true;
-
             if (i === 1 || i + 1 === sequence.length) {
                 continue;
             } else if (sequence[i] > sequence[i - 2]) {
@@ -19,16 +16,11 @@ function solution(sequence) {
                 return false;
             }
         }
-
     }
-
     return true;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let sequence = [1, 3, 2, 1];
     assert.deepStrictEqual(solution(sequence), false);
