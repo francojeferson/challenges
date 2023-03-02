@@ -1,25 +1,16 @@
-// This function checks whether a sequence of numbers is in ascending or descending order. It starts by counting the number of times a number is less than the previous number. If this number is greater than 1, the function returns false, because this means that the sequence is not in ascending or descending order. If it is equal to 1, it returns true, because this means that the sequence is in ascending or descending order.
-// Esta função verifica se uma sequência de números está em ordem crescente ou decrescente. Ela começa contando o número de vezes que um número é menor que o anterior. Se esse número for maior que 1, a função retornará false, pois isso significa que a sequência não está em ordem crescente ou decrescente. Se for igual a 1, ela retornará true, pois isso significa que a sequência está em ordem crescente ou decrescente.
+// This code is a function that takes in an array of numbers as an argument. The function checks if the sequence of numbers is increasing or decreasing. If the sequence decreases, the function will return false. Otherwise, it will return true.
 
 function solution(sequence) {
-    let count = 0;
-
-    for (let i = 1; i < sequence.length; i++) {
-        if (sequence[i] <= sequence[i - 1]) {
-            count++;
-
-            if (sequence[i] <= sequence[i - 2] && sequence[i + 1] <= sequence[i - 1]) return false;
-
-        }
+    var bad = 0;
+    for (var i = 1; i < sequence.length; i++) if (sequence[i] <= sequence[i - 1]) {
+        bad++;
+        if (bad > 1) return false;
+        if (sequence[i] <= sequence[i - 2] && sequence[i + 1] <= sequence[i - 1]) return false;
     }
-
-    return count <= 1;
+    return true;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let sequence = [1, 3, 2, 1];
     assert.deepStrictEqual(solution(sequence), false);
