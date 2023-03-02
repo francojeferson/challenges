@@ -2,8 +2,6 @@
 
 const solution = (param1, param2) => param1 + param2;
 
-// No errors, the code ran and tested 6 different cases of the solution function. For each case, it printed out the result of the solution function with the given parameters, and then compared it to an expected result using assert.deepStrictEqual.
-
 const assert = require('assert');
 function testSolution() {
     let param1 = 1;
