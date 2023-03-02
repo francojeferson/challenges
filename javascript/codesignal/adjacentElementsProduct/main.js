@@ -1,14 +1,10 @@
-// This function takes an array as parameter and returns the greatest product of two consecutive numbers within the array. First, the array is slice to delete the last element using the slice method. Next, the map method is used to multiply each element with its immediate successor. Finally, the function Math.max returns the largest value from the resulting list.
-// Essa função recebe um array como parâmetro e retorna o maior produto de dois números consecutivos dentro do array. Primeiro, o array é cortado para excluir o último elemento usando o método slice. Em seguida, o método map é usado para multiplicar cada elemento com seu sucessor imediato. Por fim, a função Math.max retorna o maior valor da lista resultante.
+// This code takes an array of numbers as an argument and returns the largest product of any two adjacent numbers in the array. It uses the spread operator to spread out the elements of the array, then uses .map() to multiply each element by its adjacent element. Finally, it uses Math.max() to return the largest product.
 
 function solution(inputArray) {
     return Math.max(...inputArray.slice(0, -1).map((n, i) => n * inputArray[i + 1]));
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let inputArray = [3, 6, -2, -5, 7, 3];
     assert.deepStrictEqual(solution(inputArray), 21);
