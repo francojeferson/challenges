@@ -1,14 +1,10 @@
-// This function takes an integer as parameter and returns the result of the sum of the squares of this number and the previous number. For example, if the parameter is 3, the function will return 25 (9 + 16).
-// Essa função recebe um número inteiro como parâmetro e retorna o resultado da soma dos quadrados desse número e do número anterior. Por exemplo, se o parâmetro for 3, a função retornará 25 (9 + 16).
+// This code is a function that takes in a number (n) and returns the result of n squared plus (n minus 1) squared. In other words, it returns the sum of the squares of two consecutive numbers.
 
 function solution(n) {
-    return Math.pow(n, 2) + Math.pow(n - 1, 2);
+    return n * n + (n - 1) * (n - 1);
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let n = 2;
     assert.deepStrictEqual(solution(n), 5);
