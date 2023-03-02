@@ -1,12 +1,8 @@
-// This function takes a year as parameter and returns the century to which it belongs. It does this by rounding up the year and dividing it by 100. For example, if the function receives the year 2020, it will return 21, since 2020 is part of the 21st century.
-// Esta função recebe um ano como parâmetro e retorna o século a que pertence. Ela faz isso arredondando o ano para cima e dividindo-o por 100. Por exemplo, se a função receber o ano 2020, ela retornará 21, pois 2020 é parte do século 21.
+// This code takes a year as an argument and returns the century that the year is in. It does this by dividing the year by 100 and then rounding up to the nearest integer.
 
 function solution(year) {
     return Math.ceil(year / 100);
 }
-
-// Test 1: 20, Test 2: 17, Test 3: 20, Test 4: 20, Test 5: 21, Test 6: 2, Test 7: 4, Test 8: 1, Test 9: 1. No errors occurred during execution and all tests ran successfully.
-// Test 1: 20, Test 2: 17, Test 3: 20, Test 4: 20, Test 5: 21, Test 6: 2, Test 7: 4, Test 8: 1, Test 9: 1. Nenhum erro ocorreu durante a execução e todos os testes foram executados com sucesso.
 
 const assert = require('assert');
 function testSolution() {
