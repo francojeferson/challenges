@@ -1,18 +1,8 @@
-// This function takes a string as parameter and checks if it is a palindrome. It creates a variable to store the inverted string, then uses a loop to loop the original string backwards, adding each character to the variable. Finally, it compares the original string with the inverted string and returns true if they are equal or false otherwise.
-// Essa função recebe uma string como parâmetro e verifica se ela é um palíndromo. Ela cria uma variável para armazenar a string invertida e, em seguida, usa um loop para percorrer a string original de trás para frente, adicionando cada caractere à variável. Por fim, ela compara a string original com a invertida e retorna true se forem iguais ou false caso contrário.
+// This code is a function that takes in a string as an argument (inputString). It returns true if the inputString is the same when reversed. Otherwise, it returns false.
 
 function solution(inputString) {
-    let reversedInputString = '';
-
-    for (let i = inputString.length - 1; i >= 0; i--) {
-        reversedInputString += inputString[i];
-    }
-
-    return inputString === reversedInputString;
+    return inputString == inputString.split('').reverse().join('');
 }
-
-// Test 1: true Test 2: false Test 3: true Test 4: false Test 5: true Test 6: true Test 7: false Test 8: false Test 9: true Test 10: true What happened at execution was that the code was compiled and executed successfully, testing 10 different inputs and displaying the results of each test.
-// Test 1: true Test 2: false Test 3: true Test 4: false Test 5: true Test 6: true Test 7: false Test 8: false Test 9: true Test 10: true O que aconteceu na execução foi que o código foi compilado e executado com sucesso, testando 10 entradas diferentes e exibindo os resultados de cada teste.
 
 const assert = require('assert');
 function testSolution() {
