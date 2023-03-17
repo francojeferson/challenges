@@ -1,7 +1,14 @@
-// The code defines a function called solution that takes in four parameters: yourLeft, yourRight, friendsLeft, and friendsRight. The function then sorts your left and right numbers, as well as your friend's left and right numbers, and joins them together as strings. Finally, the function compares the two strings to determine if they are identical, meaning that you and your friend have the same left and right numbers. The function will return a boolean value of true if the numbers match or false if they do not.
+// This is a function that takes four arguments - yourLeft (an integer), yourRight (an integer), friendsLeft (an integer), and friendsRight (an integer).
+// The function first creates two arrays containing the integers yourLeft and yourRight (the "me" array) and friendsLeft and friendsRight (the "friend" array).
+// The ".sort()" method sorts the arrays in ascending order, and the ".join()" method concatenates the sorted elements into a single string.
+// The function then checks whether the "me" array is equal to the "friend" array. If they are equal, the function returns true, indicating that your and your friend's hands are the same. If they are not equal, the function returns false, indicating that your and your friend's hands are different.
 
+// solution by gennie
 function solution(yourLeft, yourRight, friendsLeft, friendsRight) {
-    return [yourLeft, yourRight].sort().join("") === [friendsLeft, friendsRight].sort().join("");
+    let me = [yourLeft, yourRight].sort().join("");
+    let friend = [friendsLeft, friendsRight].sort().join("");
+
+    return me === friend;
 }
 
 const assert = require('assert');
