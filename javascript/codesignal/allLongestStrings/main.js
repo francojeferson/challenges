@@ -1,5 +1,16 @@
-// This function takes an array of strings as input and returns an array containing the longest strings. It runs through the input array, checking to see which string is the longest. If there are more than one string of the same length, they are added to the result.
-// Essa função recebe um array de strings como entrada e retorna um array contendo as strings mais longas. Ela percorre o array de entrada, verificando qual a string mais longa. Se houver mais de uma string com o mesmo tamanho, elas são adicionadas ao resultado.
+// This is a function that takes an array of strings as its input and returns an array of the longest strings within the input array. Here’s how the code works:
+
+// It initializes a variable called longestString to an empty string and an empty array called result.
+
+// It then loops through the inputArray using a for loop, with the loop ending once i is greater than the length of the inputArray.
+
+// Within the loop, the current string is first saved in the variable currentString.
+
+// It then checks if the currentString is longer than the value stored in the longestString variable. If it is, longestString is updated to hold the currentString, and the result array is reset to an empty array, with longestString subsequently pushed into it.
+
+// If currentString has the same length as longestString, it is simply pushed into the result array.
+
+// Once the loop completes, the function returns the result array containing the longest strings from the input array.
 
 function solution(inputArray) {
     let longestString = '';
@@ -20,10 +31,7 @@ function solution(inputArray) {
     return result;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let inputArray = [
         "aba",
