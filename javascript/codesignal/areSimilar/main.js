@@ -1,5 +1,12 @@
-// This function takes two arrays, a and b, and compares their elements to determine if they are equal. First it checks to see if the arrays are equal when converted to strings. If they are not, then it creates two new arrays (array1 and array2) where it will add the different elements between a and b. Finally, it compares the contents of the inverted arrays array1 and array2 to determine whether they are equal or not. If they are equal, the function returns true; otherwise, it returns false.
-// Essa função recebe dois arrays, a e b, e compara os seus elementos para determinar se são iguais. Primeiro, verifica se os arrays são iguais quando convertidos para strings. Se não forem, então cria dois novos arrays (array1 e array2) onde vai adicionar os elementos diferentes entre a e b. Por fim, compara os conteúdos dos arrays array1 e array2 invertidos para determinar se são iguais ou não. Se forem iguais, a função retorna true; caso contrário, retorna false.
+// This is a JavaScript function named solution that takes in two array parameters, a and b. Here's a step-by-step explanation of what the code does:
+
+// It checks if the concatenated string of array a is equal to the concatenated string of array b. If they are equal, it returns true.
+// If the arrays are not equal, it initializes two empty arrays array1 and array2.
+// It loops through each item in the arrays using a for loop, comparing each item at the same index in arrays a and b.
+// If the items are not equal, it pushes the item in a to array1 and the item in b to array2.
+// After the loop has finished, it returns a boolean indicating whether the concatenated string of array1 is equal to the concatenated string of array2 in reverse order.
+
+// Essentially, the function is checking if two arrays are equal after any items that are in different places (i.e., with different indexes) have been removed.
 
 function solution(a, b) {
     if (a.join('') === b.join('')) return true;
@@ -15,10 +22,7 @@ function solution(a, b) {
     return array1.toString() === array2.reverse().toString();
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let a = [1, 2, 3];
     let b = [1, 2, 3];
