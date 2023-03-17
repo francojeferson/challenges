@@ -1,53 +1,52 @@
-// The function solution takes a two-dimensional matrix, performs operations on each element of the matrix, and stores the results in a new two-dimensional matrix. The new matrix represents the sum of the cells surrounding each element of the original matrix, along with each cell's own value.
-// The function takes the following steps:
-
-// Initialize an empty array result to hold the results.
-// Loop through each row of the matrix, and perform the following sub-steps for each row:
-// a. Initialize an empty array rowResult to hold the results for this row.
-// b. Initialize 8 variables (top, bottom, left, right, topLeft, topRight, bottomLeft, and bottomRight) to represent the values of the cells surrounding the current cell, taking care to check that the values exist before assigning them to the variable.
-// c. Use a switch statement to determine the value of the current cell and assign an appropriate value to the variable cellResult.
-// d. Add cellResult to rowResult.
-// Add rowResult to result.
-// Return result.
+// This function takes a matrix as input and returns a new matrix of the same size, where each element is replaced with the sum of its neighboring elements including itself in the original matrix, except when the element itself is 9.
+// To achieve this, the function iterates through each row of the input matrix, then through each column of that row. For each element, if it is 0, 1, or 9, the corresponding value is set in the result matrix. Otherwise the function calculates the sum of the neighboring elements and store the sum in the corresponding element of the result matrix. The final result matrix is returned.
+// Here is the pseudocode:
+// function solution(matrix):
+//     create empty array 'result'
+//     for each row in matrix:
+//         create empty array 'rowResult'
+//         for each element 'cell' in row:
+//             if cell == 0:
+//                 set cellResult to 0
+//             else if cell == 1:
+//                 set cellResult to 1
+//             else if cell == 9:
+//                 set cellResult to 0
+//             else:
+//                 sum neighboring elements including itself and store it in 'cellResult'
+//             add cellResult to 'rowResult'
+//         add 'rowResult' to 'result'
+//     return 'result'
 
 function solution(matrix) {
     let result = [];
-
     for (let i = 0; i < matrix.length; i++) {
+        let row = matrix[i];
         let rowResult = [];
-        let top, bottom, left, right, topLeft, topRight, bottomLeft, bottomRight;
-
-        for (let j = 0; j < matrix[i].length; j++) {
-            let cellResult;
-
-            switch (matrix[i][j]) {
-                case 0:
-                    cellResult = 0;
-                    break;
-                case 1:
-                    cellResult = 1;
-                    break;
-                case 9:
-                    cellResult = 0;
-                    break;
-                default:
-                    top = i > 0 ? matrix[i - 1][j] : 0;
-                    bottom = i < matrix.length - 1 ? matrix[i + 1][j] : 0;
-                    left = j > 0 ? matrix[i][j - 1] : 0;
-                    right = j < matrix[i].length - 1 ? matrix[i][j + 1] : 0;
-                    topLeft = i > 0 && j > 0 ? matrix[i - 1][j - 1] : 0;
-                    topRight = i > 0 && j < matrix[i].length - 1 ? matrix[i - 1][j + 1] : 0;
-                    bottomLeft = i < matrix.length - 1 && j > 0 ? matrix[i + 1][j - 1] : 0;
-                    bottomRight = i < matrix.length - 1 && j < matrix[i].length - 1 ? matrix[i + 1][j + 1] : 0;
-                    cellResult = top + bottom + left + right + topLeft + topRight + bottomLeft + bottomRight;
+        for (let j = 0; j < row.length; j++) {
+            let cell = row[j];
+            let cellResult = 0;
+            if (cell === 0) {
+                cellResult = 0;
+            } else if (cell === 1) {
+                cellResult = 1;
+            } else if (cell === 9) {
+                cellResult = 0;
+            } else {
+                let top = i > 0 ? matrix[i - 1][j] : 0;
+                let bottom = i < matrix.length - 1 ? matrix[i + 1][j] : 0;
+                let left = j > 0 ? matrix[i][j - 1] : 0;
+                let right = j < row.length - 1 ? matrix[i][j + 1] : 0;
+                let topLeft = i > 0 && j > 0 ? matrix[i - 1][j - 1] : 0;
+                let topRight = i > 0 && j < row.length - 1 ? matrix[i - 1][j + 1] : 0;
+                let bottomLeft = i < matrix.length - 1 && j > 0 ? matrix[i + 1][j - 1] : 0;
+                let bottomRight = i < matrix.length - 1 && j < row.length - 1 ? matrix[i + 1][j + 1] : 0;
+                cellResult = top + bottom + left + right + topLeft + topRight + bottomLeft + bottomRight;
             }
-
             rowResult.push(cellResult);
         }
-
         result.push(rowResult);
     }
-
     return result;
 }
 
