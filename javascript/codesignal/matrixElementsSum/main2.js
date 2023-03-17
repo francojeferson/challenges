@@ -1,4 +1,4 @@
-// This code is a function that takes in a matrix as an argument. It iterates through the matrix, starting with the first column, and adds up all of the elements in the column until it finds a 0. Then it moves to the next column and does the same thing. It returns the sum of all of the elements in each column until it finds a 0.
+// The code defines a function called solution that takes in a parameter matrix, which is expected to be a 2D array. The function then loops through each column of the matrix from left to right, and for each column, it sums up all the numbers in that column from top to bottom until it encounters a 0. If a 0 is encountered, it stops summing for that column and moves on to the next column. After all columns have been processed, the function returns the total sum of all the numbers that were added up.
 
 function solution(matrix) {
     for (var r = 0, j = 0; j < matrix[0].length; j++) {
