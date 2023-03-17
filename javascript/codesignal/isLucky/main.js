@@ -1,16 +1,18 @@
-// The code defines a function solution that takes an integer n as an argument. The function then converts the integer to a string, splits the string in half, and sums the digits in the first half of the string and in the second half of the string. Finally, the function returns a boolean value: true if the sum of the digits in the first half is equal to the sum of the digits in the second half, and false otherwise.
+// This function takes in a number n, checks if the sum of the first half of its digits is equal to the sum of the second half of its digits, and returns a boolean value (true if the sum of the first half equals the sum of the second half, and false otherwise).
+// Here is a breakdown of what the code does, step by step:
+
+// Convert the number n to a string using .toString(), and store it in the variable str.
+// Get the first half of the string by slicing it from the beginning up to (but not including) the middle index, and store it in the variable firstHalf. Similarly, get the second half of the string by slicing it from the middle index up to the end, and store it in the variable secondHalf.
+// Convert both the firstHalf and secondHalf strings into arrays of digits using .split('').
+// Calculate the sum of all the digits in firstHalf by using .reduce() to add up each digit to a running total, starting at 0. This value is stored in the variable firstHalfSum. Repeat this step for secondHalf, and store the sum of its digits in the variable secondHalfSum.
+// Check if firstHalfSum is equal to secondHalfSum, and return this value as a boolean.
 
 function solution(n) {
     let str = n.toString();
-    let halfLength = str.length / 2;
-    let firstHalfSum = 0;
-    let secondHalfSum = 0;
-
-    for (let i = 0; i < halfLength; i++) {
-        firstHalfSum += parseInt(str[i]);
-        secondHalfSum += parseInt(str[halfLength + i]);
-    }
-
+    let firstHalf = str.slice(0, str.length / 2);
+    let secondHalf = str.slice(str.length / 2);
+    let firstHalfSum = firstHalf.split('').reduce((a, b) => a + parseInt(b), 0);
+    let secondHalfSum = secondHalf.split('').reduce((a, b) => a + parseInt(b), 0);
     return firstHalfSum === secondHalfSum;
 }
 
