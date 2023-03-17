@@ -1,19 +1,13 @@
-// This function creates a new string from an input string. The new string is created by replacing each character of the input string with the next character in the alphabetic sequence. For example, if the input string is "abc", the new string will be "bcd".
-// Esta função cria uma nova string a partir de uma string de entrada. A nova string é criada ao substituir cada caractere da string de entrada com o próximo caractere na sequência alfabética. Por exemplo, se a string de entrada for "abc", a nova string será "bcd".
+// The solution function takes in a string as an argument and returns the same string with each letter shifted one character forward in the alphabet. The variable c is a string of all the letters of the alphabet plus one extra "z" at the end, and is used to get the next character for each letter in inputString.
+// The .replace() method is used to iterate over each character in inputString and replaces it with the next character in c. The . in /./g means to match any character in inputString. The second argument in .replace() is a function that takes in the matched character as an argument x. It finds the index of x in c and adds 1 to it, to get the index of the next character in c. Finally, it returns the character at the next index in c.
 
-function solution(s) {
+// solution by myjinxin2015
+function solution(inputString) {
     let c = "abcdefghijklmnopqrstuvwxyza";
-    let modifiedString = "";
-    for (let i = 0; i < s.length; i++) {
-        modifiedString += c[c.indexOf(s[i]) + 1];
-    }
-    return modifiedString;
+    return inputString.replace(/./g, x => c[c.indexOf(x) + 1]);
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let inputString = "crazy";
     assert.deepStrictEqual(solution(inputString), "dsbaz");
