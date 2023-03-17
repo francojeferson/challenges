@@ -1,4 +1,5 @@
-// This code is a function that takes two parameters, param1 and param2. It adds the two parameters together and returns the sum.
+// This code defines a function called "solution" that takes in two parameters, "param1" and "param2". The function then adds the value of "param1" to "param2" using the "+=" operator to modify the original value of "param1". Finally, it returns the updated value of "param1".
+// In simpler terms, this function takes two numbers as input and adds them together, modifying and returning the value of the first input parameter.
 
 function solution(param1, param2) {
     return param1 += param2;
