@@ -1,12 +1,20 @@
-// This function takes an array as parameter and returns another array with the sums of the adjacent positions for each element in the original array. The function goes through the original array and checks the value of each element. If the value is 0, 1, or 9, it inserts the corresponding value into the resulting new matrix. If the value is another number, it adds up the values of adjacent elements and inserts the result into the new matrix. At the end, the function returns the new matrix.
-// Esta função recebe uma matriz como parâmetro e retorna outra matriz com as somas das posições adjacentes para cada elemento na matriz original. A função percorre a matriz original e verifica o valor de cada elemento. Se o valor for 0, 1 ou 9, ele insere o valor correspondente na nova matriz resultante. Se o valor for outro número, ele soma os valores dos elementos adjacentes e insere o resultado na nova matriz. Ao final, a função retorna a nova matriz.
+// The function solution takes a two-dimensional matrix, performs operations on each element of the matrix, and stores the results in a new two-dimensional matrix. The new matrix represents the sum of the cells surrounding each element of the original matrix, along with each cell's own value.
+// The function takes the following steps:
+
+// Initialize an empty array result to hold the results.
+// Loop through each row of the matrix, and perform the following sub-steps for each row:
+// a. Initialize an empty array rowResult to hold the results for this row.
+// b. Initialize 8 variables (top, bottom, left, right, topLeft, topRight, bottomLeft, and bottomRight) to represent the values of the cells surrounding the current cell, taking care to check that the values exist before assigning them to the variable.
+// c. Use a switch statement to determine the value of the current cell and assign an appropriate value to the variable cellResult.
+// d. Add cellResult to rowResult.
+// Add rowResult to result.
+// Return result.
 
 function solution(matrix) {
     let result = [];
 
     for (let i = 0; i < matrix.length; i++) {
         let rowResult = [];
-
         let top, bottom, left, right, topLeft, topRight, bottomLeft, bottomRight;
 
         for (let j = 0; j < matrix[i].length; j++) {
@@ -22,65 +30,28 @@ function solution(matrix) {
                 case 9:
                     cellResult = 0;
                     break;
-
                 default:
-
-                    // If the row index is within the array boundary.
-                    // Se o índice da linha estiver dentro do limite do array.
                     top = i > 0 ? matrix[i - 1][j] : 0;
                     bottom = i < matrix.length - 1 ? matrix[i + 1][j] : 0;
-
-                    // If the column index is within the array boundary.
-                    // Se o índice da coluna estiver dentro do limite do array.
                     left = j > 0 ? matrix[i][j - 1] : 0;
-
-                    // If the column index is within the array boundary.
-                    // Se o índice da coluna estiver dentro do limite do array.
                     right = j < matrix[i].length - 1 ? matrix[i][j + 1] : 0;
-
-                    // If the row and column indices are within the bounds of the array.
-                    // Se os índices da linha e da coluna estiverem dentro dos limites do array.
                     topLeft = i > 0 && j > 0 ? matrix[i - 1][j - 1] : 0;
-
-                    // If the row and column indices are within the bounds of the array.
-                    // Se os índices da linha e da coluna estiverem dentro dos limites do array.
                     topRight = i > 0 && j < matrix[i].length - 1 ? matrix[i - 1][j + 1] : 0;
-
-                    // If the row and column indices are within the bounds of the array.
-                    // Se os índices da linha e da coluna estiverem dentro dos limites do array.
                     bottomLeft = i < matrix.length - 1 && j > 0 ? matrix[i + 1][j - 1] : 0;
-
-                    // If the row and column indices are within the bounds of the array.
-                    // Se os índices da linha e da coluna estiverem dentro dos limites do array.
                     bottomRight = i < matrix.length - 1 && j < matrix[i].length - 1 ? matrix[i + 1][j + 1] : 0;
-
-                    // Sums all elements adjacent to each analyzed element in the original array (not counting itself).
-                    // Soma todos os elementos adjacentes a cada elemento analisado na matriz original (sem contar com ele mesmo).
                     cellResult = top + bottom + left + right + topLeft + topRight + bottomLeft + bottomRight;
-
             }
 
-            // Inserts at the current position in the new output array the result obtained for each analyzed element in the original array.
-            // Insere na posicao atual no novo vetor de saida o resultado obtido para cada elemento analisado na matriz original.
             rowResult.push(cellResult);
-
         }
 
-        // Inserts the processed line into the final output vector.
-        // Insere no vetor de saida final a linha processada.
         result.push(rowResult);
-
     }
 
-    // Returns the new output array with the sums of the adjacent positions for each element in the original array.
-    // Retorna o novo vetor de saida com as somas das posicoes adjacentes para cada elemento na matriz original.
     return result;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let matrix = [
         [true, false, false],
