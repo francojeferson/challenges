@@ -1,15 +1,12 @@
-// This function checks whether a string given as argument (name) matches a valid variable name pattern. To do so, it uses a regular expression (regex) to check whether the string begins with a letter, hyphen, or underscore, followed by any combination of alphanumeric characters. If the string meets the requirements, the function returns true; otherwise, it returns false.
-// Essa função verifica se uma string fornecida como argumento (name) corresponde a um padrão de nome de variável válido. Para isso, ela usa uma expressão regular (regex) para verificar se a string começa com uma letra, hífen ou sublinhado, seguido por qualquer combinação de caracteres alfanuméricos. Se a string atender aos requisitos, a função retornará true; caso contrário, ela retornará false.
+// This code defines a function called solution that takes in a single parameter called name. The function returns a boolean value indicating whether the name parameter follows a specific pattern.
+// The pattern is defined by a regular expression: ^[a-zA-Z_][a-zA-Z0-9_]*$. This regular expression requires that the string begins with a letter (a-z or A-Z) or an underscore (_), and is followed by zero or more occurrences of any letter (a-z or A-Z), any digit (0-9), or an underscore (_).
+// The test() method is then used to test whether the name parameter matches this regular expression. If it does, the function returns true, indicating that the input string is valid. If it does not match the expression, the function returns false, indicating that the input string is invalid.
 
 function solution(name) {
-    const regex = /^[a-zA-Z_][\w]*$/;
-    return regex.test(name);
+    return /^[a-zA-Z_][a-zA-Z0-9_]*$/.test(name);
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let name = "var_1__Int";
     assert.deepStrictEqual(solution(name), true);
