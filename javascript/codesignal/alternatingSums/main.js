@@ -1,17 +1,13 @@
-// This code defines a function called "solution" that takes an array as its parameter. The function then declares two variables called "even" and "odd" and assigns them both an initial value of 0.
-// Next, the function uses a for loop to iterate over the entire length of the input array.
-// During each iteration of the loop, the code checks if the index of the current element is even or odd. If it's even, the value of the current element is added to the "even" variable. If it's odd, the value of the current element is added to the "odd" variable.
-// Finally, the function returns an array containing the values of the "even" and "odd" variables.
-// In essence, this code adds up all the numbers located in even and odd indices of an array and returns an array containing the sum of even-index numbers and the sum of odd-index numbers, respectively.
+// This code defines a function called solution that takes an array a as its argument. The function initializes two variables, even and odd, to zero. The function then iterates over each element of the array using a for...of loop and determines whether the index of the current element is even or odd. If it is even, the value of the current element is added to the even variable. If it is odd, the value of the current element is added to the odd variable. Finally, the function returns an array containing the sum of the even-indexed elements and the sum of the odd-indexed elements.
 
 function solution(a) {
     let even = 0;
     let odd = 0;
-    for (let i = 0; i < a.length; i++) {
-        if (i % 2 === 0) {
-            even += a[i];
+    for (const val of a.entries()) {
+        if (val[0] % 2 === 0) {
+            even += val[1];
         } else {
-            odd += a[i];
+            odd += val[1];
         }
     }
     return [even, odd];
