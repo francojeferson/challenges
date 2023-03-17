@@ -1,5 +1,15 @@
-// This function takes an array 'a' as parameter. It filters the array elements so that only positive numbers are kept, and then sorts them in ascending order. Next, it maps the original array, replacing any positive number with one of the ordered elements (starting with the smallest) and keeping any negative number as -1. Finally, the function returns the new mapped array.
-// Essa função recebe um array 'a' como parâmetro. Ela filtra os elementos do array para que apenas os números positivos sejam mantidos e então os ordena de forma crescente. Em seguida, ela mapeia o array original, substituindo qualquer número positivo por um dos elementos ordenados (começando pelo menor) e mantendo qualquer número negativo como -1. Por fim, a função retorna o novo array mapeado.
+// This is a JavaScript function named solution that takes an array a as input. This function does the following:
+
+// It first initializes a new array s which is a filtered and sorted version of the input array a.
+// The filtering step removes all elements in a that are not greater than zero.
+// The sorting step sorts the filtered array in ascending order.
+// It then initializes an index variable i to 0.
+// The function maps over the input array a, and for each element p in a, it does the following:
+// If p is not equal to -1, it returns the next element of array s using the index i, and increments i.
+// If p is equal to -1, it returns -1.
+// Finally, the function returns a new array that is the result of step 5 and 6.
+
+// The purpose of this function appears to be to return a new array where all non-negative numbers of the input array a are sorted in ascending order and placed in the same position as they were in a. Any -1 values in a are replaced with -1 in the resulting array.
 
 function solution(a) {
     let s = a.filter(h => h > 0).sort((a, b) => a - b);
@@ -14,10 +24,7 @@ function solution(a) {
     });
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let a = [-1, 150, 190, 170, -1, -1, 160, 180];
     assert.deepStrictEqual(solution(a), [-1, 150, 160, 170, -1, -1, 180, 190]);
