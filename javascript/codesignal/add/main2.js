@@ -1,4 +1,7 @@
-// This code defines a function called "solution" that takes two parameters (param1 and param2) and returns the sum of the two parameters.
+// The code defines a function called "solution" using arrow function syntax. The function takes in two parameters, "param1" and "param2". The function then returns the sum of the two parameters (param1+param2). It is equivalent to writing:
+// function solution(param1, param2) {
+//     return param1 + param2;
+// }
 
 const solution = (param1, param2) => param1 + param2;
 
