@@ -3,6 +3,7 @@
 //     return param1 + param2;
 // }
 
+// solution by jonlima
 const solution = (param1, param2) => param1 + param2;
 
 const assert = require('assert');
