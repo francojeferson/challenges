@@ -1,5 +1,13 @@
-// This function checks whether an integer given as argument is a Kaprekar number. This means that when the number is divided in half, the sum of the left digits must equal the sum of the right digits. The function splits the number into two parts and calculates the sum of the left and right digits. If the sums are equal, the function returns true, otherwise it returns false.
-// Essa função verifica se um número inteiro fornecido como argumento é um número de Kaprekar. Isso significa que, quando o número é dividido ao meio, a soma dos dígitos da esquerda deve ser igual à soma dos dígitos da direita. A função divide o número em duas partes e calcula a soma dos dígitos da esquerda e da direita. Se as somas forem iguais, a função retornará true, caso contrário, retornará false.
+// The above code takes an integer as a parameter 'n' and returns a boolean value. The function performs the following steps:
+
+// Initializes a variable called 'count' to 0
+// Converts 'n' to a string, splits it into an array of individual digits using the 'split' method, and maps each digit to a number using the 'Number' function. This converts the integer input into an array of numbers.
+// Calculates the midpoint of the array by dividing the length by 2 and rounding down with the 'Math.floor' function.
+// Loops through the first half of the array from the first digit to the midpoint (exclusive) and adds each digit to the 'count' variable.
+// Loops through the second half of the array from the midpoint to the last digit (inclusive) and subtracts each digit from the 'count' variable.
+// Returns 'true' if 'count' equals 0, otherwise, returns 'false'.
+
+// The overall purpose of this code is to determine whether the sum of the digits in the first half of the number is equal to the sum of the digits in the second half of the number.
 
 function solution(n) {
     let count = 0;
@@ -15,10 +23,7 @@ function solution(n) {
     return count == 0;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let n = 1230;
     assert.deepStrictEqual(solution(n), true);
