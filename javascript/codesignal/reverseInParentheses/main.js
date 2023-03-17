@@ -1,37 +1,32 @@
-// The given code is a function that expects a string input containing parentheses. The function executes the following steps:
+// The given function solution(inputString) performs the following steps:
 
-// Initialize 4 variables with an empty value.
-// Create an infinite loop.
-// In each iteration of the loop:
-// a. Search for the next occurrence of the closing parentheses (')') in the given input string.
-// b. If no ')' is found, exit the loop.
-// c. If a ')' is found, search the substring of the input string that starts from the beginning of the string and ends at the position of the last ')' (parentheses opening)
-// d. Extract the substring from the input string that starts after the last '(' and ends before the current ')', reverse the extracted string and save the result in the middle variable.
-// e. Extract the substring of the input string that starts from the position after the current ')' and ends at the end of the input string
-// f. Concatenate the start, middle, and end substrings, and overwrite the input string with the concatenated result.
-// Repeat the above loop until all ')' parentheses have been found and all relevant portions of the input string have been reversed and concatenated
-// Return the final modified input string.
+// Initialize an infinite while loop.
+// In each iteration of the loop, find the index of the first occurrence of ) character in the inputString using indexOf() method and save it to the variable c.
+// If there is no ) character found, exit the loop using the break statement.
+// Find the index of the last occurrence of the ( character before the ) character, using lastIndexOf() method, and save it to the variable o.
+// Extract the substring of inputString from the start of the string up to the index o and save it to the variable start.
+// Extract the substring of inputString from the index o+1 (right after the ( character) and up to the index c (the ) character) and then reverse it using split(), reverse() and join() methods, and save it to the variable middle.
+// Extract the substring of inputString from the index c+1 (right after the ) character) up to the end of the string and save it to the variable end.
+// Combine the start and end substrings with the reversed middle substring and save the result to the variable inputString.
+// Repeat from step 2 until there is no ) character found in the inputString.
+// Return the modified inputString.
+
+// In summary, the given function solution() reverses the characters between each pair of opening and closing parentheses in a given string inputString.
 
 function solution(inputString) {
-    let c;
-    let o;
-    let start;
-    let middle;
-    let end;
-
     while (true) {
-        c = inputString.indexOf(')');
-
+        let c = inputString.indexOf(')');
         if (c === -1) break;
-
-        o = inputString.substring(0, c).lastIndexOf('(');
-        start = inputString.substring(0, o);
-        middle = inputString.substring(o + 1, c).split('').reverse().join('');
-        end = inputString.substring(c + 1, inputString.length);
-
+        let o = inputString.substring(0, c).lastIndexOf('(');
+        let start = inputString.substring(0, o);
+        let middle = inputString
+            .substring(o + 1, c)
+            .split('')
+            .reverse()
+            .join('');
+        let end = inputString.substring(c + 1, inputString.length);
         inputString = start + middle + end;
     }
-
     return inputString;
 }
 
