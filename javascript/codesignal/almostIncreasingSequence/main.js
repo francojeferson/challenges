@@ -1,4 +1,5 @@
-// This code is a function that checks if an array is a valid sequence. It checks if each element in the array is greater than or equal to the previous element. If it finds an element that is not, it will check if it can be made into a valid sequence by changing the value of the previous element. If it cannot, then it will return false; otherwise, it will return true.
+// This code defines a function called "solution" which takes an array called "sequence" as its input. The function loops through each element of "sequence". If the current element is smaller than or equal to the previous element, the function checks if this is the second occurrence (via the "found" variable), and if so, returns false. If it's the first occurrence, "found" is set to true. If it's not the first occurrence, the function checks other values in the sequence to determine whether it can replace the current element with a new value and still maintain an ascending sequence. If not, the function returns false. If the end is reached without returning false, the function returns true.
+
 
 function solution(sequence) {
     let found = false;
