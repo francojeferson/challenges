@@ -1,14 +1,10 @@
-// This function takes a number as argument (n) and returns a boolean value that indicates whether all digits of the number are even or not. First the argument is converted to a string using the toString() method. Next, the Array.from() method is used to create an array of strings from the resulting string. Finally, the function uses the every() method to check whether all elements of the array pass the condition that the remainder of the division by 2 is equal to zero (number % 2 == 0). If all elements pass the condition, the function will return true, otherwise it will return false.
-// Essa função recebe um número como argumento (n) e retorna um valor booleano que indica se todos os dígitos do número são pares ou não. Primeiro, o argumento é convertido em uma string usando o método toString(). Em seguida, usa-se o método Array.from() para criar um array de strings a partir da string resultante. Por fim, a função usa o método every() para verificar se todos os elementos do array passam na condição de que o resto da divisão por 2 é igual a zero (number % 2 === 0). Se todos os elementos passarem na condição, a função retornará true, caso contrário retornará false.
+// This code defines a function called solution that takes a number n as an argument. The function converts the number n to a string using the toString method, then splits the string into an array of individual characters using the split method. The every method is called on the resulting array, and the arrow function passed to it checks that each character is an even number (i.e. has no remainder when divided by 2 using the modulus operator %). If all characters pass this check, every returns true and the function returns true, indicating that all digits of the original number are even. If any character fails the check, every returns false and the function returns false, indicating that at least one digit of the original number is odd.
 
 function solution(n) {
-    return Array.from(n.toString()).every(number => number % 2 === 0);
+    return n.toString().split('').every((x) => x % 2 === 0);
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let n = 248622;
     assert.deepStrictEqual(solution(n), true);
