@@ -1,15 +1,11 @@
-// The code defines a function called solution that takes in a parameter inputString. The function returns a boolean value which is evaluated by testing whether the inputString matches the given regular expression /^((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)(\.|$)){4}$/.
-// The regular expression pattern specifies the format of an IPv4 address - a string that represents the 32-bit numerical internet protocol address that identifies each sender or receiver of information that is sent in packets across the internet.
-// The regular expression matches strings that have the following format:
+// This code defines a JavaScript function called solution that takes a string argument inputString.
+// The function tests if the given inputString matches the regular expression pattern.
+// The regular expression contains a combination of subpatterns that are matched against the input string.
+// The test() method returns a boolean true/false result whether or not inputString matches the expression pattern.
 
-// Four numeric fields separated by dots
-// Each field is between 0-255
-// Leading zeros are allowed except for a single zero
-
-// If the input string matches the IPv4 format, the function returns true, otherwise it returns false.
-
+// solution by Olexa
 const solution = inputString =>
-    /^((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)(\.|$)){4}$/.test(inputString);
+    /^((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)(\.(?!$)|$)){4}$/.test(inputString);
 
 const assert = require('assert');
 function testSolution() {
