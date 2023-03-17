@@ -1,34 +1,21 @@
-// This is a function that takes an array of strings as its input and returns an array of the longest strings within the input array. Here’s how the code works:
+// The code defines a function named "solution" that takes in an array called "inputArray." The function returns an array containing the longest string(s) in the "inputArray."
 
-// It initializes a variable called longestString to an empty string and an empty array called result.
-
-// It then loops through the inputArray using a for loop, with the loop ending once i is greater than the length of the inputArray.
-
-// Within the loop, the current string is first saved in the variable currentString.
-
-// It then checks if the currentString is longer than the value stored in the longestString variable. If it is, longestString is updated to hold the currentString, and the result array is reset to an empty array, with longestString subsequently pushed into it.
-
-// If currentString has the same length as longestString, it is simply pushed into the result array.
-
-// Once the loop completes, the function returns the result array containing the longest strings from the input array.
+// The "reduce()" method is used to iterate through each element of "inputArray."
+// For each element of the array, the callback function checks if it is the first element or if its length is greater than the length of the previous element(s).
+// If either condition is true, the callback returns a new array containing only the current element.
+// If the length of the current element is equal to the length of the previous element(s), the current element is added to the existing array of "r."
+// Once all elements have been iterated, the final "r" array will contain only the longest string(s) from the "inputArray."
 
 function solution(inputArray) {
-    let longestString = '';
-    const result = [];
-
-    for (let i = 0; i < inputArray.length; i++) {
-        const currentString = inputArray[i];
-
-        if (currentString.length > longestString.length) {
-            longestString = currentString;
-            result.length = 0;
-            result.push(longestString);
-        } else if (currentString.length === longestString.length) {
-            result.push(currentString);
+    return inputArray.reduce((r, s, i) => {
+        if (!i || r[0].length < s.length) {
+            return [s];
         }
-    }
-
-    return result;
+        if (r[0].length === s.length) {
+            r.push(s);
+        }
+        return r;
+    }, []);
 }
 
 const assert = require('assert');
