@@ -1,10 +1,12 @@
-// This is a JavaScript function called solution, which accepts a 2D array (image) as its argument. The function first initializes an empty array called result.
-// Then it loops through the rows of the image array with a for loop, starting from the first row (i = 0) and stopping at the second last row (i < image.length - 2).
-// Within each row i, the function then loops through the columns of that row with another for loop, starting from the first column (j = 0) and stopping at the second last column (j < image[i].length - 2).
-// Within each row i and column j, the function calculates the "average" value of the 3x3 square of pixels around the current pixel. To do this, it loops through the 3 rows of pixels surrounding the current pixel with another for loop (for (let k = 0; k < 3; k++)) and adds up the values of the current column j and the two adjacent columns j+1 and j+2 for each of those 3 rows of pixels.
-// After calculating this sum, it then divides it by 9 (since there are 9 pixels in the 3x3 square) and rounds down to the nearest integer using Math.floor(). It then adds this "average" value to a new array called row.
-// Once all the columns in a row i have been looped through, the row array is added to the result array, which already contains the previous rows.
-// Finally, once all the rows in the image array have been processed, the function returns the result array containing the "averaged" values of the original image.
+// The given code is a function called solution. It takes in a 2D square matrix called an image, performs a transformation on it, and returns the transformed image as a new 2D square matrix. The transformation is a type of image filtering called a box blur.
+// Here is a step-by-step description of the algorithm used to transform the input image:
+
+// Initialize an empty array result to store the transformed image.
+// Loop through the input image image starting from the first row (i=0) and first column (j=0) and going up to second-to-last row and second-to-last column (i < image.length-2 and j < image[i].length-2).
+// For each starting position (i,j), create a 3x3 "box" by iterating over the next 3 rows and 3 columns after the starting row and column, and calculate the sum of all the values inside the 3x3 box.
+// Divide the sum by 9, to get an average, push this average value to the current row (row).
+// When you complete the current row (when j = image[i].length - 3), push the row onto the result array.
+// Once all rows are complete (when i = image.length - 3), the transformation is complete. result is returned.
 
 function solution(image) {
     let result = [];
@@ -13,7 +15,9 @@ function solution(image) {
         for (let j = 0; j < image[i].length - 2; j++) {
             let sum = 0;
             for (let k = 0; k < 3; k++) {
-                sum += image[i + k][j] + image[i + k][j + 1] + image[i + k][j + 2];
+                for (let l = 0; l < 3; l++) {
+                    sum += image[i + k][j + l];
+                }
             }
             row.push(Math.floor(sum / 9));
         }
