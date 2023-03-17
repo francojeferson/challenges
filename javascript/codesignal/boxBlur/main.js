@@ -1,5 +1,10 @@
-// This function accepts an array of numbers as input and returns an array of numbers. The function averages the numbers in a 3x3 grid around each element in the original grid. The result is stored in the output matrix, which is reduced to be the same size as the original grid.
-// Esta função aceita uma matriz de números como entrada e retorna uma matriz de números. A função calcula a média dos números em uma grade 3x3 ao redor de cada elemento na grade original. O resultado é armazenado na matriz de saída, que é reduzido para ter o mesmo tamanho da grade original.
+// This is a JavaScript function called solution, which accepts a 2D array (image) as its argument. The function first initializes an empty array called result.
+// Then it loops through the rows of the image array with a for loop, starting from the first row (i = 0) and stopping at the second last row (i < image.length - 2).
+// Within each row i, the function then loops through the columns of that row with another for loop, starting from the first column (j = 0) and stopping at the second last column (j < image[i].length - 2).
+// Within each row i and column j, the function calculates the "average" value of the 3x3 square of pixels around the current pixel. To do this, it loops through the 3 rows of pixels surrounding the current pixel with another for loop (for (let k = 0; k < 3; k++)) and adds up the values of the current column j and the two adjacent columns j+1 and j+2 for each of those 3 rows of pixels.
+// After calculating this sum, it then divides it by 9 (since there are 9 pixels in the 3x3 square) and rounds down to the nearest integer using Math.floor(). It then adds this "average" value to a new array called row.
+// Once all the columns in a row i have been looped through, the row array is added to the result array, which already contains the previous rows.
+// Finally, once all the rows in the image array have been processed, the function returns the result array containing the "averaged" values of the original image.
 
 function solution(image) {
     let result = [];
@@ -17,10 +22,7 @@ function solution(image) {
     return result;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let image = [
         [1, 1, 1],
