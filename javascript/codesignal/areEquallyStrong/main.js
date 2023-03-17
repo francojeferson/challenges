@@ -1,14 +1,11 @@
-// The code defines a function called solution that takes four parameters: yourLeft, yourRight, friendsLeft, and friendsRight. The function returns a boolean value that represents whether you and your friend can exchange one glove each and end up with a pair of gloves.
-// The logic of the function works as follows:
-
-// Check if your left glove matches your friend's left glove AND your right glove matches your friend's right glove.
-// If step 1 is false, check if your left glove matches your friend's right glove AND your right glove matches your friend's left glove.
-// If either step 1 or step 2 is true, it means you and your friend can exchange one glove each and end up with a pair of gloves, so the function returns true. Otherwise, it returns false.
-
-// In other words, the function checks if you and your friend have complementary gloves that can be exchanged to form a pair.
+// The provided function solution takes in four integer arguments: yourLeft, yourRight, friendsLeft, and friendsRight.
+// The function returns true if the first condition within the return statement is true - which checks if yourLeft is strictly equal to friendsLeft AND yourRight is strictly equal to friendsRight.
+// Otherwise, it evaluates the second condition within the return statement - which checks if yourLeft is strictly equal to friendsRight AND yourRight is strictly equal to friendsLeft.
+// If either of these two conditions evaluate to true, the overall expression will return true. If not, it will evaluate to false.
+// In other words, the function is checking whether the cards that you and your friend are holding are the same, regardless of their positions.
 
 function solution(yourLeft, yourRight, friendsLeft, friendsRight) {
-    return yourLeft === friendsLeft ? yourRight === friendsRight : yourLeft === friendsRight && yourRight === friendsLeft;
+    return (yourLeft === friendsLeft && yourRight === friendsRight) || (yourLeft === friendsRight && yourRight === friendsLeft);
 }
 
 const assert = require('assert');
