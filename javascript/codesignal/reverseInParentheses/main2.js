@@ -1,12 +1,16 @@
-// This is a JavaScript function called solution that takes in a single parameter inputString. The function replaces every substring enclosed in parentheses in the input string with a reversed version of itself until there are no more parentheses left. The revised string is then returned.
-// The function performs this operation using a while loop and the includes method to determine if the input string contains any parentheses. The match method and a regular expression are used to find the first substring enclosed in parentheses. The [1] indexer is used to grab the capture group's content, which is then converted to an array using spread syntax ([...]). The reverse method is then used to reverse the array's elements, and the join method concatenates the elements together into a string.
-// The replace method is used to replace the match with reversed string while maintaining the original string's value for the next iteration. Finally, the modified string inputString is returned.
+// This code defines a JavaScript function named solution which expects a single parameter inputString, a string of characters. The function aims to reverse the order of characters for each substring between brackets ().
+// Here is a step-by-step outline of what the code does:
 
+// The while loop will execute until all substrings enclosed in parenthesis are removed, hence it relies on the includes method to check if there are remaining open brackets or not.
+// The replace method accepts two arguments: the first is a regular expression pattern that matches all parentheses of the input string and captures the string between the parentheses using the () syntax. The second argument is a function that will process the matched substring to reverse its order.
+// The reversing operation is achieved by spreading the string {...str} into an array and then reversing its order and joining its elements back into a string with the join method.
+// The modified string is then assigned back to inputString.
+// When all the substrings enclosed in parentheses have been reversed, the while loop will terminate, and the final modified string will be returned.
+
+// solution by jakzo
 function solution(inputString) {
-    let reversedString;
     while (inputString.includes('(')) {
-        reversedString = [...inputString.match(/\(([^()]*)\)/)[1]].reverse().join('');
-        inputString = inputString.replace(/\(([^()]*)\)/, reversedString);
+        inputString = inputString.replace(/\(([^()]*)\)/, (_, str) => [...str].reverse().join(''));
     }
     return inputString;
 }
