@@ -1,15 +1,13 @@
-// This function takes in two strings, s1 and s2. It loops through each character in s1 and checks if s2 contains that character. If so, it increments a count variable and removes that character from s2. The function then returns the final count of characters that were found in both s1 and s2.
+// This code defines a function called "solution" which takes two string arguments named "s1" and "s2". The purpose of the function is to count the number of characters in string "s2" that are also present in string "s1".
+// To do this, the function takes each character in string "s1" and replaces all instances of it in string "s2" with the character "!". This effectively removes all matching characters from "s2", leaving only characters that don't appear in "s1".
+// Finally, the function uses a regular expression to count the remaining non-"!" characters in "s2" and returns that count.
 
+// solution by lifeofnations
 function solution(s1, s2) {
-    let count = 0;
     for (let i = 0; i < s1.length; i++) {
-        if (s2.includes(s1[i])) {
-            count++;
-            s2 = s2.replace(s1[i], "");
-        }
+        s2 = s2.replace(s1[i], "!");
     }
-
-    return count;
+    return s2.replace(/[^!]/g, "").length;
 }
 
 const assert = require('assert');
