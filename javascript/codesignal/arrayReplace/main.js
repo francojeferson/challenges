@@ -1,14 +1,26 @@
-// This function takes as arguments an input array, an element to replace, and a replacement element. It returns the input array with any instance of the specified element replaced by the replacement element. For example, if the array is [1,2,3], the element to replace is 2, and the replacement element is 4, then the function will return [1,4,3].
-// Esta função recebe como argumentos um array de entrada, um elemento para substituir e um elemento de substituição. Ela retorna o array de entrada com qualquer instância do elemento especificado substituída pelo elemento de substituição. Por exemplo, se o array for [1,2,3], o elemento a ser substituído for 2 e o elemento de substituição for 4, então a função retornará [1,4,3].
+// This code defines a function called solution that takes three parameters:
+
+// inputArray: an array of values
+// elemToReplace: a value that needs to be replaced
+// substitutionElem: the value that will replace elemToReplace in the resulting array
+
+// The function uses the map() method to loop through each item in inputArray and perform the following actions:
+
+// If the current item in the array is equal to elemToReplace, replace it with substitutionElem
+// Otherwise, return the item as is
+
+// Finally, the function returns a new array that contains the modified values or unchanged values of inputArray elements depending on whether they matched with elemToReplace or not.
 
 function solution(inputArray, elemToReplace, substitutionElem) {
-    return inputArray.map(item => (item === elemToReplace) ? substitutionElem : item);
+    return inputArray.map((item) => {
+        if (item === elemToReplace) {
+            return substitutionElem;
+        }
+        return item;
+    });
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let inputArray = [1, 2, 1];
     let elemToReplace = 1;
