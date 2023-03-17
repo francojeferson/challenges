@@ -1,16 +1,15 @@
-// This code defines a function called solution that takes an array of integers called inputArray as an argument. It then initializes a variable called i to the value of 1.
-// The function then enters a while loop that will iterate indefinitely until a return statement inside the loop is executed.
-// Within the while loop, the function checks whether every element in the inputArray is not divisible by i. The every function returns a boolean value indicating whether the function inside the parentheses returns true for every element in the inputArray. The function inside the parentheses uses an arrow function to determine whether each element in the inputArray is not divisible by i.
-// If every element in the inputArray is not divisible by i, then the function returns the value of i and exits the loop. If not, then the variable i is incremented by 1 and the loop starts again, checking whether every element in the inputArray is not divisible by the new value of i.
-// In summary, the function solution finds the smallest positive integer that is not divisible by any element in inputArray.
+// This code defines a function called solution which takes an array as its input.
+// The function then enters a for loop which initializes a variable i at 1 and runs indefinitely without a defined end point.
+// Within the for loop, there is an if statement that checks whether every element in the input array is not divisible by i using the modulo operator (%).
+// If every element in the array is not divisible by i, the function returns the current value of i.
+// If any element in the array is divisible by i, the loop continues to the next iteration and increments i by 1.
+// The function will continue in this manner until it finds the smallest positive integer that is not a multiple of any element in the input array.
 
 function solution(inputArray) {
-    let i = 1;
-    while (true) {
+    for (let i = 1; ; i++) {
         if (inputArray.every(element => element % i !== 0)) {
             return i;
         }
-        i++;
     }
 }
 
