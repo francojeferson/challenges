@@ -1,5 +1,4 @@
-// This function takes an array as parameter (a) and returns the maximum difference between two consecutive numbers in the array. It runs through the array using a for loop. Inside the loop, the variable "diff" stores the absolute difference between the current numbers at index "i" and "i + 1". If the difference is greater than the variable maxDiff, maxDiff is updated to the value of the diff variable. At the end of the loop, maxDiff is returned as the result of the function.
-// Essa função recebe um array como parâmetro (a) e retorna a diferença máxima entre dois números consecutivos no array. Ela percorre o array usando um loop for. Dentro do loop, a variável "diff" armazena a diferença absoluta entre os números atuais no índice "i" e "i + 1". Se a diferença for maior que a variável maxDiff, maxDiff é atualizado para o valor da variável diff. Ao final do loop, maxDiff é retornado como o resultado da função.
+// This code defines a function called solution that takes an array a as its parameter. The function finds the maximum difference between two adjacent elements in the array. It starts by initializing the variable maxDiff to 0. It then loops through the array, comparing the absolute difference between each element and the next element. If the difference is greater than the value of maxDiff, it updates maxDiff to the new, larger value. Finally, the function returns the value of maxDiff.
 
 function solution(a) {
     let maxDiff = 0;
@@ -13,10 +12,7 @@ function solution(a) {
     return maxDiff;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let inputArray = [2, 4, 1, 0];
     assert.deepStrictEqual(solution(inputArray), 3);
