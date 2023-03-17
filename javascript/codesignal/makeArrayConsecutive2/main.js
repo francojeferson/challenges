@@ -1,4 +1,13 @@
-// This code is a function that takes in an array of statues as a parameter. It first finds the minimum and maximum values in the array using the Math.min() and Math.max() methods. It then creates a loop that iterates from the minimum value to the maximum value, and checks if each value is included in the statues array using the .includes() method. If it is not included, it adds 1 to a count variable. Finally, it returns this count variable which represents how many statues are missing from the array.
+// The function solution accepts an array of numbers called statues. The purpose of the function is to count how many numbers are missing from the sequence of numbers that starts at the smallest number in the array and ends at the largest number in the array.
+// The following is a step-by-step plan for how the function works:
+
+// Step 1: Find the smallest number in the input array using Math.min(...statues) and store it in a variable called min.
+// Step 2: Find the largest number in the input array using Math.max(...statues) and store it in a variable called max.
+// Step 3: Initialize a variable called count to 0, to keep track of how many numbers are missing in the sequence.
+// Step 4: Start a for loop that loops through each number in the sequence starting from min and ending with max.
+// Step 5: Inside the loop, check if the current number is not included in the original array using !statues.includes(i).
+// Step 6: If the current number is not included in the array, increment the count variable by 1 using count++.
+// Step 7: After the loop has finished, return the count variable, which represents the number of missing numbers in the sequence.
 
 function solution(statues) {
     var min = Math.min(...statues);
