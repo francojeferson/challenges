@@ -1,4 +1,4 @@
-// This code is a function that takes in a number (n) as an argument and returns the sum of the square of n and the square of n minus 1. In other words, it returns n2 + (n-1)2.
+// This code defines a function called solution that takes in one parameter n. The function returns the sum of the square of n and the square of n minus 1. Essentially, it calculates the sum of the squares of the two closest integers to n.
 
 function solution(n) {
     return n * n + (n - 1) * (n - 1);
