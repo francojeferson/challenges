@@ -9,6 +9,7 @@
 
 // If the length of the final string is less than 2, then the string is a palindrome and the function returns true. Otherwise, it returns false.
 
+// solution by jbraithwaite
 function solution(inputString) {
     return inputString.split('').sort().join('').replace(/(\w)\1/g, '').length < 2;
 }
