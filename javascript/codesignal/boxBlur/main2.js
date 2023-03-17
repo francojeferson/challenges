@@ -1,17 +1,22 @@
-// This code takes in an array of arrays (a 2D array) called "image" which represents a grayscale image. It removes the first and last rows and columns of the image using the .slice() method. Then it maps over each element and removes the first and last elements of each inner array, thus removing the first and last columns of the image. It then applies a blur filter to the resultant image by iterating over each pixel, adding up the values of the pixel and the 8 pixels surrounding it (3x3 grid), and then taking the average of those values. The resulting value is then placed in the same position as the original pixel in a new matrix that represents the blurred image. Finally, the new matrix is returned as the resulting image.
+// This code defines a function named solution that takes an image argument as input, which is expected to be a 2D array of numbers, where each number is a pixel value of an image. The function manipulates the input array and returns a new array that represents a blurred version of the image.
+// The function first creates a new array B that is a sub-array of the image array, where the first and last rows and columns are removed. This is done because the function does not perform the blurring operation for pixels on the image borders.
+// Then, the function applies a nested map operation on the B array, where each pixel value is replaced with the average value of the nine pixels in a 3x3 grid centered around the pixel. This is done by looping over a 3x3 sub-grid for each pixel of the B array and accumulating the sum of pixel values in the sum variable. Finally, the average value is calculated by dividing the sum by 9 and rounding down the result, which is then used as the new pixel value.
+// The blurred image is returned as a new 2D array of numbers that has the same dimensions as the B array.
 
-const solution = image =>
-    image.slice(1, -1).map(val => val.slice(1, -1)).map((val, i) =>
-        val.map((_, j) => {
-            let total = 0;
-            for (let x = 0; x < 3; x++) {
-                for (let y = 0; y < 3; y++) {
-                    total += image[i + x][j + y];
-                }
-            }
-            return Math.floor(total / 9);
+// solution by jraghon
+const solution = image => {
+    let B = image.slice(1, -1).map(e => e.slice(1, -1));
+
+    return B.map((row, i) =>
+        row.map((elem, j) => {
+            var sum = 0;
+            for (var x = 0; x < 3; ++x)
+                for (var y = 0; y < 3; ++y)
+                    sum += image[i + x][j + y];
+            return sum / 9 | 0;
         })
     );
+};
 
 const assert = require('assert');
 function testSolution() {
