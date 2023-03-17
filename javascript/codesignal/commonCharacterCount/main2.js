@@ -1,5 +1,4 @@
-// This function compares two strings (s1 and s2) and counts how many characters from s1 are present in s2. The for loop goes through each character of s1 and checks if it is present in s2 using the includes method. If the character is present, the count variable is incremented and the character is removed from the string s2 using the replace method. At the end of the loop, the function returns the value of count.
-// Essa função compara duas strings (s1 e s2) e conta quantos caracteres de s1 estão presentes em s2. O loop for percorre cada caractere de s1 e verifica se ele está presente em s2 usando o método includes. Se o caractere estiver presente, a variável count é incrementada e o caractere é removido da string s2 usando o método replace. Ao final do loop, a função retorna o valor de count.
+// This function takes in two strings, s1 and s2. It loops through each character in s1 and checks if s2 contains that character. If so, it increments a count variable and removes that character from s2. The function then returns the final count of characters that were found in both s1 and s2.
 
 function solution(s1, s2) {
     let count = 0;
@@ -13,10 +12,7 @@ function solution(s1, s2) {
     return count;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let s1 = "aabcc";
     let s2 = "adcaa";
