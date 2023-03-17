@@ -1,17 +1,13 @@
-// This function takes three arguments as input: an input array, the element to be replaced, and the replacement element. It traverses the input array and, when it finds the element to be replaced, it replaces it with the replacement element. Finally, it returns the modified input array.
-// Esta função recebe três argumentos como entrada: um array de entrada, o elemento a ser substituído e o elemento de substituição. Ela percorre o array de entrada e, quando encontra o elemento a ser substituído, ele o substitui pelo elemento de substituição. Finalmente, ela retorna o array de entrada modificado.
+// This is a function called solution that takes three parameters: an inputArray, elemToReplace, and substitutionElem.
+// The function uses the map() method to create a new array after applying a function to each element in the inputArray. In this case, taking each element i of the inputArray, the function checks if it is equal to elemToReplace. If it is, the element is replaced with substitutionElem, otherwise it is kept the same.
+// The new array with the replaced elements is then returned.
 
+// solution by bintay1
 function solution(inputArray, elemToReplace, substitutionElem) {
-    for (let i = 0; i < inputArray.length; i++) {
-        if (inputArray[i] === elemToReplace) inputArray[i] = substitutionElem;
-    }
-    return inputArray;
+    return inputArray.map(i => i == elemToReplace ? substitutionElem : i);
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let inputArray = [1, 2, 1];
     let elemToReplace = 1;
