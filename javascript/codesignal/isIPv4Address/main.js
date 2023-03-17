@@ -1,13 +1,9 @@
-// This is a function called "solution" that takes a string as its argument. The function first creates a regular expression called "regex".
-// This regex checks whether the input string is a valid IPv4 address:
-
-// The regex starts by checking 3 groups of numbers separated by periods, where each group can be a single digit (0-9), two digits (10-99), or three digits (100-255).
-// After the 3 groups of numbers, the regex checks for a final single digit.
-
-// The function then returns a boolean value depending on whether the input string matches the regex or not. If the input string matches, the function will return "true". Otherwise, it will return "false".
+// This code defines a function called solution that takes in one parameter, inputString. This function returns a boolean value that indicates whether or not the input string matches a regular expression pattern for a valid IPv4 address.
+// The regular expression is stored in the constant regex. It specifically looks for patterns that consist of four groups of one to three digits, separated by periods. Each group must be between 0 and 255 (inclusive).
+// The test function is called on the regex object using the inputString argument. This function returns a boolean value indicating whether or not inputString matches the regex pattern. This boolean value is then returned as the result of the solution function. If the input string is a valid IPv4 format, the function will return true, otherwise it will return false.
 
 function solution(inputString) {
-    const regex = /^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/;
+    const regex = /^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$/;
     return regex.test(inputString);
 }
 
