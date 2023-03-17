@@ -1,9 +1,12 @@
-// This function takes an array of numbers called inputArray and calculates the maximum difference between any two adjacent numbers in the array. It initializes a variable called maxDiff to 0 and then loops through each element in the inputArray, using the Math.max function to compare the current value of maxDiff with the absolute difference between the current element and the element immediately following it. The loop stops before reaching the last element of the array to avoid a "undefined" error. Finally, the function returns the largest difference found.
+// This is a function called "solution" that takes in an inputArray as its argument. The function will iterate through the inputArray and find the largest difference between any two adjacent values. It does this by initializing a variable called "maxDiff" to 0 and then iterating through the array using a for loop. For each pair of adjacent values, the function calculates the absolute difference and assigns that value to a variable called "diff". If "diff" is greater than "maxDiff", then "maxDiff" is updated to be equal to "diff". Finally, the function returns the value of "maxDiff".
 
 function solution(inputArray) {
     let maxDiff = 0;
     for (let i = 0; i < inputArray.length - 1; i++) {
-        maxDiff = Math.max(maxDiff, Math.abs(inputArray[i] - inputArray[i + 1]));
+        let diff = Math.abs(inputArray[i] - inputArray[i + 1]);
+        if (diff > maxDiff) {
+            maxDiff = diff;
+        }
     }
     return maxDiff;
 }
