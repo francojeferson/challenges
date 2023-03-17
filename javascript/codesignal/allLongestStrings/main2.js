@@ -1,5 +1,6 @@
-// This function takes an array of strings as input and returns an array containing only the longest strings. First, the maxSize variable is set to 0. Next, the forEach method is used to step through the input array and update the value of the maxSize variable to the size of the longest string. Finally, the filter method is used to filter the input array and return only strings with a length equal to the value stored in maxSize.
-// Esta função recebe um array de strings como entrada e retorna um array contendo apenas as strings mais longas. Primeiro, a variável maxSize é definida como 0. Em seguida, o método forEach é usado para percorrer o array de entrada e atualizar o valor da variável maxSize para o tamanho da string mais longa. Por fim, o método filter é usado para filtrar o array de entrada e retornar apenas as strings com o tamanho igual ao valor armazenado em maxSize.
+// This code defines a function called solution that takes an array of strings called inputArray as an input. The goal of the function is to filter the input array and return a new array of strings that have the maximum length among all the strings in the input array.
+// The function initializes a variable maxSize to 0, which will be used to store the maximum length of any string in the input array. It then uses the forEach method to iterate over each element x in the inputArray, and updates maxSize to be the maximum value between maxSize and the length of x.
+// Finally, the function returns a new array obtained by filtering the inputArray to only contain strings of length equal to maxSize. The filter method is used to return a new array that only includes elements x for which the expression x.length === maxSize is true.
 
 function solution(inputArray) {
     let maxSize = 0;
@@ -7,10 +8,7 @@ function solution(inputArray) {
     return inputArray.filter(x => x.length === maxSize);
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let inputArray = [
         "aba",
