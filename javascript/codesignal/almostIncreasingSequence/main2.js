@@ -1,5 +1,6 @@
 // This is a function named solution that takes one parameter sequence. The function checks whether the given sequence of numbers is an almost increasing sequence or not. An almost increasing sequence is defined as a sequence where you can remove at most one element from the sequence and the resulting sequence will be an increasing sequence. The function uses a for loop to go through the entire sequence and checks if the current element is smaller than or equal to the previous element. If this is the case, it increments a variable named bad. If bad becomes greater than 1, the function returns false because the sequence is not an almost increasing sequence. If the current element is smaller than or equal to the element two positions before it and the current element plus one position is smaller than or equal to the previous element, the function returns false because removing the current element would result in a non-increasing sequence. If the loop completes without returning false, the function will return true indicating that the sequence is an almost increasing sequence.
 
+// solution by myjinxin2015
 function solution(sequence) {
     var bad = 0;
     for (var i = 1; i < sequence.length; i++) if (sequence[i] <= sequence[i - 1]) {
