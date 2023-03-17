@@ -1,5 +1,9 @@
-// This function creates a frame around the picture. The variable "width" sets the length of the frame to the width of the picture plus two. The result is an array of strings, with each string being a line of the frame. The lines are added to the array, starting with one asterisk line and ending with another. The resulting array is then returned.
-// Esta função cria um quadro em volta da imagem (picture). A variável "width" define o comprimento do quadro como a largura da imagem mais dois. O resultado é uma matriz de strings, com cada string sendo uma linha do quadro. As linhas são adicionadas à matriz, começando com uma linha de asteriscos e terminando com outra. A matriz resultante é então retornada.
+// This is a function named solution that takes a 2D array called picture as argument. The picture array is assumed to have the same length of strings in all its subarrays. The function adds a border of '*' around the picture array by inserting '*' characters at the beginning and end of each string in the picture array and then adding a row of ' *' at the top and bottom of the picture array.
+// The function begins by calculating the width of the final bordered image. It does this by taking the length of the first string in the picture array, then adding 2 (one for the '*' character at the beginning and one for the '*' character at the end.)
+// It then creates an array called result containing one string that is width characters long and consists entirely of '*'.
+// Next, the function iterates over each string in the picture array and adds a '*' at the beginning and end of the string before pushing it onto the result array.
+// Finally, the function pushes another string of '*' characters that is also width characters long to the result array, effectively creating the bottom border of the image.
+// The result array is then returned, which is the bordered image represented as an array of strings.
 
 function solution(picture) {
     let width = picture[0].length + 2;
@@ -14,10 +18,7 @@ function solution(picture) {
     return result;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let picture = [
         "abc",
