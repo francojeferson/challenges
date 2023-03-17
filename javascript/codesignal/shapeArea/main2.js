@@ -1,4 +1,4 @@
-// This code is a function that takes in a number (n) and returns the result of n squared plus (n minus 1) squared. In other words, it returns the sum of the squares of two consecutive numbers.
+// The given code is defining a function named solution that takes an integer parameter n. It returns the sum of squares of n and n-1. Specifically, it calculates the sum of the square of n (n * n) and the square of (n-1) [(n - 1) * (n - 1)]). So, the output of this function will be an integer.
 
 function solution(n) {
     return n * n + (n - 1) * (n - 1);
