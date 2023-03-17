@@ -1,19 +1,33 @@
-// This function checks whether a supplied string is a valid variable name. It breaks the string into an array of characters and iterates over it. If the first character is a number, it returns false. If any other character is not a valid alphanumeric character (letter, number, underscore), it returns false. If all characters are valid, the function returns true.
-// Esta função verifica se uma string fornecida é um nome de variável válido. Ela quebra a string em um array de caracteres e itera sobre ele. Se o primeiro caractere for um número, ela retornará falso. Se qualquer outro caractere não for um caractere alfanumérico válido (letra, número, sublinhado), ela retornará falso. Se todos os caracteres forem válidos, a função retornará verdadeiro.
+// This script defines a function solution(name) that takes in a parameter name, which is a string. It then splits the string into an array of individual characters using the split() method. Next, it loops through the array using a for loop with a counter i. Inside the loop, there are two conditionals that check if the character at the current index is a digit, letter, or underscore using the helper functions isDigit(), isLetter(), and isUnderscore().
+// If the first character is a digit or if any character is not a digit, letter, or underscore, the function returns false. If all characters pass the check, the function returns true.
+// The three helper functions simply check if the given character is a digit, underscore, or letter respectively.
+// In summary, this function checks if a given string may be used as a name of a variable in a programming language, and returns true if it is valid and false if not.
 
+// solution by fernando_a15
 function solution(name) {
     let array = name.split('');
     for (let i = 0; i < array.length; i++) {
-        if (i === 0 && !isNaN(array[i])) return false;
-        if (!/[\w_]/.test(array[i])) return false;
+        if (i === 0 && isDigit(array[i]))
+            return false;
+        if (!(isDigit(array[i]) || isLetter(array[i]) || isUnderscore(array[i])))
+            return false;
     }
     return true;
 }
 
-// unit test
-// teste unitário
-const assert = require('assert');
+function isDigit(c) {
+    return '0123456789'.indexOf(c) !== -1;
+}
 
+function isUnderscore(c) {
+    return '_'.indexOf(c) !== -1;
+}
+
+function isLetter(c) {
+    return c.toLowerCase() != c.toUpperCase();
+}
+
+const assert = require('assert');
 function testSolution() {
     let name = "var_1__Int";
     assert.deepStrictEqual(solution(name), true);
