@@ -1,4 +1,4 @@
-// This code defines a function called solution that takes one argument, year. The function then returns the result of dividing the argument by 100 and rounding up to the nearest whole number.
+// This code defines a function named solution that takes in a single parameter called year. The function first divides the year argument by 100 and then rounds the result up to the nearest whole number using the Math.ceil() method. It then returns this result as the function output. The purpose of the function is to take a year and return the century that it belongs to.
 
 const solution = year => Math.ceil(year / 100);
 
