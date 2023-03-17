@@ -1,17 +1,15 @@
-// This code defines a function named solution that takes one parameter inputString which is a string. This function returns a boolean value. It returns true if the input string can be rearranged to form a palindrome, which is a word that is spelled the same way forwards and backwards.
-// Here is what the code does step by step:
-
-// Declares an empty object named charCount which will store the count of each character in the input string
-// Loops through each character in the provided inputString using a for loop, incrementally adding the count of each character to the charCount object
-// Initializes a variable named oddCount to zero
-// Loops through each key in the charCount object using a for-in loop
-// For each key in the charCount object, if the count of that key value is odd, increments the oddCount variable by one
-// If there are more than one characters with odd counts, returns false, otherwise returns true.
+// This code defines a function called solution that takes a string as an argument. The purpose of this function is to determine whether the string can be rearranged into a palindrome (a word, phrase, or sequence of characters that reads the same backward as forward).
+// It works by counting the number of occurrences of each character in the input string. If the number of occurrences of every character in the string is even, then the string can be rearranged into a palindrome. If there is only one character that occurs an odd number of times in the string, then the string can still be rearranged into a palindrome. If there are two or more characters that occur an odd number of times in the string, then the string cannot be rearranged into a palindrome.
+// The function does this by creating an object called charCount, which will be used to store the count of each character. Then, it loops through the input string and for each character in the string, it either increments the count of that character in the charCount object or adds the character to the charCount object with a count of 1. After iterating through each character in the input string, it then checks whether the number of occurrences of each character in the string is even or odd. If there is only one character that occurs an odd number of times, it returns true (which means the string can be rearranged into a palindrome), otherwise it returns false (which means the string cannot be rearranged into a palindrome).
 
 function solution(inputString) {
     const charCount = {};
     for (let i = 0; i < inputString.length; i++) {
-        charCount[inputString[i]] = (charCount[inputString[i]] || 0) + 1;
+        if (charCount[inputString[i]]) {
+            charCount[inputString[i]]++;
+        } else {
+            charCount[inputString[i]] = 1;
+        }
     }
     let oddCount = 0;
     for (let key in charCount) {
