@@ -1,4 +1,5 @@
-// This code takes in an array of numbers (sequence) and returns the difference between the maximum and minimum values in the array, plus one, minus the length of the array. This can be used to find the number of unique elements in an array.
+// The solution function takes an array of numbers as input and returns an integer result. The function first uses the Math.max and Math.min methods to find the largest and smallest values in the input array, respectively. The spread operator (...) is used to convert the input array into a list of values that can be passed as arguments to these methods.
+// The function then subtracts the smallest value from the largest value and adds 1 to this difference, to get the span of the sequence. Finally, the length of the input sequence is subtracted from this span. This gives the number of missing values in the sequence required for it to form a contiguous range of numbers. The resulting integer is returned as output of the solution function.
 
 function solution(sequence) {
     return Math.max(...sequence) - Math.min(...sequence) + 1 - sequence.length;
