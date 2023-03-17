@@ -1,5 +1,10 @@
-// This function aims to find the minimum sum of elements required for the input array to be sorted in ascending order. It does this by traversing the input array, comparing each element with the previous element and adding the difference between them if necessary. The result is stored in the variable "res" and returned at the end of the function.
-// Esta função tem como objetivo encontrar a soma mínima de elementos necessários para que o array de entrada seja ordenado em ordem crescente. Ele faz isso percorrendo o array de entrada, comparando cada elemento com o elemento anterior e somando a diferença entre eles se for necessário. O resultado é armazenado na variável "res" e retornado no final da função.
+// This code defines a function solution that takes an array called inputArray as an argument.
+// Within the function, two variables are initialized - pre which is assigned the value of the first element in the inputArray, and res which is initialized to 0.
+// A for loop is then used to iterate through the inputArray, starting from the second element (i=1).
+// Within each iteration of the loop, a new variable now is defined and assigned the value of the current element inputArray[i].
+// The variable res is then updated by adding the maximum value between (pre - now + 1) and 0. The value of pre is also updated to be the maximum value between (pre + 1) and now.
+// Finally, the function returns the value of res.
+// In summary, the function computes the total number of times that additional items need to be added to an array in order to make each successive element at least as large as the previous element.
 
 function solution(inputArray) {
     let pre = inputArray[0],
@@ -14,10 +19,7 @@ function solution(inputArray) {
     return res;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let inputArray = [1, 1, 1];
     assert.deepStrictEqual(solution(inputArray), 3);
