@@ -1,25 +1,18 @@
-// This is a function that takes in a matrix, and returns a new matrix with the same dimensions as the input matrix, but with each element being the number of neighboring elements that are truthy (i.e. not 0 or false) in the input matrix.
-// The function does this by first obtaining the length of the rows and columns in the input matrix. Then it uses the map function on the input matrix to create a new matrix with the same dimensions. For each element in the input matrix, the function checks all its neighbors (including diagonal neighbors) to see how many of them are truthy. This is done by using nested for loops that iterate over a 3x3 square centered on the current element (taking care not to go out of bounds of the matrix).
-// Finally, the count of truthy neighboring elements is returned for each element of the input matrix, and used to populate the output matrix.
+// This code defines an array called "directions", where each element is a pair of the form [i, j], representing a direction of movement such that moving one space in that direction means incrementing the row index by i and the column index by j respectively.
+// The array "directions" contains 8 different directions: up-left, up, up-right, left, right, down-left, down, down-right.
+// The next line "solution" is a function that takes a matrix (a two-dimensional array) as an argument. The function returns a new two-dimensional array of the same shape as the input matrix.
+// The new two-dimensional array contains in each element the number of neighboring elements (in the original matrix) that are 'truthy'. To achieve this, the map function cycles through each position (y, x) in the original matrix.
+// The inner call to the reduce method returns the count of the non-zero values using the double-bang operator (!!). The reduce method does so by iterating through the array "directions", each time checking for the existence and truthiness of the element at the new position (y+i[0], x+i[1]) maintaining a total count of truthy values.
+// Note: If no matrix element exists at the new position, it will return a falsy value (undefined), and the "!" operator will convert it to true.
 
-function solution(matrix) {
-    const rowLength = matrix.length;
-    const colLength = matrix[0].length;
+// solution by koviko
+const directions = [
+    [1, -1], [1, 0], [1, 1],
+    [0, -1], [0, 1],
+    [-1, -1], [-1, 0], [-1, 1]
+];
 
-    return matrix.map((row, i) =>
-        row.map((col, j) => {
-            let count = 0;
-
-            for (let x = Math.max(i - 1, 0); x <= Math.min(i + 1, rowLength - 1); x++) {
-                for (let y = Math.max(j - 1, 0); y <= Math.min(j + 1, colLength - 1); y++) {
-                    if (x !== i || y !== j) count += matrix[x][y] ? 1 : 0;
-                }
-            }
-
-            return count;
-        })
-    );
-}
+const solution = matrix => matrix.map((row, y) => row.map((col, x) => directions.reduce((count, i) => count += !!(matrix[y + i[0]] && matrix[y + i[0]][x + i[1]]), 0)));
 
 const assert = require('assert');
 function testSolution() {
