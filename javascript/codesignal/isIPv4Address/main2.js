@@ -1,13 +1,17 @@
-// This code checks if a string is a valid IP address. It uses a regular expression to check if the string passed in matches the format of an IP address. If the string matches, the code returns true, otherwise false.
-// Esse código verifica se uma string é um endereço IP válido. Ele usa uma expressão regular para verificar se a string passada corresponde ao formato de um endereço IP. Se a string corresponder, o código retornará true, senão false.
+// The code defines a function called solution that takes in a parameter inputString. The function returns a boolean value which is evaluated by testing whether the inputString matches the given regular expression /^((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)(\.|$)){4}$/.
+// The regular expression pattern specifies the format of an IPv4 address - a string that represents the 32-bit numerical internet protocol address that identifies each sender or receiver of information that is sent in packets across the internet.
+// The regular expression matches strings that have the following format:
+
+// Four numeric fields separated by dots
+// Each field is between 0-255
+// Leading zeros are allowed except for a single zero
+
+// If the input string matches the IPv4 format, the function returns true, otherwise it returns false.
 
 const solution = inputString =>
     /^((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)(\.|$)){4}$/.test(inputString);
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let inputString = "172.16.254.1";
     assert.deepStrictEqual(solution(inputString), true);
