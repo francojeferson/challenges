@@ -1,5 +1,9 @@
-// This function adds an asterisk border to an image in array form (array of array). It loops through the image array, adds '*' before and after each row of the array, and puts another set of '*' at the top and bottom of the array, before returning the new array with the border.
-// Esta função adiciona uma borda de asteriscos à uma imagem em forma de matriz (array de array). Ela percorre a matriz da imagem, adiciona '*' antes e depois de cada linha da matriz e coloca outro conjunto de '*' no topo e no fundo da matriz, antes de retornar a nova matriz com a borda.
+// This code defines a function called solution which takes in a single parameter called picture. The picture parameter is expected to be an array of strings.
+// The function then creates a new array called result, which is initialized with a single string containing a number of asterisks that is equal to the length of the first string in the picture array plus two.
+// The function then loops through each string in the picture array and concatenates an asterisk at the beginning and end of each string. These strings are then pushed into the result array.
+// Finally, another string of asterisks, whose length is equal to the length of the first string in the picture array plus two, is added to the end of the result array.
+// The result array is then returned from the function.
+// The overall effect of this function is to add a border of asterisks around a rectangular "picture" made up of an array of strings.
 
 function solution(picture) {
     let result = ['*'.repeat(picture[0].length + 2)];
@@ -11,10 +15,7 @@ function solution(picture) {
     return result;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let picture = [
         "abc",
