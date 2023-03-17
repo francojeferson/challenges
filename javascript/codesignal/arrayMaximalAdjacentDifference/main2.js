@@ -1,15 +1,8 @@
-// This code defines a function called solution that takes an array a as its parameter. The function finds the maximum difference between two adjacent elements in the array. It starts by initializing the variable maxDiff to 0. It then loops through the array, comparing the absolute difference between each element and the next element. If the difference is greater than the value of maxDiff, it updates maxDiff to the new, larger value. Finally, the function returns the value of maxDiff.
+// The code defines a function named solution which accepts an array a as its input. Within the function, the Math.max() function is used to return the largest number from an iteration over the array that uses slice to obtain a portion of the array from index 1 to the end, and map to iterate over each element to calculate the absolute difference between it and the preceding element using Math.abs(x - a[i]). The ... is the spread operator used to convert the selected portion of the array to individual arguments. The result is the maximum calculated absolute difference between adjacent values in the input array a.
 
+// solution by myjinxin2015
 function solution(a) {
-    let maxDiff = 0;
-    for (let i = 0; i < a.length - 1; i++) {
-        const diff = Math.abs(a[i] - a[i + 1]);
-        if (diff > maxDiff) {
-            maxDiff = diff;
-        }
-    }
-
-    return maxDiff;
+    return Math.max(...a.slice(1).map((x, i) => Math.abs(x - a[i])));
 }
 
 const assert = require('assert');
