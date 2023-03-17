@@ -1,5 +1,12 @@
-// This function compares two strings (s1 and s2) and returns the number of characters they have in common. First, the variable 'count' is set to 0. Then, the strings are split into character arrays using the 'split' method. The 'forEach' method is used to iterate over the characters in the first string (s1). If the array of the second string (s2) includes a character from the array of the first string, the 'count' variable is incremented and that character is removed from the array of the second string using the 'splice' method. Finally, the function returns the value of 'count'.
-// Esta função compara duas strings (s1 e s2) e retorna o número de caracteres que elas têm em comum. Primeiro, a variável 'count' é definida como 0. Em seguida, as strings são divididas em arrays de caracteres usando o método 'split'. O método 'forEach' é usado para iterar sobre os caracteres da primeira string (s1). Se o array da segunda string (s2) incluir um caractere do array da primeira string, a variável 'count' é incrementada e esse caractere é removido do array da segunda string usando o método 'splice'. Por fim, a função retorna o valor de 'count'.
+// This code defines a function named "solution" that takes two parameters "s1" and "s2" which are strings. The function returns a count of the number of characters that appears in both "s1" and "s2".
+// Here's a detailed explanation of what the code does step by step:
+
+// A variable "count" is initialized to zero
+// The variables "s1" and "s2" are converted to arrays of characters using the ".split()" method.
+// The ".forEach()" method is called on "s1" to loop through each character.
+// For each character in "s1", an "if" condition checks if the character is present in "s2" using the ".includes()" method.
+// If the character is present in "s2", the count is incremented by 1 and the character is removed from "s2" using the ".splice()" method.
+// After all characters in "s1" have been checked, the count is returned.
 
 function solution(s1, s2) {
     let count = 0;
@@ -14,10 +21,7 @@ function solution(s1, s2) {
     return count;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let s1 = "aabcc";
     let s2 = "adcaa";
