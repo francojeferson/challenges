@@ -1,19 +1,7 @@
-// The code defines a function called solution which takes an array a as its parameter. The function initializes two variables: evenSum and oddSum, both starting with 0. The function then loops over every element in the input array a using the forEach() method. For each iteration, it checks if the current element's index is even or odd, sums up the elements separately for the odd and even indices, and stores the results in the evenSum or oddSum variables. Finally, the function returns an array containing the evenSum and oddSum.
+// This code defines an arrow function called solution that takes an array a as its input. The function then uses the reduce method to iterate through the array and apply a function to each element. The function passed to reduce takes three arguments: the previous value (p), the current value (v), and the current index (i). The function adds the current value to either the 0th or 1st index of the accumulator p based on whether the index is even or odd, using the bitwise AND operator &. Finally, the function returns the updated accumulator p, which is an array containing two values. The initial value of the accumulator is [0, 0]. Therefore, the solution function returns an array of two numbers representing the sum of elements with even indices and the sum of elements with odd indices, respectively, in the input array a.
 
-const solution = (a) => {
-    let evenSum = 0;
-    let oddSum = 0;
-
-    a.forEach((num, index) => {
-        if (index % 2 === 0) {
-            evenSum += num;
-        } else {
-            oddSum += num;
-        }
-    });
-
-    return [evenSum, oddSum];
-};
+// solution by codeedog
+const solution = a => a.reduce((p, v, i) => (p[i & 1] += v, p), [0, 0]);
 
 const assert = require('assert');
 function testSolution() {
