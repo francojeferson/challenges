@@ -1,14 +1,19 @@
-// This function checks whether an input string contains at least two different letters. It starts by splitting the input string into an array of characters, sorts them, puts them back together, and replaces any repeated characters with nothing. Then it checks whether the length of the resulting string is less than 2 - which means that there was only one different character in the input string. If it is, the function returns true; otherwise, false.
-// Essa função verifica se uma string de entrada contém pelo menos duas letras diferentes. Ela começa dividindo a string de entrada em um array de caracteres, ordena-os, junta-os novamente e substitui qualquer caractere repetido por nada. Em seguida, ela verifica se o comprimento da string resultante é menor que 2 - o que significa que havia apenas um caractere diferente na string de entrada. Se for, a função retornará true; caso contrário, false.
+// The code is a function named solution that takes a single string argument inputString. This function is used to determine whether the given string is a palindrome.
+// Here are the steps that the function follows:
+
+// .split(''): The inputString is first converted to an array of individual characters.
+// .sort(): The array of characters is then sorted in alphabetical order.
+// .join(''): The sorted array is then concatenated back into a string.
+// .replace(/(\w)\1/g, ''): Any consecutive occurrences of the same character are removed from the string.
+// .length < 2: Finally, the function returns a boolean indicating whether the length of the resulting string is less than 2.
+
+// If the length of the final string is less than 2, then the string is a palindrome and the function returns true. Otherwise, it returns false.
 
 function solution(inputString) {
     return inputString.split('').sort().join('').replace(/(\w)\1/g, '').length < 2;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let inputString = "aabb";
     assert.deepStrictEqual(solution(inputString), true);
