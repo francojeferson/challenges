@@ -1,5 +1,6 @@
-// This function takes a string as input and inverts any contents in parentheses. For example, if the input string is "abc(de)f", the output will be "abcfed". The function uses a while loop to check whether the input string contains parentheses. If it does, the content between the parentheses is captured using regular expressions and the content is inverted using the reverse() method. Then the input string is replaced with the inverted string. When there are no more parentheses in the input string, the function returns the resulting string.
-// Esta função recebe uma string como entrada e inverte qualquer conteúdo entre parênteses. Por exemplo, se a string de entrada for "abc(de)f", a saída será "abcfed". A função usa um loop while para verificar se a string de entrada contém parênteses. Se houver, o conteúdo entre os parênteses é capturado usando expressões regulares e o conteúdo é invertido usando o método reverse(). Em seguida, a string de entrada é substituída pela string invertida. Quando não há mais parênteses na string de entrada, a função retorna a string resultante.
+// This is a JavaScript function called solution that takes in a single parameter inputString. The function replaces every substring enclosed in parentheses in the input string with a reversed version of itself until there are no more parentheses left. The revised string is then returned.
+// The function performs this operation using a while loop and the includes method to determine if the input string contains any parentheses. The match method and a regular expression are used to find the first substring enclosed in parentheses. The [1] indexer is used to grab the capture group's content, which is then converted to an array using spread syntax ([...]). The reverse method is then used to reverse the array's elements, and the join method concatenates the elements together into a string.
+// The replace method is used to replace the match with reversed string while maintaining the original string's value for the next iteration. Finally, the modified string inputString is returned.
 
 function solution(inputString) {
     let reversedString;
@@ -10,10 +11,7 @@ function solution(inputString) {
     return inputString;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let inputString = "(bar)";
     assert.deepStrictEqual(solution(inputString), "rab");
