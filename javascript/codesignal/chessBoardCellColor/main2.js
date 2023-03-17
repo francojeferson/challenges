@@ -1,27 +1,14 @@
-// This function compares whether the sum of the values of the cells passed as argument is even or odd. The "board" object relates the letters and numbers corresponding to the coordinates of an 8x8 table (chess game). The function returns true if the sum of the two positions is even, and false if it is odd.
-// Esta função compara se a soma dos valores das células passadas como argumento é par ou ímpar. O objeto "board" relaciona as letras e o números correspondentes às coordenadas de uma tabela de 8x8 (jogo de xadrez). A função retorna true se a soma das duas posições for par, e false caso seja ímpar.
+// The given code is a JavaScript function that takes two cell locations on a chessboard as input, and returns whether or not they are the same color on the board.
+// The const color function takes a string parameter s. It converts the first character of the string to a Buffer object, subtracts the ASCII value of the second character of the string from it, and then applies modulo 2 to the result. In other words, it returns 0 if the difference of the ASCII values of the first and second character of the string is even, and returns 1 if it is odd.
+// The const solution function takes two input parameters, cell1 and cell2, which represent the two cell locations in algebraic notation on the chessboard. The function then calls the color function on each input and returns a boolean value depending on whether the two colors are the same. If the colors are the same, the function returns true, otherwise it returns false.
+// In summary, the code determines whether two chessboard cells are the same color.
 
-function solution(cell1, cell2) {
-    const board = {
-        "A": 1,
-        "B": 2,
-        "C": 3,
-        "D": 4,
-        "E": 5,
-        "F": 6,
-        "G": 7,
-        "H": 8
-    };
+// solution by jraghon
+const color = s => (Buffer(s)[0] - s[1]) % 2;
 
-    // There is no need to create temporary variables to store the result of adding up the cell positions. The code can be reduced by doing the comparison directly in the return.
-    // Não há necessidade de criar variáveis temporárias para armazenar o resultado da soma das posições das células. O código pode ser reduzido efetuando a comparação diretamente no return.
-    return (board[cell1[0]] + parseInt(cell1[1])) % 2 === (board[cell2[0]] + parseInt(cell2[1])) % 2;
-}
+const solution = (cell1, cell2) => color(cell1) == color(cell2);
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let cell1 = "A1";
     let cell2 = "C3";
