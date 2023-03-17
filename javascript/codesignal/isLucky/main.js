@@ -1,5 +1,4 @@
-// This function checks whether the sum of the digits of the first half of a number is equal to the sum of the digits of the second half. First, the function converts the number into a string and determines the length of the half. Then it iterates over each half and calculates the sum of the digits. Finally, it returns true if the two sums are equal and false otherwise.
-// Esta função verifica se a soma dos dígitos da primeira metade de um número é igual à soma dos dígitos da segunda metade. Primeiro, a função converte o número em uma string e determina o comprimento da metade. Em seguida, ela itera sobre cada metade e calcula a soma dos dígitos. Por último, ela retorna true se as duas somas forem iguais e false caso contrário.
+// The code defines a function solution that takes an integer n as an argument. The function then converts the integer to a string, splits the string in half, and sums the digits in the first half of the string and in the second half of the string. Finally, the function returns a boolean value: true if the sum of the digits in the first half is equal to the sum of the digits in the second half, and false otherwise.
 
 function solution(n) {
     let str = n.toString();
@@ -15,10 +14,7 @@ function solution(n) {
     return firstHalfSum === secondHalfSum;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let n = 1230;
     assert.deepStrictEqual(solution(n), true);
