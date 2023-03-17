@@ -1,5 +1,16 @@
-// This function is used to reverse the order of characters in parentheses. It starts by looking for a closing parenthesis (')'), and then looks for the last opening parenthesis ('(') before the closing parenthesis. It then separates the string into three parts: the beginning of the string before the closing parentheses, the middle of the string between the parentheses, and the end of the string after the closing parentheses. The middle of the string is then inverted and the three parts are concatenated to form the new string. The function then repeats this process until all the parentheses are inverted. Finally, the function returns the new inverted string.
-// Esta função é usada para inverter a ordem dos caracteres entre parênteses. Ela começa procurando por um fechamento de parênteses (')') e, em seguida, procura pelo último abrir parênteses ('(') antes do fechamento. Em seguida, ela separa a string em três partes: o início da string antes do abrir parênteses, o meio da string entre os parênteses e o final da string após o fechamento de parêntese. O meio da string é então invertido e as três partes são concatenadas para formar a nova string. A função então repete esse processo até que todos os parêntesis sejam invertidos. Por fim, a função retorna a nova string invertida.
+// The given code is a function that expects a string input containing parentheses. The function executes the following steps:
+
+// Initialize 4 variables with an empty value.
+// Create an infinite loop.
+// In each iteration of the loop:
+// a. Search for the next occurrence of the closing parentheses (')') in the given input string.
+// b. If no ')' is found, exit the loop.
+// c. If a ')' is found, search the substring of the input string that starts from the beginning of the string and ends at the position of the last ')' (parentheses opening)
+// d. Extract the substring from the input string that starts after the last '(' and ends before the current ')', reverse the extracted string and save the result in the middle variable.
+// e. Extract the substring of the input string that starts from the position after the current ')' and ends at the end of the input string
+// f. Concatenate the start, middle, and end substrings, and overwrite the input string with the concatenated result.
+// Repeat the above loop until all ')' parentheses have been found and all relevant portions of the input string have been reversed and concatenated
+// Return the final modified input string.
 
 function solution(inputString) {
     let c;
@@ -24,10 +35,7 @@ function solution(inputString) {
     return inputString;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let inputString = "(bar)";
     assert.deepStrictEqual(solution(inputString), "rab");
