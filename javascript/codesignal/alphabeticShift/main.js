@@ -1,21 +1,23 @@
-// This function takes an input string and does a Caesar's Cipher operation, i.e. it encrypts the input string into a new string, using a 1-number offset. The code uses the offset to know the ASCII table position of the letters, so for each letter of the string it calculates the ASCII table position of the new letter +1 and converts it to the corresponding character.
-// Essa função recebe uma string de entrada e faz uma operação de Cifra de César, ou seja, ela criptografa a string de entrada em uma nova string, usando um deslocamento de 1 número. O código usa o "offset" para saber a posição na tabela ASCII das letras, então para cada letra da string ele calcula a posição na tabela ASCII da nova letra +1 e converte para o caractere correspondente.
+// This code defines a function called "solution" that takes a single parameter "inputString". The function then applies a series of operations on the input string and returns the modified string.
+// The operations are as follows:
+
+// The input string is first split into an array of characters using the .split('') method.
+// Then, the .map() method is used to iterate through each character in the array and modify it based on a conditional statement.
+// The conditional statement checks whether the character's unicode value is equal to 122 (which represents the letter "z").
+// If it is "z", then the replacement value for that character is set to "a".
+// If it is not "z", then the replacement value for that character is set to the next character in the alphabet using the .fromCharCode() method to convert the unicode value of the next character to its corresponding character value.
+// Finally, the modified array of characters is converted back to a string using the .join() method, and that new string is returned as the output of the function.
+
+// Essentially, this function takes a string and shifts every character in the string by one letter in the alphabet (with "z" wrapping back around to "a").
 
 function solution(inputString) {
-    let outputString = '';
-    let offset = 'a'.charCodeAt();
-
-    for (let char of inputString) {
-        outputString += String.fromCharCode((char.charCodeAt() - offset + 1) % 26 + offset);
-    }
-
-    return outputString;
+    return inputString
+        .split('')
+        .map(char => char.charCodeAt(0) === 122 ? 'a' : String.fromCharCode(char.charCodeAt(0) + 1))
+        .join('');
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let inputString = "crazy";
     assert.deepStrictEqual(solution(inputString), "dsbaz");
