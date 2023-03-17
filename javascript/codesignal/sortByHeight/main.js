@@ -1,16 +1,29 @@
-// This code defines a function called solution that accepts an array a as an argument. The function does the following:
+// This code defines a function called solution that takes an array a as its input. The function performs the following steps:
 
-// It creates a new array called sortedA which is a filtered and sorted version of the original array a. The filtering removes all occurrences of the number -1 from a and the sorting orders the remaining values in ascending order.
-// It initializes a variable called sortedAIndex to 0.
-// It returns a new array by applying a mapping function to each element of the original array a. If an element in a is equal to -1, it returns -1. Otherwise, it returns the corresponding element of sortedA at the index of sortedAIndex and then increments the sortedAIndex variable by 1. The effect of this mapping is to replace all occurrences of -1 in the original array a with the corresponding element from the sorted array but leaving all other values in their original order.
+// Create a new array called sortedA by cloning the input array a and sorting it in ascending order. Any elements with a value of -1 are removed from the sorted array using the filter method.
 
-// Therefore, this function organizes a in non-descending order while still retaining the original positions of all other elements of a.
+// Declare a variable sortedAIndex and initialize it to 0.
+
+// Loop through the input array a.
+
+// If the current element of a is equal to -1, skip it and continue to the next element.
+
+// Otherwise, replace the current element of a with the value at the corresponding index of the sortedA array, starting with the first index.
+
+// After all elements of a have been processed, return the modified a array with the -1 values replaced by sorted values.
+
+// In summary, this function takes an array, sorts it and returns the sorted array keeping the original positions of elements in the input array except -1 values.
 
 function solution(a) {
-    const sortedA = a.filter(num => num !== -1).sort((a, b) => a - b);
+    const sortedA = [...a].sort((a, b) => a - b).filter((num) => num !== -1);
     let sortedAIndex = 0;
-
-    return a.map(num => num === -1 ? num : sortedA[sortedAIndex++]);
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] === -1) continue;
+        else {
+            a[i] = sortedA[sortedAIndex++];
+        }
+    }
+    return a;
 }
 
 const assert = require('assert');
