@@ -1,5 +1,4 @@
-// This function receives two parameters, "a" and "b", which are both arrays of strings. First the function filters both vectors and compares their values for each index. Those values that are not equal are stored in separate variables called "ad" and "bd". Next, the function checks whether the variable "ad" contains 0 elements or if it contains two elements and these elements are in reverse order with respect to the variable "bd". If one of these conditions is met, the function returns true as the final result of the operation.
-// Essa função recebe dois parâmetros, "a" e "b", que são ambos vetores de strings. Primeiro, a função filtra ambos vetores e compara seus valores para cada índice. Aqueles valores que não são iguais são armazenados em variáveis separadas chamadas "ad" e "bd". Em seguida, a função verifica se a variável "ad" contém 0 elementos ou se contém dois elementos e esses elementos estão em ordem inversa em relação à variável "bd". Se uma dessas condições for atendida, a função retornará true como resultado final da operação.
+// This code defines a function called solution that takes two arguments a and b. It creates two new arrays, ad and bd, by applying a filter function that removes any elements from a and b respectively that are equal to their corresponding element in the other array. The function then checks if the length of ad is either 0 or 2 and if the elements in ad are equal to the reversed elements in bd. If this condition is true, it returns true, and returns false otherwise.
 
 function solution(a, b) {
     const ad = a.filter((v, i) => v != b[i]);
@@ -8,10 +7,7 @@ function solution(a, b) {
     return (ad.length == 0 || (ad.length == 2 && ad.join('') === bd.reverse().join('')));
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let a = [1, 2, 3];
     let b = [1, 2, 3];
