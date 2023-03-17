@@ -1,5 +1,4 @@
-// This code is used to apply a blur filter to an image. The first map() steps through the image and removes the first and last element of each value, while the second map() steps through the image again and calculates the average value of the pixels adjacent to the current pixel, rounding it down. At the end it returns a new image with the blur filter applied.
-// Esse código é usado para aplicar um filtro blur em uma imagem. O primeiro map() percorre a imagem e remove o primeiro e o último elemento de cada valor, enquanto o segundo map() percorre novamente a imagem e calcula o valor médio dos pixels adjacentes ao pixel atual, arredondando-o para baixo. Ao final, retorna uma nova imagem com o filtro blur aplicado.
+// This code takes in an array of arrays (a 2D array) called "image" which represents a grayscale image. It removes the first and last rows and columns of the image using the .slice() method. Then it maps over each element and removes the first and last elements of each inner array, thus removing the first and last columns of the image. It then applies a blur filter to the resultant image by iterating over each pixel, adding up the values of the pixel and the 8 pixels surrounding it (3x3 grid), and then taking the average of those values. The resulting value is then placed in the same position as the original pixel in a new matrix that represents the blurred image. Finally, the new matrix is returned as the resulting image.
 
 const solution = image =>
     image.slice(1, -1).map(val => val.slice(1, -1)).map((val, i) =>
@@ -14,10 +13,7 @@ const solution = image =>
         })
     );
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let image = [
         [1, 1, 1],
