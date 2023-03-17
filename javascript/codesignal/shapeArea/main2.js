@@ -1,7 +1,8 @@
-// The given code is defining a function named solution that takes an integer parameter n. It returns the sum of squares of n and n-1. Specifically, it calculates the sum of the square of n (n * n) and the square of (n-1) [(n - 1) * (n - 1)]). So, the output of this function will be an integer.
+// This code defines a function called "solution" that takes in a parameter "n". The function then returns the sum of the square of "n" and the square of "n-1". The Math.pow() function is used to compute the power of the numbers.
 
+// solution by bobziroll
 function solution(n) {
-    return n * n + (n - 1) * (n - 1);
+    return Math.pow(n, 2) + Math.pow(n - 1, 2);
 }
 
 const assert = require('assert');
