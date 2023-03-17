@@ -1,4 +1,10 @@
-// This code takes an array of numbers as an argument and returns the largest product of any two adjacent numbers in the array. It uses the spread operator to spread out the elements of the array, then uses .map() to multiply each element by its adjacent element. Finally, it uses Math.max() to return the largest product.
+// This code defines a function called solution that takes an array of numbers as its input, and then returns the maximum value obtained by multiplying each number in the array by the next number in the array, and identifying the maximum value in the resulting array of products.
+// Here is a step-by-step breakdown of the code:
+
+// inputArray.slice(0, -1) selects all the items in the array except for the last one.
+// .map((n, i) => n * inputArray[i + 1]) applies a function to each item n in the array, where the function multiplies it by the next item in the array, which is inputArray[i + 1].
+// ... is the spread operator that unpacks the array of products into the Math.max() function.
+// Math.max() identifies the largest number in the array of products, and returns it.
 
 function solution(inputArray) {
     return Math.max(...inputArray.slice(0, -1).map((n, i) => n * inputArray[i + 1]));
