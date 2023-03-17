@@ -1,5 +1,6 @@
-// This function takes an array as input and counts how many operations are needed to make the elements of that array sorted in ascending order. The variable counter is initially set to 0, and the reduce method is used to iterate over the array. For each pair of adjacent elements a and b, if a is greater than b, then the difference between them is added to the counter variable. If not, then b is returned. At the end of the iteration, the variable counter stores the number of operations needed to sort the array in ascending order.
-// Essa função recebe um array como entrada e conta quantas operações são necessárias para que os elementos desse array sejam ordenados de forma crescente. A variável counter inicialmente é definida como 0, e o método reduce é usado para iterar sobre o array. Para cada par de elementos adjacentes a e b, se a for maior que b, então a diferença entre eles é adicionada à variável counter. Se não, então b é retornado. Ao final da iteração, a variável counter armazena a quantidade de operações necessárias para ordenar o array de forma crescente.
+// This code defines a function solution() which takes an array of numbers inputArray. It then initializes a variable counter to 0.
+// It uses the reduce() method to iterate through each element of inputArray and accumulates a value a which starts as the first element of inputArray. It processes each subsequent element b by checking if a is greater than or equal to b. If a is greater than or equal to b, it calculates the difference diff between a+1 and b. It then adds diff to the counter variable and returns a+1. If a is less than b, the function simply returns b.
+// After iterating through all elements of inputArray, the function returns the value of counter. Essentially, it adds up the number of times it had to increment a value to make the array strictly increasing.
 
 function solution(inputArray) {
     let counter = 0;
@@ -14,10 +15,7 @@ function solution(inputArray) {
     return counter;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let inputArray = [1, 1, 1];
     assert.deepStrictEqual(solution(inputArray), 3);
