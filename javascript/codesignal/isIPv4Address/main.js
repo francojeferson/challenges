@@ -1,15 +1,17 @@
-// This function checks whether the input string is a valid IP address. The regex tests whether the input string matches the pattern of an IP address, with four dot-separated numbers, each number being between 0 and 255. If the test returns true, the function returns true, indicating that the string is a valid IP address.
-// Essa função verifica se a string de entrada é um endereço IP válido. O regex testa se a string de entrada corresponde ao padrão de um IP, com quatro números separados por pontos, cada número estando entre 0 e 255. Se o teste retornar true, a função retornará true, indicando que a string é um endereço IP válido.
+// This is a function called "solution" that takes a string as its argument. The function first creates a regular expression called "regex".
+// This regex checks whether the input string is a valid IPv4 address:
+
+// The regex starts by checking 3 groups of numbers separated by periods, where each group can be a single digit (0-9), two digits (10-99), or three digits (100-255).
+// After the 3 groups of numbers, the regex checks for a final single digit.
+
+// The function then returns a boolean value depending on whether the input string matches the regex or not. If the input string matches, the function will return "true". Otherwise, it will return "false".
 
 function solution(inputString) {
     const regex = /^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/;
     return regex.test(inputString);
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let inputString = "172.16.254.1";
     assert.deepStrictEqual(solution(inputString), true);
