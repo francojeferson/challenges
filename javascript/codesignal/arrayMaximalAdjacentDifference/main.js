@@ -1,5 +1,4 @@
-// This function calculates the largest difference between the elements of an array. It uses a variable called maxDiff to store the largest deviation between the elements. It then uses a loop to loop through all the elements of the array and check the absolute difference between the current element and the next element. The variable maxDiff is updated with the maximum value of the difference. Finally, the function returns maxDiff which contains the largest difference found.
-// Essa função calcula a maior diferença entre os elementos de um array. Ela usa uma variável chamada maxDiff para armazenar o maior desvio entre os elementos. Em seguida, usa um loop para percorrer todos os elementos do array e verificar a diferença absoluta entre o elemento atual e o próximo elemento. A variável maxDiff é atualizada com o valor máximo da diferença. Por último, a função retorna maxDiff que contém a maior diferença encontrada.
+// This function takes an array of numbers called inputArray and calculates the maximum difference between any two adjacent numbers in the array. It initializes a variable called maxDiff to 0 and then loops through each element in the inputArray, using the Math.max function to compare the current value of maxDiff with the absolute difference between the current element and the element immediately following it. The loop stops before reaching the last element of the array to avoid a "undefined" error. Finally, the function returns the largest difference found.
 
 function solution(inputArray) {
     let maxDiff = 0;
@@ -9,10 +8,7 @@ function solution(inputArray) {
     return maxDiff;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let inputArray = [2, 4, 1, 0];
     assert.deepStrictEqual(solution(inputArray), 3);
