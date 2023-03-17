@@ -1,14 +1,17 @@
-// This function checks if the pairs of shoes of the user and the friend are equal. It compares the user's left shoe (yourLeft) with the friend's left shoe (friendsLeft) and, if they are equal, it compares the user's right shoe (yourRight) with the friend's right shoe (friendsRight). If the shoes are not equal, it compares the user's left shoe (yourLeft) with the friend's right shoe (friendsRight) and then compares the user's right shoe (yourRight) with the friend's left shoe (friendsLeft). If all comparisons are true, the function returns true, otherwise it returns false.
-// Essa função verifica se os pares de sapatos do usuário e do amigo são iguais. Ela compara o sapato esquerdo do usuário (yourLeft) com o sapato esquerdo do amigo (friendsLeft) e, se forem iguais, compara o sapato direito do usuário (yourRight) com o sapato direito do amigo (friendsRight). Se os sapatos não forem iguais, ela compara o sapato esquerdo do usuário (yourLeft) com o sapato direito do amigo (friendsRight) e, em seguida, compara o sapato direito do usuário (yourRight) com o sapato esquerdo do amigo (friendsLeft). Se todas as comparações forem verdadeiras, a função retorna true, caso contrário retorna false.
+// The code defines a function called solution that takes four parameters: yourLeft, yourRight, friendsLeft, and friendsRight. The function returns a boolean value that represents whether you and your friend can exchange one glove each and end up with a pair of gloves.
+// The logic of the function works as follows:
+
+// Check if your left glove matches your friend's left glove AND your right glove matches your friend's right glove.
+// If step 1 is false, check if your left glove matches your friend's right glove AND your right glove matches your friend's left glove.
+// If either step 1 or step 2 is true, it means you and your friend can exchange one glove each and end up with a pair of gloves, so the function returns true. Otherwise, it returns false.
+
+// In other words, the function checks if you and your friend have complementary gloves that can be exchanged to form a pair.
 
 function solution(yourLeft, yourRight, friendsLeft, friendsRight) {
     return yourLeft === friendsLeft ? yourRight === friendsRight : yourLeft === friendsRight && yourRight === friendsLeft;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let yourLeft = 10;
     let yourRight = 15;
