@@ -1,23 +1,19 @@
-// This is a JavaScript function named solution that takes an array a as input. This function does the following:
+// The function solution takes an array a as a parameter and performs the following actions:
 
-// It first initializes a new array s which is a filtered and sorted version of the input array a.
-// The filtering step removes all elements in a that are not greater than zero.
-// The sorting step sorts the filtered array in ascending order.
-// It then initializes an index variable i to 0.
-// The function maps over the input array a, and for each element p in a, it does the following:
-// If p is not equal to -1, it returns the next element of array s using the index i, and increments i.
-// If p is equal to -1, it returns -1.
-// Finally, the function returns a new array that is the result of step 5 and 6.
+// Filters out all the elements that are less than or equal to zero and returns a new sorted array s.
+// Loops through each element in the array a.
+// If the current element is not equal to -1, then it means we need to replace this value with the next smallest positive number from the sorted array s, which we achieve using the shift function to remove and retrieve the element at the beginning of the array.
+// If the current element is equal to -1, then we need to simply return -1.
+// Returns a new array with the above modifications done, but the original values of -1 are still present.
 
-// The purpose of this function appears to be to return a new array where all non-negative numbers of the input array a are sorted in ascending order and placed in the same position as they were in a. Any -1 values in a are replaced with -1 in the resulting array.
+// Essentially, the function takes an array with both positive and negative numbers, sorts the positive numbers and replaces all non-negative numbers in the original array with the next smallest positive number from the sorted array. If an element in the original array is equal to -1, then it stays as is in the modified array.
 
+// solution by haynar
 function solution(a) {
     let s = a.filter(h => h > 0).sort((a, b) => a - b);
-    let i = 0;
-
     return a.map(p => {
         if (p !== -1) {
-            return s[i++];
+            return s.shift();
         }
 
         return -1;
