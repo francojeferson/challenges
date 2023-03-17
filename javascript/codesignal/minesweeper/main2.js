@@ -1,5 +1,6 @@
-// This function takes an array as parameter and returns another array containing the number of live cells adjacent to each cell in the original array. Each element of the new array represents the number of live cells adjacent to the corresponding position in the original array.
-// Esta função recebe uma matriz como parâmetro e retorna outra matriz contendo o número de células vivas adjacentes a cada célula da matriz original. Cada elemento da nova matriz representa o número de células vivas adjacentes à posição correspondente na matriz original.
+// This is a function that takes in a matrix, and returns a new matrix with the same dimensions as the input matrix, but with each element being the number of neighboring elements that are truthy (i.e. not 0 or false) in the input matrix.
+// The function does this by first obtaining the length of the rows and columns in the input matrix. Then it uses the map function on the input matrix to create a new matrix with the same dimensions. For each element in the input matrix, the function checks all its neighbors (including diagonal neighbors) to see how many of them are truthy. This is done by using nested for loops that iterate over a 3x3 square centered on the current element (taking care not to go out of bounds of the matrix).
+// Finally, the count of truthy neighboring elements is returned for each element of the input matrix, and used to populate the output matrix.
 
 function solution(matrix) {
     const rowLength = matrix.length;
@@ -16,15 +17,11 @@ function solution(matrix) {
             }
 
             return count;
-
         })
     );
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let matrix = [
         [true, false, false],
