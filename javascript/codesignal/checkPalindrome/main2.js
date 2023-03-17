@@ -1,5 +1,6 @@
 // This code defines a function named solution that takes a single argument, inputString. The function checks whether inputString is a palindrome by comparing it with the result of transforming inputString into an array of its constituent characters using split(''), reversing the order of the characters using reverse(), and then joining them back into a string using join(''). If the two values are equal, the function returns true, meaning the inputString is a palindrome; if not, the function returns false.
 
+// solution by folsomwg
 function solution(inputString) {
     return inputString == inputString.split('').reverse().join('');
 }
