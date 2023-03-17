@@ -1,5 +1,4 @@
-// This code is a function that takes an array as parameter. The function goes through the array and adds up the even numbers in a variable named evenSum and the odd numbers in a variable named oddSum. Finally, the function returns an array containing the sum of the even numbers and the sum of the odd numbers.
-// Esse código é uma função que recebe um array como parâmetro. A função percorre o array e soma os números pares em uma variável chamada evenSum e os números ímpares em uma variável chamada oddSum. Por fim, a função retorna um array contendo a soma dos números pares e a soma dos números ímpares.
+// The code defines a function called solution which takes an array a as its parameter. The function initializes two variables: evenSum and oddSum, both starting with 0. The function then loops over every element in the input array a using the forEach() method. For each iteration, it checks if the current element's index is even or odd, sums up the elements separately for the odd and even indices, and stores the results in the evenSum or oddSum variables. Finally, the function returns an array containing the evenSum and oddSum.
 
 const solution = (a) => {
     let evenSum = 0;
@@ -16,10 +15,7 @@ const solution = (a) => {
     return [evenSum, oddSum];
 };
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let a = [50, 60, 60, 45, 70];
     assert.deepStrictEqual(solution(a), [180, 105]);
