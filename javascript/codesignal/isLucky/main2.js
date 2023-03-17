@@ -1,25 +1,15 @@
-// The above code takes an integer as a parameter 'n' and returns a boolean value. The function performs the following steps:
+// The solution function takes in one argument, an integer n.
+// The first line initializes a variable count to zero.
+// n = String(n).split('').map(t => { return parseInt(t); }); This line converts the integer n to a string, splits the string into an array of individual characters, and then maps it to an array of integers.
+// The next line uses the forEach method to loop through the array of integers. If the index of the current element is less than half the length of the array, it adds the element to the count variable. Otherwise, it subtracts the element from count.
+// The function returns true if the final count variable is equal to zero, and false if it is not.
+// Essentially, this function checks if the sum of the first half of the digits in the number n equals the sum of the second half of the digits in the number n.
 
-// Initializes a variable called 'count' to 0
-// Converts 'n' to a string, splits it into an array of individual digits using the 'split' method, and maps each digit to a number using the 'Number' function. This converts the integer input into an array of numbers.
-// Calculates the midpoint of the array by dividing the length by 2 and rounding down with the 'Math.floor' function.
-// Loops through the first half of the array from the first digit to the midpoint (exclusive) and adds each digit to the 'count' variable.
-// Loops through the second half of the array from the midpoint to the last digit (inclusive) and subtracts each digit from the 'count' variable.
-// Returns 'true' if 'count' equals 0, otherwise, returns 'false'.
-
-// The overall purpose of this code is to determine whether the sum of the digits in the first half of the number is equal to the sum of the digits in the second half of the number.
-
+// solution by evgenia_y
 function solution(n) {
     let count = 0;
-    n = String(n).split('').map(Number);
-    const midIndex = Math.floor(n.length / 2);
-    for (let i = 0; i < midIndex; i++) {
-        count += n[i];
-    }
-    for (let i = midIndex; i < n.length; i++) {
-        count -= n[i];
-    }
-
+    n = String(n).split('').map(t => { return parseInt(t); });
+    n.forEach((el, i) => { (i < n.length / 2) ? count += el : count -= el; });
     return count == 0;
 }
 
