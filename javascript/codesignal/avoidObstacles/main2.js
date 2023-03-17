@@ -1,16 +1,10 @@
-// This code defines a function called solution that takes an input array as an argument. The function initializes a variable jump to 2, then loops through each element of the input array using a for loop. For each element of the array, the code checks if the element is evenly divisible by jump. If it is, the code increments jump by 1, and sets the loop iterator i back to -1 (which will be incremented to 0 on the next iteration).
-// The effect of this is that if an element of the array is divisible by jump, the code will re-check every element of the array from the beginning. This process will continue until an element is found that is not divisible by jump. Once this happens, the loop will continue onto the next element of the array, incrementing jump as necessary.
-// The function then returns the value of jump once the loop has completed. The output of the function is the minimum number that jump must be incremented to in order to ensure that no element of inputArray is divisible by jump.
+// This code defines a function called "solution" which takes an input array. The function iterates over a sequence of increasing numbers starting from 1 and checks if every element in the inputArray is evenly divisible by the current number being evaluated. The .every() method is used to check if all the elements in the array satisfy the specified condition.
+// The condition inside .every() checks whether the modulus of every element of the inputArray when divided by the current number being iterated is non-zero (i.e. they are not evenly divisible). If all elements are indeed not evenly divisible, then the current number being evaluated is returned as the solution to the problem. If no solution is found before the maximum value of n (i.e. Number.MAX_SAFE_INTEGER), then this function will run indefinitely, potentially leading to an infinite loop.
+// Overall, this function appears to search for the smallest possible positive integer that can divide all elements in the array without remainder.
 
+// solution by myjinxin2015
 function solution(inputArray) {
-    let jump = 2;
-    for (let i = 0; i < inputArray.length; i++) {
-        if (inputArray[i] % jump == 0) {
-            jump++;
-            i = -1;
-        }
-    }
-    return jump;
+    for (let n = 1; ; n++) if (inputArray.every(x => x % n)) return n;
 }
 
 const assert = require('assert');
