@@ -1,4 +1,4 @@
-// This code takes a year as an argument and returns the century that the year is in. It does this by dividing the year by 100 and then rounding up to the nearest integer.
+// This code defines a function called solution that takes in a parameter called year. The function then divides the year parameter by 100 and rounds up to the nearest integer using the Math.ceil() method. Finally, it returns this result as the output of the function. In other words, the code returns the century of the input year.
 
 function solution(year) {
     return Math.ceil(year / 100);
