@@ -1,5 +1,8 @@
-// This function takes an array 'a' as parameter and returns an array containing the sum of odd and even numbers. First, the variables even and odd are set to 0. Then, the for loop is used to iterate over each element of the array 'a'. If the index is even, the value is added to the variable even, otherwise it is added to the variable odd. Finally, the function returns an array containing the sum of even and odd numbers.
-// Esta função recebe um array 'a' como parâmetro e retorna um array contendo a soma dos números pares e ímpares. Primeiro, as variáveis ​​even e odd são definidas como 0. Em seguida, o loop for é usado para iterar sobre cada elemento do array 'a'. Se o índice for par, o valor é adicionado à variável even; caso contrário, é adicionado à variável odd. Finalmente, a função retorna um array contendo a soma dos números pares e ímpares.
+// This code defines a function called "solution" that takes an array as its parameter. The function then declares two variables called "even" and "odd" and assigns them both an initial value of 0.
+// Next, the function uses a for loop to iterate over the entire length of the input array.
+// During each iteration of the loop, the code checks if the index of the current element is even or odd. If it's even, the value of the current element is added to the "even" variable. If it's odd, the value of the current element is added to the "odd" variable.
+// Finally, the function returns an array containing the values of the "even" and "odd" variables.
+// In essence, this code adds up all the numbers located in even and odd indices of an array and returns an array containing the sum of even-index numbers and the sum of odd-index numbers, respectively.
 
 function solution(a) {
     let even = 0;
@@ -14,10 +17,7 @@ function solution(a) {
     return [even, odd];
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let a = [50, 60, 60, 45, 70];
     assert.deepStrictEqual(solution(a), [180, 105]);
