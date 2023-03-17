@@ -1,5 +1,12 @@
-// This function counts the number of odd characters in a given string. It creates a character count object to keep track of the number of each character in the string, and then iterates over that object, counting the number of odd-counted characters. If the total number of odd-counted characters is less than or equal to 1, the function returns true, otherwise it returns false.
-// Esta função conta o número de caracteres ímpares em uma string fornecida. Ela cria um objeto de contagem de caracteres para manter o controle da quantidade de cada caractere na string, e então faz uma iteração sobre esse objeto, contando o número de caracteres com contagem ímpar. Se o número total de caracteres com contagem ímpar for menor ou igual a 1, a função retorna verdadeiro, caso contrário, retornará falso.
+// This code defines a function named solution that takes one parameter inputString which is a string. This function returns a boolean value. It returns true if the input string can be rearranged to form a palindrome, which is a word that is spelled the same way forwards and backwards.
+// Here is what the code does step by step:
+
+// Declares an empty object named charCount which will store the count of each character in the input string
+// Loops through each character in the provided inputString using a for loop, incrementally adding the count of each character to the charCount object
+// Initializes a variable named oddCount to zero
+// Loops through each key in the charCount object using a for-in loop
+// For each key in the charCount object, if the count of that key value is odd, increments the oddCount variable by one
+// If there are more than one characters with odd counts, returns false, otherwise returns true.
 
 function solution(inputString) {
     const charCount = {};
@@ -15,10 +22,7 @@ function solution(inputString) {
     return oddCount <= 1;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let inputString = "aabb";
     assert.deepStrictEqual(solution(inputString), true);
