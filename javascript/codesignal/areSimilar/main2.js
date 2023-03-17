@@ -1,10 +1,10 @@
 // This code defines a function called solution that takes two arguments a and b. It creates two new arrays, ad and bd, by applying a filter function that removes any elements from a and b respectively that are equal to their corresponding element in the other array. The function then checks if the length of ad is either 0 or 2 and if the elements in ad are equal to the reversed elements in bd. If this condition is true, it returns true, and returns false otherwise.
 
+// solution by wanicode
 function solution(a, b) {
     const ad = a.filter((v, i) => v != b[i]);
     const bd = b.filter((v, i) => v != a[i]);
-
-    return (ad.length == 0 || (ad.length == 2 && ad.join('') === bd.reverse().join('')));
+    return ad.length == 0 || (ad.length == 2 && ad.join('') == bd.reverse().join(''));
 }
 
 const assert = require('assert');
