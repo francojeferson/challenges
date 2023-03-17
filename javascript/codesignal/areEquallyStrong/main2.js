@@ -1,14 +1,10 @@
-// This function compares whether two people have the same dominant hand. The parameters yourLeft and yourRight represent the left and right hand of the user, while friendsLeft and friendsRight represent the left and right hand of a friend. The function compares whether these parameters are equal, returning either true or false depending on the result of the comparison. By sorting each set, it becomes possible to compare them correctly.
-// Essa função compara se duas pessoas possuem a mesma mão dominante. Os parâmetros yourLeft e yourRight representam a mão esquerda e direita do usuário, enquanto que friendsLeft e friendsRight representam a mão esquerda e direita de um amigo. A função compara se esses parâmetros são iguais, retornando se é verdadeiro ou falso, dependendo do resultado da comparação. Ao ordenar cada conjunto, torna-se possível compará-los corretamente.
+// The code defines a function called solution that takes in four parameters: yourLeft, yourRight, friendsLeft, and friendsRight. The function then sorts your left and right numbers, as well as your friend's left and right numbers, and joins them together as strings. Finally, the function compares the two strings to determine if they are identical, meaning that you and your friend have the same left and right numbers. The function will return a boolean value of true if the numbers match or false if they do not.
 
 function solution(yourLeft, yourRight, friendsLeft, friendsRight) {
     return [yourLeft, yourRight].sort().join("") === [friendsLeft, friendsRight].sort().join("");
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let yourLeft = 10;
     let yourRight = 15;
