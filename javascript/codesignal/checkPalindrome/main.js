@@ -1,4 +1,12 @@
-// This code is a function that takes in a string as an input and returns a boolean value. The function first converts the input string to lowercase and removes any non-alphanumeric characters using a regular expression. It then splits the string into individual characters, reverses the order of the characters, and rejoins them into a new string. Finally, it compares the original processed string to the reversed one and returns true if they are equal or false if they are not.
+// This code defines a function named solution that takes a string inputString as its parameter.
+// The function performs the following tasks:
+
+// It defines a regular expression regex that matches all characters that are not alphanumeric.
+// It converts the input string to lowercase and removes all non-alphanumeric characters using replace method, and saves the result in procString variable.
+// It reverses the processed string procString by splitting it into an array of characters, reversing the array, and then joining the characters back into a string. Result is saved in integCheck variable.
+// It checks if the processed string procString is equal to its reverse integCheck. If yes, it returns true, else it returns false.
+
+// In summary, the function checks if the input string is a palindrome (reads the same forwards and backwards ignoring any non-alphanumeric characters and case).
 
 function solution(inputString) {
     const regex = /[^a-zA-Z0-9]/g;
