@@ -1,10 +1,9 @@
-// This code defines a function called solution that takes an array of strings called inputArray as an input. The goal of the function is to filter the input array and return a new array of strings that have the maximum length among all the strings in the input array.
-// The function initializes a variable maxSize to 0, which will be used to store the maximum length of any string in the input array. It then uses the forEach method to iterate over each element x in the inputArray, and updates maxSize to be the maximum value between maxSize and the length of x.
-// Finally, the function returns a new array obtained by filtering the inputArray to only contain strings of length equal to maxSize. The filter method is used to return a new array that only includes elements x for which the expression x.length === maxSize is true.
+// This function takes an array of strings (inputArray) and returns an array of only the strings that have the maximum length. The code first calculates the maximum length value using the Math.max function along with the spread operator and the map function to create an array of all the string lengths. The filter function is then used to return only the strings whose length is equal to the maximum size.
 
+// solution by xyrn
 function solution(inputArray) {
-    let maxSize = 0;
-    inputArray.forEach(x => maxSize = Math.max(maxSize, x.length));
+    'use strict';
+    let maxSize = Math.max(...inputArray.map(x => x.length));
     return inputArray.filter(x => x.length === maxSize);
 }
 
