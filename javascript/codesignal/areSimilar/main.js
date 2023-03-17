@@ -1,12 +1,4 @@
-// This is a JavaScript function named solution that takes in two array parameters, a and b. Here's a step-by-step explanation of what the code does:
-
-// It checks if the concatenated string of array a is equal to the concatenated string of array b. If they are equal, it returns true.
-// If the arrays are not equal, it initializes two empty arrays array1 and array2.
-// It loops through each item in the arrays using a for loop, comparing each item at the same index in arrays a and b.
-// If the items are not equal, it pushes the item in a to array1 and the item in b to array2.
-// After the loop has finished, it returns a boolean indicating whether the concatenated string of array1 is equal to the concatenated string of array2 in reverse order.
-
-// Essentially, the function is checking if two arrays are equal after any items that are in different places (i.e., with different indexes) have been removed.
+// The code takes in two arrays a and b. It checks if the concatenated string of elements in the array a are equal to that of array b. If they are equal, then it returns true. Otherwise, it loops through both arrays and pushes any elements that are not the same at the same index to two separate arrays array1 and array2. Then, it reverses the order of the array2 and joins the array elements into a string while array1 is joined into a string as is. Finally, it checks if array1 is equal to array2. If they are equal, then it returns true. Otherwise, it returns false. In summary, the code checks if two arrays are equal or if they are only different in the order of a few elements.
 
 function solution(a, b) {
     if (a.join('') === b.join('')) return true;
@@ -18,8 +10,10 @@ function solution(a, b) {
             array2.push(b[i]);
         }
     }
-
-    return array1.toString() === array2.reverse().toString();
+    array2 = array2.reverse().join('');
+    array1 = array1.join('');
+    if (array1 === array2) return true;
+    return false;
 }
 
 const assert = require('assert');
