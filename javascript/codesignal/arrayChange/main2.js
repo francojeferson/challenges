@@ -1,22 +1,20 @@
-// This code defines a function solution that takes an array called inputArray as an argument.
-// Within the function, two variables are initialized - pre which is assigned the value of the first element in the inputArray, and res which is initialized to 0.
-// A for loop is then used to iterate through the inputArray, starting from the second element (i=1).
-// Within each iteration of the loop, a new variable now is defined and assigned the value of the current element inputArray[i].
-// The variable res is then updated by adding the maximum value between (pre - now + 1) and 0. The value of pre is also updated to be the maximum value between (pre + 1) and now.
-// Finally, the function returns the value of res.
-// In summary, the function computes the total number of times that additional items need to be added to an array in order to make each successive element at least as large as the previous element.
+// This code defines a function named 'solution' which accepts an array of integers named 'series'. The function iterates over the array with a for loop, starting from the second element (index '1') until the last element of the array.
+// For each element, the function checks if it is less than or equal to the previous element. If it is, the function calculates the difference between the current element and the previous element plus 1. This difference is added to the current element, and the number of moves required to make the current element greater than the previous element is added to the 'moves' variable.
+// Finally, the function returns the number of moves that were required to make every element in the array strictly increasing.
 
-function solution(inputArray) {
-    let pre = inputArray[0],
-        res = 0;
+// solution by gennie
+function solution(series) {
+    var moves = 0;
 
-    for (let i = 1; i < inputArray.length; i++) {
-        let now = inputArray[i];
-        res += Math.max(pre - now + 1, 0);
-        pre = Math.max(pre + 1, now);
+    for (var i = 1; i < series.length; i++) {
+        if (series[i] <= series[i - 1]) {
+            diff = series[i - 1] - series[i] + 1;
+            series[i] += diff;
+            moves += diff;
+        }
     }
 
-    return res;
+    return moves;
 }
 
 const assert = require('assert');
