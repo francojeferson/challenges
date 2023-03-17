@@ -1,17 +1,16 @@
-// This code defines a function called solution which takes in a single parameter called picture. The picture parameter is expected to be an array of strings.
-// The function then creates a new array called result, which is initialized with a single string containing a number of asterisks that is equal to the length of the first string in the picture array plus two.
-// The function then loops through each string in the picture array and concatenates an asterisk at the beginning and end of each string. These strings are then pushed into the result array.
-// Finally, another string of asterisks, whose length is equal to the length of the first string in the picture array plus two, is added to the end of the result array.
-// The result array is then returned from the function.
-// The overall effect of this function is to add a border of asterisks around a rectangular "picture" made up of an array of strings.
+// This is a function named "solution" that takes one argument named "picture". The function essentially takes an two-dimensional array of characters (a picture) and surrounds it with asterisks (*) to form a border.
+// The function first initializes an empty array named "result", and then it creates a variable "border" which is a string of asterisks that stretches across the entire width of the picture plus an additional two asterisks for the left and right border.
+// Then, a for loop is used to iterate over the rows of the picture, and each row is wrapped in asterisks and pushed into the "result" array. Specifically, an asterisk is added at the beginning and at the end of each row.
+// Finally, the "border" variable is pushed again into the "result" array to form the bottom border, and the "result" array is returned.
 
 function solution(picture) {
-    let result = ['*'.repeat(picture[0].length + 2)];
+    let result = [];
+    let border = '*'.repeat(picture[0].length + 2);
+    result.push(border);
     for (let i = 0; i < picture.length; i++) {
         result.push('*' + picture[i] + '*');
     }
-    result.push('*'.repeat(picture[0].length + 2));
-
+    result.push(border);
     return result;
 }
 
