@@ -1,5 +1,6 @@
 // This code defines a function named solution that takes in a single parameter called year. The function first divides the year argument by 100 and then rounds the result up to the nearest whole number using the Math.ceil() method. It then returns this result as the function output. The purpose of the function is to take a year and return the century that it belongs to.
 
+// solution by eyeslikeflame
 const solution = year => Math.ceil(year / 100);
 
 const assert = require('assert');
