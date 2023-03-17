@@ -8,6 +8,7 @@
 
 // The largest number, which will be the maximum product of any adjacent elements in the input array, is returned as the final result.
 
+// solution by myjinxin2015
 function solution(inputArray) {
     return Math.max(...inputArray.slice(1).map((x, i) => [x * inputArray[i]]));
 }
