@@ -1,5 +1,4 @@
-// This function takes an array of numbers as argument and returns the number closest to the average of the values in the array. First, a start result (result) and a min variable are set to store the minimum value. The for loop (i) loops through the array a, while the for loop (j) sums the absolute values of the difference between each element of the array and the current element of loop i. If the sum is less than min, then min is replaced by the new sum value and the result is updated to the current element of loop i. When all loops are completed, the function returns result as the answer.
-// Esta função recebe um array de números como argumento e devolve o número mais próximo da média dos valores presentes no array. Primeiro, é definido um resultado inicial (result) e uma variável min para armazenar o valor mínimo. O loop for (i) percorre o array a, enquanto o loop for (j) soma os valores absolutos da diferença entre cada elemento do array e o elemento atual do loop i. Se a soma for menor que min, então min é substituído pelo novo valor da soma e o resultado é atualizado para o elemento atual do loop i. Quando todos os loops são concluídos, a função retorna result como resposta.
+// The code is defining a function, named "solution", that takes an array of numbers or integers as an input parameter. The function calculates the number in the input array which has the smallest differences with all other numbers in the array. The function does this by looping over the input array, and within each iteration, performs a nested loop over the array to calculate the absolute difference of each iteration with that of the outer loop. The sum of all the absolute differences is stored in the "sum" variable, which is compared to a variable named "min". If the sum is smaller than the min variable, the new minimum sum is stored in the variable "min", and the current iteration value is stored in the "result" variable. After all iterations are done, the function returns the value of the "result" variable.
 
 function solution(a) {
     let result = 0;
@@ -17,10 +16,7 @@ function solution(a) {
     return result;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let a = [2, 4, 7];
     assert.deepStrictEqual(solution(a), 4);
