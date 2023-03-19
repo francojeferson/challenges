@@ -1,31 +1,38 @@
-// When optimizing this code the main changes that were made were to replace the some method with a manual loop and to replace the some method inside the bar function with a loop as well. This was done to improve performance and to prevent the some methods from looping through the entire input array during function execution.
-// Na otimização deste código, as principais alterações que foram feitas foram a substituição do método some por um looping manual e a troca do método some dentro da função bar por um looping também. Isso foi feito para melhorar o desempenho e evitar que os métodos some percorram todo o array de entrada durante a execução da função.
+// The given code consists of three functions that work together to accomplish a task.
+// The solution function accepts an array (inputArray) and returns a boolean value. It checks whether it's possible to construct a word chain by changing exactly one letter at a time, starting from any word in the given input array, and returning to the original word after traversing through all other words in the array. If this is possible, it returns true, otherwise it returns false.
+// The findNext function is called inside the solution function. It takes two arguments, a word (current) and an array of words (inputArray). It finds the words that differ from the current word by a single letter and recursively calls itself with these words and the "rest" of the inputArray. It keeps doing this until there's no more words left in the inputArray, or it has found all words that differ by a single letter. It returns the remaining array after finding all the one-letter-difference words.
+// The differsByOneChar function is a helper function used by findNext to check if two strings differ by exactly one character. If so, it returns true, otherwise false.
 
-const solution = inputArray => {
-    const foo = (a, b) =>
-        [...a].reduce((pre, val, idx) => pre + (val !== b[idx]), 0) === 1;
-
-    const bar = (a, b) => {
-        if (!b.length) return true;
-
-        for (let i = 0; i < b.length; i++) {
-            if (foo(a[0], b[i]) && bar([b[i], ...a], b.filter((_, j) => j !== i))) return true;
-        }
-
-        return false;
-    };
-
+// solution by danielmeeusen
+function solution(inputArray) {
     for (let i = 0; i < inputArray.length; i++) {
-        if (bar([inputArray[i]], inputArray.filter((_, j) => j !== i))) return true;
+        let remaining = findNext(inputArray[i], inputArray);
+        if (remaining.length === 0) return true;
     }
-
     return false;
-};
+}
 
-// unit test
-// teste unitário
+function findNext(current, inputArray) {
+    if (inputArray.length === 0) return inputArray;
+    for (let i = 0; i < inputArray.length; i++) {
+        if (differsByOneChar(current, inputArray[i])) {
+            let remaining = findNext(inputArray[i], inputArray.slice(0, i).concat(inputArray.slice(i + 1)));
+            if (remaining.length === 0) return remaining;
+        }
+    }
+    return inputArray;
+}
+
+function differsByOneChar(s1, s2) {
+    let mismatches = 0;
+    for (let i = 0; i < s1.length; i++) {
+        if (s1[i] !== s2[i]) mismatches++;
+        if (mismatches > 1) break;
+    }
+    return mismatches === 1;
+}
+
 const assert = require('assert');
-
 function testSolution() {
     let inputArray = [
         "aba",
