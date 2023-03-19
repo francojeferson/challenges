@@ -1,14 +1,17 @@
-// This function returns the value of the middle element of an array. It uses the Math.ceil method to round up the size of the array and then subtracts 1 from the result to get the correct index of the middle element.
-// Esta função retorna o valor do elemento do meio de um array. Ela usa o método Math.ceil para arredondar o tamanho do array para cima e, em seguida, subtrai 1 do resultado para obter o índice correto do elemento central.
+// This code defines a JavaScript function solution that takes an array a as an argument. The function returns the middle element of the array a.
+// Here is the step-by-step plan to describe what this code does in pseudocode:
 
+// Define a function called solution that takes an array a as an argument.
+// Use the Math.ceil() method to get the smallest integer greater than or equal to the result of dividing the length of a by 2.
+// Subtract 1 from the result of step 2 to get the index of the middle element in the array a.
+// Return the element of a at the index calculated in step 3.
+
+// solution by archimedez
 function solution(a) {
     return a[Math.ceil(a.length / 2) - 1];
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let a = [2, 4, 7];
     assert.deepStrictEqual(solution(a), 4);
