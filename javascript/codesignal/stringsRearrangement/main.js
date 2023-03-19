@@ -1,5 +1,19 @@
-// This function checks whether a given set of words can be made into a string of words, where each word is only one letter different from the previous word. For example, the input sets "cat", "cot", "cog", "dog" can be transformed into a string: "cat" -> "cot" -> "cog" -> "dog". The function uses the depth-first search (DFS) algorithm to traverse all possible paths between words. If the algorithm finds a path that connects all the words, the function returns true; otherwise, false.
-// Esta função verifica se um dado conjunto de palavras pode ser transformado em uma cadeia de palavras, onde cada palavra seja apenas uma letra diferente da palavra anterior. Por exemplo, os conjuntos de entrada "cat", "cot", "cog", "dog" podem ser transformados em uma cadeia: "cat" -> "cot" -> "cog" -> "dog". A função usa o algoritmo de busca em profundidade (DFS) para percorrer todos os possíveis caminhos entre as palavras. Se o algoritmo encontrar um caminho que conecta todas as palavras, a função retornará true; caso contrário, false.
+// This code takes in an array of arrays inputArray where each array represents a string. Then, it checks the strings and tries to find a path where only one character differs from the previous string. If such a path exists, it returns true; otherwise, it returns false.
+// The code implements this solution by first creating an adjacency matrix g that is n by n, where each element of g is either 0 or 1. The element g[i][j] is set to 1 if the string at index i has exactly one character different than the string at index j. The code then performs a depth-first search to check if there is a path of length n through the graph where each edge has a weight of 1. If such a path exists, the function returns true; otherwise, it returns false.
+// Here is the pseudocode for the same program:
+
+// Define a function that takes in an array of arrays as input.
+// Get the length of the input array and store it in variable n.
+// Get the length of the first array in the input array and store it in variable m.
+// Define a graph g of size nxn and initialize it with zeros.
+// For each i and j (0 <= i,j < n), check if the i-th and the j-th element of the array are different in only one character. If they are, set g[i][j] to 1.
+// Define a path array and set all elements of used to false.
+// Define a dfs function that takes in a vertex of the graph and returns true if there is a path of length n that starts from the vertex and false otherwise.
+// If the path array has n elements, return true.
+// For each neighbor of the vertex that has not been used yet, run dfs on this neighbor.
+// If dfs returns true, return true.
+// Otherwise, mark vertex as unused and remove it from the path array.
+// If there is no path of length n starting from any vertex, return false. Finally, the function itself can be used to implement the above pseudocode in code.
 
 function solution(inputArray) {
     const n = inputArray.length;
@@ -47,10 +61,7 @@ function solution(inputArray) {
     return false;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let inputArray = [
         "aba",
