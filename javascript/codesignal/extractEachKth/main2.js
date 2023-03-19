@@ -1,21 +1,23 @@
-// The optimization consists of replacing the filter using the filter() method for an ordinary for loop, because this way it is possible to reduce the time complexity of the algorithm to O(n), since it is not necessary to perform an additional operation for each element of the array.
-// A otimização consiste em substituir o filtro usando o método filter() para um loop for comum, pois assim é possível reduzir a complexidade de tempo do algoritmo para O(n), já que não é necessário executar uma operação adicional para cada elemento do array.
+// This function takes in an array inputArray of numbers, and an integer k. It creates an empty array result and a counter variable initialized to 0. The function then iterates over each number in inputArray using a for...of loop, incrementing the counter variable for each iteration. If the counter is not equal to k, which means the current element is not the kth element, the number is added to the result array using the push() method. If counter is equal to k, the result array is not updated and the counter is reset to 0. Finally, the result array is returned. The purpose of the function is to remove every kth element from the inputArray.
 
+// solution by luis_miguel
 function solution(inputArray, k) {
     let result = [];
-    for (let i = 0; i < inputArray.length; i++) {
-        if ((i + 1) % k !== 0) {
-            result.push(inputArray[i]);
-        }
+    let counter = 0;
+
+    for (let number of inputArray) {
+        counter++;
+
+        if (counter !== k)
+            result.push(number);
+        else
+            counter = 0;
     }
 
     return result;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let inputArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let k = 3;
