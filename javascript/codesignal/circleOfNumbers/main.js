@@ -1,14 +1,11 @@
-// This function gets two parameters, n and firstNumber. The function returns the value of (firstNumber + n / 2) % n. Basically, this means that the function will return the first number + half of n (divided by n) and then get the remainder of the division (modulo) by n. For example, if you pass 10 as the first number and 15 as the second, it will return 8.5 (10 + 15 / 2 = 8.5). The remainder of the division would be 8, so the output would be 8.
-// Essa função recebe dois parâmetros, n e firstNumber. A função retorna o valor de (firstNumber + n / 2) % n. Basicamente, isso significa que a função retornará o primeiro número + metade de n (dividido por n) e então obterá o restante da divisão (modulo) por n. Por exemplo, se você passar 10 como primeiro número e 15 como segundo, ela retornará 8.5 (10 + 15 / 2 = 8.5). O restante da divisão seria 8, então a saída seria 8.
+// This code defines a function called "solution" that takes in two arguments - "n" and "firstNumber". The function returns the modulo of the sum of "firstNumber" and "n" divided by 2 in relation to the value of "n".
+// With this code, for a given sequence length of "n" with first item "firstNumber", the function calculates the index of the reflection of the item back to the top front of the list.
 
 function solution(n, firstNumber) {
     return (firstNumber + n / 2) % n;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let n = 10;
     let firstNumber = 2;
