@@ -1,15 +1,15 @@
-// This function receives two parameters: an integer n and an integer firstNumber. First, the variable x is defined as the sum of firstNumber and n divided by 2. Then, the function returns x minus n if x is greater than or equal to n, otherwise x is returned. In other words, this function calculates the mean between firstNumber and n.
-// Esta função recebe dois parâmetros: um inteiro n e um número inteiro firstNumber. Primeiro, a variável x é definida como a soma de firstNumber e n dividido por 2. Então, a função retorna x menos n se x for maior ou igual a n, caso contrário, é retornado x. Em outras palavras, essa função calcula o meio entre firstNumber e n.
+// This code defines a function called solution which takes in two parameters: n and firstNumber. The n parameter represents the length of a list of numbers, and firstNumber represents the first number of the list.
+// The function then calculates the middle number of this list, by adding n / 2 to the firstNumber. This is stored in a variable called x.
+// Next, the code checks if x is greater than or equal to n. If it is, the code subtracts n from x and returns the result. Otherwise, it just returns x.
+// Essentially, the code is finding the middle number of a list by adding n / 2 to firstNumber, and then wrapping back around to the beginning of the list if the middle number goes past the end of the list.
 
+// solution by mrworral
 function solution(n, firstNumber) {
     let x = firstNumber + n / 2;
     return x >= n ? x - n : x;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let n = 10;
     let firstNumber = 2;
