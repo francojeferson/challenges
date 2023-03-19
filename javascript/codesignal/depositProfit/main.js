@@ -1,5 +1,4 @@
-// This function takes three parameters (deposit, rate, and threshold) and returns the number of years it takes for the deposit to grow until it reaches the threshold. The code uses a looping loop to calculate the number of years needed for the deposit to be larger than the threshold. On each iteration, a percentage of the entered rate is added to the deposit and one year is incremented. When the loop condition is satisfied (deposit >= threshold) the function returns the number of years.
-// Esta função recebe três parâmetros (depósito, taxa e limiar) e retorna o número de anos necessários para que o depósito cresça até atingir o limiar. O código usa um looping para calcular a quantidade de anos necessários para que o depósito seja maior que o limiar. Em cada iteração, adiciona-se ao depósito uma porcentagem da taxa informada e é incrementado um ano. Quando a condição do loop é satisfeita (deposit >= threshold) a função retorna o número de anos.
+// This code defines a function named solution which takes three parameters (deposit, rate, and threshold) representing the initial deposit amount, the annual interest rate (as a percentage), and a threshold amount. The function calculates how many years it takes for the deposit to reach the threshold amount based on the interest rate. The function uses a while loop to continuously add the interest to the deposit amount until it reaches or exceeds the threshold. The years variable tracks how many years it takes to reach the threshold. The function returns the number of years it takes to reach the threshold.
 
 function solution(deposit, rate, threshold) {
     let years = 0;
@@ -10,10 +9,7 @@ function solution(deposit, rate, threshold) {
     return years;
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let deposit = 100;
     let rate = 20;
