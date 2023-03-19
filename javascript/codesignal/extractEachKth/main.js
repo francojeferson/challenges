@@ -1,5 +1,8 @@
-// This function takes an input array and an integer k as arguments. The function filters the input array, returning all elements whose index + 1 is not divisible by k. For example, if the input array is [1, 2, 3, 4, 5] and k is 3, the function will return [1, 2, 4, 5] because indexes 0 + 1 (1) and 2 + 1 (3) are divisible by 3.
-// Essa função recebe um array de entrada e um inteiro k como argumentos. A função filtra o array de entrada, retornando todos os elementos cujo índice + 1 não é divisível por k. Por exemplo, se o array de entrada for [1, 2, 3, 4, 5] e k for 3, a função retornará [1, 2, 4, 5] pois os índices 0 + 1 (1) e 2 + 1 (3) são divisíveis por 3.
+// This function takes two parameters: an array of elements called inputArray, and an integer called k.
+// The function then uses the filter() method on inputArray to iterate through each element of the array, and return a new array of elements that meet a certain condition:
+// The condition is that the index of each element in the original inputArray plus one ((index + 1)) must not be divisible by k.
+// In other words, the code filters out every element in the original array whose index plus one is a multiple of k, essentially removing every kth element from the array.
+// The new array, consisting of all the elements that did not get filtered out, is returned as the output of the function.
 
 function solution(inputArray, k) {
     return inputArray.filter((element, index) => {
@@ -7,10 +10,7 @@ function solution(inputArray, k) {
     });
 }
 
-// unit test
-// teste unitário
 const assert = require('assert');
-
 function testSolution() {
     let inputArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let k = 3;
