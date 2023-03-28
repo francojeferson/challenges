@@ -1,12 +1,10 @@
-// This code defines a function called solution which takes in two parameters: n and firstNumber. The n parameter represents the length of a list of numbers, and firstNumber represents the first number of the list.
-// The function then calculates the middle number of this list, by adding n / 2 to the firstNumber. This is stored in a variable called x.
-// Next, the code checks if x is greater than or equal to n. If it is, the code subtracts n from x and returns the result. Otherwise, it just returns x.
-// Essentially, the code is finding the middle number of a list by adding n / 2 to firstNumber, and then wrapping back around to the beginning of the list if the middle number goes past the end of the list.
+// The function solution takes two arguments: n and firstNumber. It divides n by 2 and assigns the result to a temporary variable tmp. If tmp is greater than firstNumber, the function returns the sum of tmp and firstNumber. Otherwise, it returns the difference between firstNumber and tmp. Essentially, the function is trying to determine the arithmetic mean of n and firstNumber and return that value.
 
-// solution by mrworral
+// solution by eric_noh
 function solution(n, firstNumber) {
-    let x = firstNumber + n / 2;
-    return x >= n ? x - n : x;
+    let tmp = n / 2;
+    if (tmp > firstNumber) return tmp + firstNumber;
+    return firstNumber - tmp;
 }
 
 const assert = require('assert');
