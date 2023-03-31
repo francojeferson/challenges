@@ -22,41 +22,45 @@ function solution(product) {
 
 const assert = require('assert');
 function testSolution() {
-    let product = 12;
-    assert.deepStrictEqual(solution(product), 26);
-    console.log('Test 1: ', solution(product));
+    try {
+        let product = 12;
+        assert.deepStrictEqual(solution(product), 26);
+        console.log('Test 1: ', solution(product));
 
-    product = 19;
-    assert.deepStrictEqual(solution(product), -1);
-    console.log('Test 2: ', solution(product));
+        product = 19;
+        assert.deepStrictEqual(solution(product), -1);
+        console.log('Test 2: ', solution(product));
 
-    product = 450;
-    assert.deepStrictEqual(solution(product), 2559);
-    console.log('Test 3: ', solution(product));
+        product = 450;
+        assert.deepStrictEqual(solution(product), 2559);
+        console.log('Test 3: ', solution(product));
 
-    product = 0;
-    assert.deepStrictEqual(solution(product), 10);
-    console.log('Test 4: ', solution(product));
+        product = 0;
+        assert.deepStrictEqual(solution(product), 10);
+        console.log('Test 4: ', solution(product));
 
-    product = 13;
-    assert.deepStrictEqual(solution(product), -1);
-    console.log('Test 5: ', solution(product));
+        product = 13;
+        assert.deepStrictEqual(solution(product), -1);
+        console.log('Test 5: ', solution(product));
 
-    product = 1;
-    assert.deepStrictEqual(solution(product), 1);
-    console.log('Test 6: ', solution(product));
+        product = 1;
+        assert.deepStrictEqual(solution(product), 1);
+        console.log('Test 6: ', solution(product));
 
-    product = 243;
-    assert.deepStrictEqual(solution(product), 399);
-    console.log('Test 7: ', solution(product));
+        product = 243;
+        assert.deepStrictEqual(solution(product), 399);
+        console.log('Test 7: ', solution(product));
 
-    product = 576;
-    assert.deepStrictEqual(solution(product), 889);
-    console.log('Test 8: ', solution(product));
+        product = 576;
+        assert.deepStrictEqual(solution(product), 889);
+        console.log('Test 8: ', solution(product));
 
-    product = 360;
-    assert.deepStrictEqual(solution(product), 589);
-    console.log('Test 9: ', solution(product));
+        product = 360;
+        assert.deepStrictEqual(solution(product), 589);
+        console.log('Test 9: ', solution(product));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
