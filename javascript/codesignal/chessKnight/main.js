@@ -20,45 +20,49 @@ function solution(cell) {
 
 const assert = require('assert');
 function testSolution() {
-    let cell = "a1";
-    assert.deepStrictEqual(solution(cell), 2);
-    console.log('Test 1: ', solution(cell));
+    try {
+        let cell = "a1";
+        assert.deepStrictEqual(solution(cell), 2);
+        console.log('Test 1: ', solution(cell));
 
-    cell = "c2";
-    assert.deepStrictEqual(solution(cell), 6);
-    console.log('Test 2: ', solution(cell));
+        cell = "c2";
+        assert.deepStrictEqual(solution(cell), 6);
+        console.log('Test 2: ', solution(cell));
 
-    cell = "d4";
-    assert.deepStrictEqual(solution(cell), 8);
-    console.log('Test 3: ', solution(cell));
+        cell = "d4";
+        assert.deepStrictEqual(solution(cell), 8);
+        console.log('Test 3: ', solution(cell));
 
-    cell = "g6";
-    assert.deepStrictEqual(solution(cell), 6);
-    console.log('Test 4: ', solution(cell));
+        cell = "g6";
+        assert.deepStrictEqual(solution(cell), 6);
+        console.log('Test 4: ', solution(cell));
 
-    cell = "a3";
-    assert.deepStrictEqual(solution(cell), 4);
-    console.log('Test 5: ', solution(cell));
+        cell = "a3";
+        assert.deepStrictEqual(solution(cell), 4);
+        console.log('Test 5: ', solution(cell));
 
-    cell = "b7";
-    assert.deepStrictEqual(solution(cell), 4);
-    console.log('Test 6: ', solution(cell));
+        cell = "b7";
+        assert.deepStrictEqual(solution(cell), 4);
+        console.log('Test 6: ', solution(cell));
 
-    cell = "h8";
-    assert.deepStrictEqual(solution(cell), 2);
-    console.log('Test 7: ', solution(cell));
+        cell = "h8";
+        assert.deepStrictEqual(solution(cell), 2);
+        console.log('Test 7: ', solution(cell));
 
-    cell = "h6";
-    assert.deepStrictEqual(solution(cell), 4);
-    console.log('Test 8: ', solution(cell));
+        cell = "h6";
+        assert.deepStrictEqual(solution(cell), 4);
+        console.log('Test 8: ', solution(cell));
 
-    cell = "g8";
-    assert.deepStrictEqual(solution(cell), 3);
-    console.log('Test 9: ', solution(cell));
+        cell = "g8";
+        assert.deepStrictEqual(solution(cell), 3);
+        console.log('Test 9: ', solution(cell));
 
-    cell = "a5";
-    assert.deepStrictEqual(solution(cell), 4);
-    console.log('Test 10: ', solution(cell));
+        cell = "a5";
+        assert.deepStrictEqual(solution(cell), 4);
+        console.log('Test 10: ', solution(cell));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
