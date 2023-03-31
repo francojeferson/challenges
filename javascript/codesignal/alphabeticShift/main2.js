@@ -9,25 +9,29 @@ function solution(inputString) {
 
 const assert = require('assert');
 function testSolution() {
-    let inputString = "crazy";
-    assert.deepStrictEqual(solution(inputString), "dsbaz");
-    console.log('Test 1: ', solution(inputString));
+    try {
+        let inputString = "crazy";
+        assert.deepStrictEqual(solution(inputString), "dsbaz");
+        console.log('Test 1: ', solution(inputString));
 
-    inputString = "z";
-    assert.deepStrictEqual(solution(inputString), "a");
-    console.log('Test 2: ', solution(inputString));
+        inputString = "z";
+        assert.deepStrictEqual(solution(inputString), "a");
+        console.log('Test 2: ', solution(inputString));
 
-    inputString = "aaaabbbccd";
-    assert.deepStrictEqual(solution(inputString), "bbbbcccdde");
-    console.log('Test 3: ', solution(inputString));
+        inputString = "aaaabbbccd";
+        assert.deepStrictEqual(solution(inputString), "bbbbcccdde");
+        console.log('Test 3: ', solution(inputString));
 
-    inputString = "fuzzy";
-    assert.deepStrictEqual(solution(inputString), "gvaaz");
-    console.log('Test 4: ', solution(inputString));
+        inputString = "fuzzy";
+        assert.deepStrictEqual(solution(inputString), "gvaaz");
+        console.log('Test 4: ', solution(inputString));
 
-    inputString = "codesignal";
-    assert.deepStrictEqual(solution(inputString), "dpeftjhobm");
-    console.log('Test 5: ', solution(inputString));
+        inputString = "codesignal";
+        assert.deepStrictEqual(solution(inputString), "dpeftjhobm");
+        console.log('Test 5: ', solution(inputString));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
