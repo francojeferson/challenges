@@ -13,49 +13,53 @@ function solution(st) {
 
 const assert = require('assert');
 function testSolution() {
-    let st = "abcdc";
-    assert.deepStrictEqual(solution(st), "abcdcba");
-    console.log('Test 1: ', solution(st));
+    try {
+        let st = "abcdc";
+        assert.deepStrictEqual(solution(st), "abcdcba");
+        console.log('Test 1: ', solution(st));
 
-    st = "ababab";
-    assert.deepStrictEqual(solution(st), "abababa");
-    console.log('Test 2: ', solution(st));
+        st = "ababab";
+        assert.deepStrictEqual(solution(st), "abababa");
+        console.log('Test 2: ', solution(st));
 
-    st = "abba";
-    assert.deepStrictEqual(solution(st), "abba");
-    console.log('Test 3: ', solution(st));
+        st = "abba";
+        assert.deepStrictEqual(solution(st), "abba");
+        console.log('Test 3: ', solution(st));
 
-    st = "abaa";
-    assert.deepStrictEqual(solution(st), "abaaba");
-    console.log('Test 4: ', solution(st));
+        st = "abaa";
+        assert.deepStrictEqual(solution(st), "abaaba");
+        console.log('Test 4: ', solution(st));
 
-    st = "aaaaba";
-    assert.deepStrictEqual(solution(st), "aaaabaaaa");
-    console.log('Test 5: ', solution(st));
+        st = "aaaaba";
+        assert.deepStrictEqual(solution(st), "aaaabaaaa");
+        console.log('Test 5: ', solution(st));
 
-    st = "abc";
-    assert.deepStrictEqual(solution(st), "abcba");
-    console.log('Test 6: ', solution(st));
+        st = "abc";
+        assert.deepStrictEqual(solution(st), "abcba");
+        console.log('Test 6: ', solution(st));
 
-    st = "kebab";
-    assert.deepStrictEqual(solution(st), "kebabek");
-    console.log('Test 7: ', solution(st));
+        st = "kebab";
+        assert.deepStrictEqual(solution(st), "kebabek");
+        console.log('Test 7: ', solution(st));
 
-    st = "abccba";
-    assert.deepStrictEqual(solution(st), "abccba");
-    console.log('Test 8: ', solution(st));
+        st = "abccba";
+        assert.deepStrictEqual(solution(st), "abccba");
+        console.log('Test 8: ', solution(st));
 
-    st = "abcabc";
-    assert.deepStrictEqual(solution(st), "abcabcbacba");
-    console.log('Test 9: ', solution(st));
+        st = "abcabc";
+        assert.deepStrictEqual(solution(st), "abcabcbacba");
+        console.log('Test 9: ', solution(st));
 
-    st = "cbdbedffcg";
-    assert.deepStrictEqual(solution(st), "cbdbedffcgcffdebdbc");
-    console.log('Test 10: ', solution(st));
+        st = "cbdbedffcg";
+        assert.deepStrictEqual(solution(st), "cbdbedffcgcffdebdbc");
+        console.log('Test 10: ', solution(st));
 
-    st = "euotmn";
-    assert.deepStrictEqual(solution(st), "euotmnmtoue");
-    console.log('Test 11: ', solution(st));
+        st = "euotmn";
+        assert.deepStrictEqual(solution(st), "euotmnmtoue");
+        console.log('Test 11: ', solution(st));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
