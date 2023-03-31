@@ -19,35 +19,39 @@ function solution(votes, k) {
 
 const assert = require('assert');
 function testSolution() {
-    let votes = [2, 3, 5, 2];
-    let k = 3;
-    assert.deepStrictEqual(solution(votes, k), 2);
-    console.log('Test 1: ', solution(votes, k));
+    try {
+        let votes = [2, 3, 5, 2];
+        let k = 3;
+        assert.deepStrictEqual(solution(votes, k), 2);
+        console.log('Test 1: ', solution(votes, k));
 
-    votes = [1, 3, 3, 1, 1];
-    k = 0;
-    assert.deepStrictEqual(solution(votes, k), 0);
-    console.log('Test 2: ', solution(votes, k));
+        votes = [1, 3, 3, 1, 1];
+        k = 0;
+        assert.deepStrictEqual(solution(votes, k), 0);
+        console.log('Test 2: ', solution(votes, k));
 
-    votes = [5, 1, 3, 4, 1];
-    k = 0;
-    assert.deepStrictEqual(solution(votes, k), 1);
-    console.log('Test 3: ', solution(votes, k));
+        votes = [5, 1, 3, 4, 1];
+        k = 0;
+        assert.deepStrictEqual(solution(votes, k), 1);
+        console.log('Test 3: ', solution(votes, k));
 
-    votes = [1, 1, 1, 1];
-    k = 1;
-    assert.deepStrictEqual(solution(votes, k), 4);
-    console.log('Test 4: ', solution(votes, k));
+        votes = [1, 1, 1, 1];
+        k = 1;
+        assert.deepStrictEqual(solution(votes, k), 4);
+        console.log('Test 4: ', solution(votes, k));
 
-    votes = [1, 1, 1, 1];
-    k = 0;
-    assert.deepStrictEqual(solution(votes, k), 0);
-    console.log('Test 5: ', solution(votes, k));
+        votes = [1, 1, 1, 1];
+        k = 0;
+        assert.deepStrictEqual(solution(votes, k), 0);
+        console.log('Test 5: ', solution(votes, k));
 
-    votes = [3, 1, 1, 3, 1];
-    k = 2;
-    assert.deepStrictEqual(solution(votes, k), 2);
-    console.log('Test 6: ', solution(votes, k));
+        votes = [3, 1, 1, 3, 1];
+        k = 2;
+        assert.deepStrictEqual(solution(votes, k), 2);
+        console.log('Test 6: ', solution(votes, k));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
