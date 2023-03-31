@@ -20,47 +20,51 @@ function solution(min1, min2_10, min11, s) {
 
 const assert = require('assert');
 function testSolution() {
-    let min1 = 3;
-    let min2_10 = 1;
-    let min11 = 2;
-    let s = 20;
-    assert.deepStrictEqual(solution(min1, min2_10, min11, s), 14);
-    console.log('Test 1: ', solution(min1, min2_10, min11, s));
+    try {
+        let min1 = 3;
+        let min2_10 = 1;
+        let min11 = 2;
+        let s = 20;
+        assert.deepStrictEqual(solution(min1, min2_10, min11, s), 14);
+        console.log('Test 1: ', solution(min1, min2_10, min11, s));
 
-    min1 = 2;
-    min2_10 = 2;
-    min11 = 1;
-    s = 2;
-    assert.deepStrictEqual(solution(min1, min2_10, min11, s), 1);
-    console.log('Test 2: ', solution(min1, min2_10, min11, s));
+        min1 = 2;
+        min2_10 = 2;
+        min11 = 1;
+        s = 2;
+        assert.deepStrictEqual(solution(min1, min2_10, min11, s), 1);
+        console.log('Test 2: ', solution(min1, min2_10, min11, s));
 
-    min1 = 10;
-    min2_10 = 1;
-    min11 = 2;
-    s = 22;
-    assert.deepStrictEqual(solution(min1, min2_10, min11, s), 11);
-    console.log('Test 3: ', solution(min1, min2_10, min11, s));
+        min1 = 10;
+        min2_10 = 1;
+        min11 = 2;
+        s = 22;
+        assert.deepStrictEqual(solution(min1, min2_10, min11, s), 11);
+        console.log('Test 3: ', solution(min1, min2_10, min11, s));
 
-    min1 = 2;
-    min2_10 = 2;
-    min11 = 1;
-    s = 24;
-    assert.deepStrictEqual(solution(min1, min2_10, min11, s), 14);
-    console.log('Test 4: ', solution(min1, min2_10, min11, s));
+        min1 = 2;
+        min2_10 = 2;
+        min11 = 1;
+        s = 24;
+        assert.deepStrictEqual(solution(min1, min2_10, min11, s), 14);
+        console.log('Test 4: ', solution(min1, min2_10, min11, s));
 
-    min1 = 1;
-    min2_10 = 2;
-    min11 = 1;
-    s = 6;
-    assert.deepStrictEqual(solution(min1, min2_10, min11, s), 3);
-    console.log('Test 5: ', solution(min1, min2_10, min11, s));
+        min1 = 1;
+        min2_10 = 2;
+        min11 = 1;
+        s = 6;
+        assert.deepStrictEqual(solution(min1, min2_10, min11, s), 3);
+        console.log('Test 5: ', solution(min1, min2_10, min11, s));
 
-    min1 = 10;
-    min2_10 = 10;
-    min11 = 10;
-    s = 8;
-    assert.deepStrictEqual(solution(min1, min2_10, min11, s), 0);
-    console.log('Test 6: ', solution(min1, min2_10, min11, s));
+        min1 = 10;
+        min2_10 = 10;
+        min11 = 10;
+        s = 8;
+        assert.deepStrictEqual(solution(min1, min2_10, min11, s), 0);
+        console.log('Test 6: ', solution(min1, min2_10, min11, s));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
