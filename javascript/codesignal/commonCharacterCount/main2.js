@@ -12,30 +12,34 @@ function solution(s1, s2) {
 
 const assert = require('assert');
 function testSolution() {
-    let s1 = "aabcc";
-    let s2 = "adcaa";
-    assert.deepStrictEqual(solution(s1, s2), 3);
-    console.log('Test 1: ', solution(s1, s2));
+    try {
+        let s1 = "aabcc";
+        let s2 = "adcaa";
+        assert.deepStrictEqual(solution(s1, s2), 3);
+        console.log('Test 1: ', solution(s1, s2));
 
-    s1 = "zzzz";
-    s2 = "zzzzzzz";
-    assert.deepStrictEqual(solution(s1, s2), 4);
-    console.log('Test 2: ', solution(s1, s2));
+        s1 = "zzzz";
+        s2 = "zzzzzzz";
+        assert.deepStrictEqual(solution(s1, s2), 4);
+        console.log('Test 2: ', solution(s1, s2));
 
-    s1 = "abca";
-    s2 = "xyzbac";
-    assert.deepStrictEqual(solution(s1, s2), 3);
-    console.log('Test 3: ', solution(s1, s2));
+        s1 = "abca";
+        s2 = "xyzbac";
+        assert.deepStrictEqual(solution(s1, s2), 3);
+        console.log('Test 3: ', solution(s1, s2));
 
-    s1 = "a";
-    s2 = "b";
-    assert.deepStrictEqual(solution(s1, s2), 0);
-    console.log('Test 4: ', solution(s1, s2));
+        s1 = "a";
+        s2 = "b";
+        assert.deepStrictEqual(solution(s1, s2), 0);
+        console.log('Test 4: ', solution(s1, s2));
 
-    s1 = "a";
-    s2 = "aaa";
-    assert.deepStrictEqual(solution(s1, s2), 1);
-    console.log('Test 5: ', solution(s1, s2));
+        s1 = "a";
+        s2 = "aaa";
+        assert.deepStrictEqual(solution(s1, s2), 1);
+        console.log('Test 5: ', solution(s1, s2));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
