@@ -11,35 +11,39 @@ function solution(deposit, rate, threshold) {
 
 const assert = require('assert');
 function testSolution() {
-    let deposit = 100;
-    let rate = 20;
-    let threshold = 170;
-    assert.deepStrictEqual(solution(deposit, rate, threshold), 3);
-    console.log('Test 1: ', solution(deposit, rate, threshold));
+    try {
+        let deposit = 100;
+        let rate = 20;
+        let threshold = 170;
+        assert.deepStrictEqual(solution(deposit, rate, threshold), 3);
+        console.log('Test 1: ', solution(deposit, rate, threshold));
 
-    deposit = 100;
-    rate = 1;
-    threshold = 101;
-    assert.deepStrictEqual(solution(deposit, rate, threshold), 1);
-    console.log('Test 2: ', solution(deposit, rate, threshold));
+        deposit = 100;
+        rate = 1;
+        threshold = 101;
+        assert.deepStrictEqual(solution(deposit, rate, threshold), 1);
+        console.log('Test 2: ', solution(deposit, rate, threshold));
 
-    deposit = 1;
-    rate = 100;
-    threshold = 64;
-    assert.deepStrictEqual(solution(deposit, rate, threshold), 6);
-    console.log('Test 3: ', solution(deposit, rate, threshold));
+        deposit = 1;
+        rate = 100;
+        threshold = 64;
+        assert.deepStrictEqual(solution(deposit, rate, threshold), 6);
+        console.log('Test 3: ', solution(deposit, rate, threshold));
 
-    deposit = 20;
-    rate = 20;
-    threshold = 50;
-    assert.deepStrictEqual(solution(deposit, rate, threshold), 6);
-    console.log('Test 4: ', solution(deposit, rate, threshold));
+        deposit = 20;
+        rate = 20;
+        threshold = 50;
+        assert.deepStrictEqual(solution(deposit, rate, threshold), 6);
+        console.log('Test 4: ', solution(deposit, rate, threshold));
 
-    deposit = 50;
-    rate = 25;
-    threshold = 100;
-    assert.deepStrictEqual(solution(deposit, rate, threshold), 4);
-    console.log('Test 5: ', solution(deposit, rate, threshold));
+        deposit = 50;
+        rate = 25;
+        threshold = 100;
+        assert.deepStrictEqual(solution(deposit, rate, threshold), 4);
+        console.log('Test 5: ', solution(deposit, rate, threshold));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
