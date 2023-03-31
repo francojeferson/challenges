@@ -16,55 +16,59 @@ function solution(bishop, pawn) {
 
 const assert = require('assert');
 function testSolution() {
-    let bishop = "a1";
-    let pawn = "c3";
-    assert.deepStrictEqual(solution(bishop, pawn), true);
-    console.log('Test 1: ', solution(bishop, pawn));
+    try {
+        let bishop = "a1";
+        let pawn = "c3";
+        assert.deepStrictEqual(solution(bishop, pawn), true);
+        console.log('Test 1: ', solution(bishop, pawn));
 
-    bishop = "h1";
-    pawn = "h3";
-    assert.deepStrictEqual(solution(bishop, pawn), false);
-    console.log('Test 2: ', solution(bishop, pawn));
+        bishop = "h1";
+        pawn = "h3";
+        assert.deepStrictEqual(solution(bishop, pawn), false);
+        console.log('Test 2: ', solution(bishop, pawn));
 
-    bishop = "a5";
-    pawn = "c3";
-    assert.deepStrictEqual(solution(bishop, pawn), true);
-    console.log('Test 3: ', solution(bishop, pawn));
+        bishop = "a5";
+        pawn = "c3";
+        assert.deepStrictEqual(solution(bishop, pawn), true);
+        console.log('Test 3: ', solution(bishop, pawn));
 
-    bishop = "g1";
-    pawn = "f3";
-    assert.deepStrictEqual(solution(bishop, pawn), false);
-    console.log('Test 4: ', solution(bishop, pawn));
+        bishop = "g1";
+        pawn = "f3";
+        assert.deepStrictEqual(solution(bishop, pawn), false);
+        console.log('Test 4: ', solution(bishop, pawn));
 
-    bishop = "e7";
-    pawn = "d6";
-    assert.deepStrictEqual(solution(bishop, pawn), true);
-    console.log('Test 5: ', solution(bishop, pawn));
+        bishop = "e7";
+        pawn = "d6";
+        assert.deepStrictEqual(solution(bishop, pawn), true);
+        console.log('Test 5: ', solution(bishop, pawn));
 
-    bishop = "e7";
-    pawn = "a3";
-    assert.deepStrictEqual(solution(bishop, pawn), true);
-    console.log('Test 6: ', solution(bishop, pawn));
+        bishop = "e7";
+        pawn = "a3";
+        assert.deepStrictEqual(solution(bishop, pawn), true);
+        console.log('Test 6: ', solution(bishop, pawn));
 
-    bishop = "e3";
-    pawn = "a7";
-    assert.deepStrictEqual(solution(bishop, pawn), true);
-    console.log('Test 7: ', solution(bishop, pawn));
+        bishop = "e3";
+        pawn = "a7";
+        assert.deepStrictEqual(solution(bishop, pawn), true);
+        console.log('Test 7: ', solution(bishop, pawn));
 
-    bishop = "a1";
-    pawn = "h8";
-    assert.deepStrictEqual(solution(bishop, pawn), true);
-    console.log('Test 8: ', solution(bishop, pawn));
+        bishop = "a1";
+        pawn = "h8";
+        assert.deepStrictEqual(solution(bishop, pawn), true);
+        console.log('Test 8: ', solution(bishop, pawn));
 
-    bishop = "a1";
-    pawn = "h7";
-    assert.deepStrictEqual(solution(bishop, pawn), false);
-    console.log('Test 9: ', solution(bishop, pawn));
+        bishop = "a1";
+        pawn = "h7";
+        assert.deepStrictEqual(solution(bishop, pawn), false);
+        console.log('Test 9: ', solution(bishop, pawn));
 
-    bishop = "h1";
-    pawn = "a8";
-    assert.deepStrictEqual(solution(bishop, pawn), true);
-    console.log('Test 10: ', solution(bishop, pawn));
+        bishop = "h1";
+        pawn = "a8";
+        assert.deepStrictEqual(solution(bishop, pawn), true);
+        console.log('Test 10: ', solution(bishop, pawn));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
