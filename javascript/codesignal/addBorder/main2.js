@@ -31,57 +31,61 @@ function solution(picture) {
 
 const assert = require('assert');
 function testSolution() {
-    let picture = [
-        "abc",
-        "ded"];
-    assert.deepStrictEqual(solution(picture), [
-        "*****",
-        "*abc*",
-        "*ded*",
-        "*****"]);
-    console.log('Test 1: ', solution(picture));
+    try {
+        let picture = [
+            "abc",
+            "ded"];
+        assert.deepStrictEqual(solution(picture), [
+            "*****",
+            "*abc*",
+            "*ded*",
+            "*****"]);
+        console.log('Test 1: ', solution(picture));
 
-    picture = ["a"];
-    assert.deepStrictEqual(solution(picture), [
-        "***",
-        "*a*",
-        "***"]);
-    console.log('Test 2: ', solution(picture));
+        picture = ["a"];
+        assert.deepStrictEqual(solution(picture), [
+            "***",
+            "*a*",
+            "***"]);
+        console.log('Test 2: ', solution(picture));
 
-    picture = [
-        "aa",
-        "**",
-        "zz"];
-    assert.deepStrictEqual(solution(picture), [
-        "****",
-        "*aa*",
-        "****",
-        "*zz*",
-        "****"]);
-    console.log('Test 3: ', solution(picture));
+        picture = [
+            "aa",
+            "**",
+            "zz"];
+        assert.deepStrictEqual(solution(picture), [
+            "****",
+            "*aa*",
+            "****",
+            "*zz*",
+            "****"]);
+        console.log('Test 3: ', solution(picture));
 
-    picture = [
-        "abcde",
-        "fghij",
-        "klmno",
-        "pqrst",
-        "uvwxy"];
-    assert.deepStrictEqual(solution(picture), [
-        "*******",
-        "*abcde*",
-        "*fghij*",
-        "*klmno*",
-        "*pqrst*",
-        "*uvwxy*",
-        "*******"]);
-    console.log('Test 4: ', solution(picture));
+        picture = [
+            "abcde",
+            "fghij",
+            "klmno",
+            "pqrst",
+            "uvwxy"];
+        assert.deepStrictEqual(solution(picture), [
+            "*******",
+            "*abcde*",
+            "*fghij*",
+            "*klmno*",
+            "*pqrst*",
+            "*uvwxy*",
+            "*******"]);
+        console.log('Test 4: ', solution(picture));
 
-    picture = ["wzy**"];
-    assert.deepStrictEqual(solution(picture), [
-        "*******",
-        "*wzy***",
-        "*******"]);
-    console.log('Test 5: ', solution(picture));
+        picture = ["wzy**"];
+        assert.deepStrictEqual(solution(picture), [
+            "*******",
+            "*wzy***",
+            "*******"]);
+        console.log('Test 5: ', solution(picture));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
