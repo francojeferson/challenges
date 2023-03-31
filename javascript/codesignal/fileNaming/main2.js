@@ -20,103 +20,107 @@ function solution(names) {
 
 const assert = require('assert');
 function testSolution() {
-    let names = [
-        "doc",
-        "doc",
-        "image",
-        "doc(1)",
-        "doc"];
-    assert.deepStrictEqual(solution(names), [
-        "doc",
-        "doc(1)",
-        "image",
-        "doc(1)(1)",
-        "doc(2)"]);
-    console.log('Test 1: ', solution(names));
+    try {
+        let names = [
+            "doc",
+            "doc",
+            "image",
+            "doc(1)",
+            "doc"];
+        assert.deepStrictEqual(solution(names), [
+            "doc",
+            "doc(1)",
+            "image",
+            "doc(1)(1)",
+            "doc(2)"]);
+        console.log('Test 1: ', solution(names));
 
-    names = [
-        "a(1)",
-        "a(6)",
-        "a",
-        "a",
-        "a",
-        "a",
-        "a",
-        "a",
-        "a",
-        "a",
-        "a",
-        "a"];
-    assert.deepStrictEqual(solution(names), [
-        "a(1)",
-        "a(6)",
-        "a",
-        "a(2)",
-        "a(3)",
-        "a(4)",
-        "a(5)",
-        "a(7)",
-        "a(8)",
-        "a(9)",
-        "a(10)",
-        "a(11)"]);
-    console.log('Test 2: ', solution(names));
+        names = [
+            "a(1)",
+            "a(6)",
+            "a",
+            "a",
+            "a",
+            "a",
+            "a",
+            "a",
+            "a",
+            "a",
+            "a",
+            "a"];
+        assert.deepStrictEqual(solution(names), [
+            "a(1)",
+            "a(6)",
+            "a",
+            "a(2)",
+            "a(3)",
+            "a(4)",
+            "a(5)",
+            "a(7)",
+            "a(8)",
+            "a(9)",
+            "a(10)",
+            "a(11)"]);
+        console.log('Test 2: ', solution(names));
 
-    names = [
-        "dd",
-        "dd(1)",
-        "dd(2)",
-        "dd",
-        "dd(1)",
-        "dd(1)(2)",
-        "dd(1)(1)",
-        "dd",
-        "dd(1)"];
-    assert.deepStrictEqual(solution(names), [
-        "dd",
-        "dd(1)",
-        "dd(2)",
-        "dd(3)",
-        "dd(1)(1)",
-        "dd(1)(2)",
-        "dd(1)(1)(1)",
-        "dd(4)",
-        "dd(1)(3)"]);
-    console.log('Test 3: ', solution(names));
+        names = [
+            "dd",
+            "dd(1)",
+            "dd(2)",
+            "dd",
+            "dd(1)",
+            "dd(1)(2)",
+            "dd(1)(1)",
+            "dd",
+            "dd(1)"];
+        assert.deepStrictEqual(solution(names), [
+            "dd",
+            "dd(1)",
+            "dd(2)",
+            "dd(3)",
+            "dd(1)(1)",
+            "dd(1)(2)",
+            "dd(1)(1)(1)",
+            "dd(4)",
+            "dd(1)(3)"]);
+        console.log('Test 3: ', solution(names));
 
-    names = [
-        "a",
-        "b",
-        "cd",
-        "b ",
-        "a(3)"];
-    assert.deepStrictEqual(solution(names), [
-        "a",
-        "b",
-        "cd",
-        "b ",
-        "a(3)"]);
-    console.log('Test 4: ', solution(names));
+        names = [
+            "a",
+            "b",
+            "cd",
+            "b ",
+            "a(3)"];
+        assert.deepStrictEqual(solution(names), [
+            "a",
+            "b",
+            "cd",
+            "b ",
+            "a(3)"]);
+        console.log('Test 4: ', solution(names));
 
-    names = [
-        "name",
-        "name",
-        "name(1)",
-        "name(3)",
-        "name(2)",
-        "name(2)"];
-    assert.deepStrictEqual(solution(names), [
-        "name",
-        "name(1)",
-        "name(1)(1)",
-        "name(3)",
-        "name(2)",
-        "name(2)(1)"]);
-    console.log('Test 5: ', solution(names));
+        names = [
+            "name",
+            "name",
+            "name(1)",
+            "name(3)",
+            "name(2)",
+            "name(2)"];
+        assert.deepStrictEqual(solution(names), [
+            "name",
+            "name(1)",
+            "name(1)(1)",
+            "name(3)",
+            "name(2)",
+            "name(2)(1)"]);
+        console.log('Test 5: ', solution(names));
 
-    names = [];
-    assert.deepStrictEqual(solution(names), []);
-    console.log('Test 6: ', solution(names));
+        names = [];
+        assert.deepStrictEqual(solution(names), []);
+        console.log('Test 6: ', solution(names));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
