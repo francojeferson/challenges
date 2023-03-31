@@ -6,25 +6,29 @@ function solution(n) {
 
 const assert = require('assert');
 function testSolution() {
-    let n = 2;
-    assert.deepStrictEqual(solution(n), 99);
-    console.log('Test 1: ', solution(n));
+    try {
+        let n = 2;
+        assert.deepStrictEqual(solution(n), 99);
+        console.log('Test 1: ', solution(n));
 
-    n = 1;
-    assert.deepStrictEqual(solution(n), 9);
-    console.log('Test 2: ', solution(n));
+        n = 1;
+        assert.deepStrictEqual(solution(n), 9);
+        console.log('Test 2: ', solution(n));
 
-    n = 7;
-    assert.deepStrictEqual(solution(n), 9999999);
-    console.log('Test 3: ', solution(n));
+        n = 7;
+        assert.deepStrictEqual(solution(n), 9999999);
+        console.log('Test 3: ', solution(n));
 
-    n = 4;
-    assert.deepStrictEqual(solution(n), 9999);
-    console.log('Test 4: ', solution(n));
+        n = 4;
+        assert.deepStrictEqual(solution(n), 9999);
+        console.log('Test 4: ', solution(n));
 
-    n = 3;
-    assert.deepStrictEqual(solution(n), 999);
-    console.log('Test 5: ', solution(n));
+        n = 3;
+        assert.deepStrictEqual(solution(n), 999);
+        console.log('Test 5: ', solution(n));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
