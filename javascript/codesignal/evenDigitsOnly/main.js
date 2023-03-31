@@ -6,45 +6,49 @@ function solution(n) {
 
 const assert = require('assert');
 function testSolution() {
-    let n = 248622;
-    assert.deepStrictEqual(solution(n), true);
-    console.log('Test 1: ', solution(n));
+    try {
+        let n = 248622;
+        assert.deepStrictEqual(solution(n), true);
+        console.log('Test 1: ', solution(n));
 
-    n = 642386;
-    assert.deepStrictEqual(solution(n), false);
-    console.log('Test 2: ', solution(n));
+        n = 642386;
+        assert.deepStrictEqual(solution(n), false);
+        console.log('Test 2: ', solution(n));
 
-    n = 248842;
-    assert.deepStrictEqual(solution(n), true);
-    console.log('Test 3: ', solution(n));
+        n = 248842;
+        assert.deepStrictEqual(solution(n), true);
+        console.log('Test 3: ', solution(n));
 
-    n = 1;
-    assert.deepStrictEqual(solution(n), false);
-    console.log('Test 4: ', solution(n));
+        n = 1;
+        assert.deepStrictEqual(solution(n), false);
+        console.log('Test 4: ', solution(n));
 
-    n = 8;
-    assert.deepStrictEqual(solution(n), true);
-    console.log('Test 5: ', solution(n));
+        n = 8;
+        assert.deepStrictEqual(solution(n), true);
+        console.log('Test 5: ', solution(n));
 
-    n = 2462487;
-    assert.deepStrictEqual(solution(n), false);
-    console.log('Test 6: ', solution(n));
+        n = 2462487;
+        assert.deepStrictEqual(solution(n), false);
+        console.log('Test 6: ', solution(n));
 
-    n = 468402800;
-    assert.deepStrictEqual(solution(n), true);
-    console.log('Test 7: ', solution(n));
+        n = 468402800;
+        assert.deepStrictEqual(solution(n), true);
+        console.log('Test 7: ', solution(n));
 
-    n = 2468428;
-    assert.deepStrictEqual(solution(n), true);
-    console.log('Test 8: ', solution(n));
+        n = 2468428;
+        assert.deepStrictEqual(solution(n), true);
+        console.log('Test 8: ', solution(n));
 
-    n = 5468428;
-    assert.deepStrictEqual(solution(n), false);
-    console.log('Test 9: ', solution(n));
+        n = 5468428;
+        assert.deepStrictEqual(solution(n), false);
+        console.log('Test 9: ', solution(n));
 
-    n = 7468428;
-    assert.deepStrictEqual(solution(n), false);
-    console.log('Test 10: ', solution(n));
+        n = 7468428;
+        assert.deepStrictEqual(solution(n), false);
+        console.log('Test 10: ', solution(n));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
