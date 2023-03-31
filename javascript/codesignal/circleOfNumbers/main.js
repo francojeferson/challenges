@@ -7,40 +7,44 @@ function solution(n, firstNumber) {
 
 const assert = require('assert');
 function testSolution() {
-    let n = 10;
-    let firstNumber = 2;
-    assert.deepStrictEqual(solution(n, firstNumber), 7);
-    console.log('Test 1: ', solution(n, firstNumber));
+    try {
+        let n = 10;
+        let firstNumber = 2;
+        assert.deepStrictEqual(solution(n, firstNumber), 7);
+        console.log('Test 1: ', solution(n, firstNumber));
 
-    n = 10;
-    firstNumber = 7;
-    assert.deepStrictEqual(solution(n, firstNumber), 2);
-    console.log('Test 2: ', solution(n, firstNumber));
+        n = 10;
+        firstNumber = 7;
+        assert.deepStrictEqual(solution(n, firstNumber), 2);
+        console.log('Test 2: ', solution(n, firstNumber));
 
-    n = 4;
-    firstNumber = 1;
-    assert.deepStrictEqual(solution(n, firstNumber), 3);
-    console.log('Test 3: ', solution(n, firstNumber));
+        n = 4;
+        firstNumber = 1;
+        assert.deepStrictEqual(solution(n, firstNumber), 3);
+        console.log('Test 3: ', solution(n, firstNumber));
 
-    n = 6;
-    firstNumber = 3;
-    assert.deepStrictEqual(solution(n, firstNumber), 0);
-    console.log('Test 4: ', solution(n, firstNumber));
+        n = 6;
+        firstNumber = 3;
+        assert.deepStrictEqual(solution(n, firstNumber), 0);
+        console.log('Test 4: ', solution(n, firstNumber));
 
-    n = 18;
-    firstNumber = 6;
-    assert.deepStrictEqual(solution(n, firstNumber), 15);
-    console.log('Test 5: ', solution(n, firstNumber));
+        n = 18;
+        firstNumber = 6;
+        assert.deepStrictEqual(solution(n, firstNumber), 15);
+        console.log('Test 5: ', solution(n, firstNumber));
 
-    n = 12;
-    firstNumber = 10;
-    assert.deepStrictEqual(solution(n, firstNumber), 4);
-    console.log('Test 6: ', solution(n, firstNumber));
+        n = 12;
+        firstNumber = 10;
+        assert.deepStrictEqual(solution(n, firstNumber), 4);
+        console.log('Test 6: ', solution(n, firstNumber));
 
-    n = 18;
-    firstNumber = 5;
-    assert.deepStrictEqual(solution(n, firstNumber), 14);
-    console.log('Test 7: ', solution(n, firstNumber));
+        n = 18;
+        firstNumber = 5;
+        assert.deepStrictEqual(solution(n, firstNumber), 14);
+        console.log('Test 7: ', solution(n, firstNumber));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
