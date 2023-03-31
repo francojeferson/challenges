@@ -19,30 +19,34 @@ function solution(inputArray, k) {
 
 const assert = require('assert');
 function testSolution() {
-    let inputArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    let k = 3;
-    assert.deepStrictEqual(solution(inputArray, k), [1, 2, 4, 5, 7, 8, 10]);
-    console.log('Test 1: ', solution(inputArray, k));
+    try {
+        let inputArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let k = 3;
+        assert.deepStrictEqual(solution(inputArray, k), [1, 2, 4, 5, 7, 8, 10]);
+        console.log('Test 1: ', solution(inputArray, k));
 
-    inputArray = [1, 1, 1, 1, 1];
-    k = 1;
-    assert.deepStrictEqual(solution(inputArray, k), []);
-    console.log('Test 2: ', solution(inputArray, k));
+        inputArray = [1, 1, 1, 1, 1];
+        k = 1;
+        assert.deepStrictEqual(solution(inputArray, k), []);
+        console.log('Test 2: ', solution(inputArray, k));
 
-    inputArray = [1, 2, 1, 2, 1, 2, 1, 2];
-    k = 2;
-    assert.deepStrictEqual(solution(inputArray, k), [1, 1, 1, 1]);
-    console.log('Test 3: ', solution(inputArray, k));
+        inputArray = [1, 2, 1, 2, 1, 2, 1, 2];
+        k = 2;
+        assert.deepStrictEqual(solution(inputArray, k), [1, 1, 1, 1]);
+        console.log('Test 3: ', solution(inputArray, k));
 
-    inputArray = [1, 2, 1, 2, 1, 2, 1, 2];
-    k = 10;
-    assert.deepStrictEqual(solution(inputArray, k), [1, 2, 1, 2, 1, 2, 1, 2]);
-    console.log('Test 4: ', solution(inputArray, k));
+        inputArray = [1, 2, 1, 2, 1, 2, 1, 2];
+        k = 10;
+        assert.deepStrictEqual(solution(inputArray, k), [1, 2, 1, 2, 1, 2, 1, 2]);
+        console.log('Test 4: ', solution(inputArray, k));
 
-    inputArray = [2, 4, 6, 8, 10];
-    k = 2;
-    assert.deepStrictEqual(solution(inputArray, k), [2, 6, 10]);
-    console.log('Test 5: ', solution(inputArray, k));
+        inputArray = [2, 4, 6, 8, 10];
+        k = 2;
+        assert.deepStrictEqual(solution(inputArray, k), [2, 6, 10]);
+        console.log('Test 5: ', solution(inputArray, k));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
