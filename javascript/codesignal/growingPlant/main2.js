@@ -9,35 +9,39 @@ function solution(upSpeed, downSpeed, desiredHeight) {
 
 const assert = require('assert');
 function testSolution() {
-    let upSpeed = 100;
-    let downSpeed = 10;
-    let desiredHeight = 910;
-    assert.deepStrictEqual(solution(upSpeed, downSpeed, desiredHeight), 10);
-    console.log('Test 1: ', solution(upSpeed, downSpeed, desiredHeight));
+    try {
+        let upSpeed = 100;
+        let downSpeed = 10;
+        let desiredHeight = 910;
+        assert.deepStrictEqual(solution(upSpeed, downSpeed, desiredHeight), 10);
+        console.log('Test 1: ', solution(upSpeed, downSpeed, desiredHeight));
 
-    upSpeed = 10;
-    downSpeed = 9;
-    desiredHeight = 4;
-    assert.deepStrictEqual(solution(upSpeed, downSpeed, desiredHeight), 1);
-    console.log('Test 2: ', solution(upSpeed, downSpeed, desiredHeight));
+        upSpeed = 10;
+        downSpeed = 9;
+        desiredHeight = 4;
+        assert.deepStrictEqual(solution(upSpeed, downSpeed, desiredHeight), 1);
+        console.log('Test 2: ', solution(upSpeed, downSpeed, desiredHeight));
 
-    upSpeed = 5;
-    downSpeed = 2;
-    desiredHeight = 7;
-    assert.deepStrictEqual(solution(upSpeed, downSpeed, desiredHeight), 2);
-    console.log('Test 3: ', solution(upSpeed, downSpeed, desiredHeight));
+        upSpeed = 5;
+        downSpeed = 2;
+        desiredHeight = 7;
+        assert.deepStrictEqual(solution(upSpeed, downSpeed, desiredHeight), 2);
+        console.log('Test 3: ', solution(upSpeed, downSpeed, desiredHeight));
 
-    upSpeed = 7;
-    downSpeed = 3;
-    desiredHeight = 443;
-    assert.deepStrictEqual(solution(upSpeed, downSpeed, desiredHeight), 110);
-    console.log('Test 4: ', solution(upSpeed, downSpeed, desiredHeight));
+        upSpeed = 7;
+        downSpeed = 3;
+        desiredHeight = 443;
+        assert.deepStrictEqual(solution(upSpeed, downSpeed, desiredHeight), 110);
+        console.log('Test 4: ', solution(upSpeed, downSpeed, desiredHeight));
 
-    upSpeed = 6;
-    downSpeed = 5;
-    desiredHeight = 10;
-    assert.deepStrictEqual(solution(upSpeed, downSpeed, desiredHeight), 5);
-    console.log('Test 5: ', solution(upSpeed, downSpeed, desiredHeight));
+        upSpeed = 6;
+        downSpeed = 5;
+        desiredHeight = 10;
+        assert.deepStrictEqual(solution(upSpeed, downSpeed, desiredHeight), 5);
+        console.log('Test 5: ', solution(upSpeed, downSpeed, desiredHeight));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
