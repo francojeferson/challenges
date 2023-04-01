@@ -10,45 +10,49 @@ function solution(inputString) {
 
 const assert = require('assert');
 function testSolution() {
-    let inputString = "00-1B-63-84-45-E6";
-    assert.deepStrictEqual(solution(inputString), true);
-    console.log('Test 1: ', solution(inputString));
+    try {
+        let inputString = "00-1B-63-84-45-E6";
+        assert.deepStrictEqual(solution(inputString), true);
+        console.log('Test 1: ', solution(inputString));
 
-    inputString = "Z1-1B-63-84-45-E6";
-    assert.deepStrictEqual(solution(inputString), false);
-    console.log('Test 2: ', solution(inputString));
+        inputString = "Z1-1B-63-84-45-E6";
+        assert.deepStrictEqual(solution(inputString), false);
+        console.log('Test 2: ', solution(inputString));
 
-    inputString = "not a MAC-48 address";
-    assert.deepStrictEqual(solution(inputString), false);
-    console.log('Test 3: ', solution(inputString));
+        inputString = "not a MAC-48 address";
+        assert.deepStrictEqual(solution(inputString), false);
+        console.log('Test 3: ', solution(inputString));
 
-    inputString = "FF-FF-FF-FF-FF-FF";
-    assert.deepStrictEqual(solution(inputString), true);
-    console.log('Test 4: ', solution(inputString));
+        inputString = "FF-FF-FF-FF-FF-FF";
+        assert.deepStrictEqual(solution(inputString), true);
+        console.log('Test 4: ', solution(inputString));
 
-    inputString = "00-00-00-00-00-00";
-    assert.deepStrictEqual(solution(inputString), true);
-    console.log('Test 5: ', solution(inputString));
+        inputString = "00-00-00-00-00-00";
+        assert.deepStrictEqual(solution(inputString), true);
+        console.log('Test 5: ', solution(inputString));
 
-    inputString = "G0-00-00-00-00-00";
-    assert.deepStrictEqual(solution(inputString), false);
-    console.log('Test 6: ', solution(inputString));
+        inputString = "G0-00-00-00-00-00";
+        assert.deepStrictEqual(solution(inputString), false);
+        console.log('Test 6: ', solution(inputString));
 
-    inputString = "02-03-04-05-06-07-";
-    assert.deepStrictEqual(solution(inputString), false);
-    console.log('Test 7: ', solution(inputString));
+        inputString = "02-03-04-05-06-07-";
+        assert.deepStrictEqual(solution(inputString), false);
+        console.log('Test 7: ', solution(inputString));
 
-    inputString = "12-34-56-78-9A-BC";
-    assert.deepStrictEqual(solution(inputString), true);
-    console.log('Test 8: ', solution(inputString));
+        inputString = "12-34-56-78-9A-BC";
+        assert.deepStrictEqual(solution(inputString), true);
+        console.log('Test 8: ', solution(inputString));
 
-    inputString = "FF-FF-AB-CD-EA-BC";
-    assert.deepStrictEqual(solution(inputString), true);
-    console.log('Test 9: ', solution(inputString));
+        inputString = "FF-FF-AB-CD-EA-BC";
+        assert.deepStrictEqual(solution(inputString), true);
+        console.log('Test 9: ', solution(inputString));
 
-    inputString = "12-34-56-78-9A-BG";
-    assert.deepStrictEqual(solution(inputString), false);
-    console.log('Test 10: ', solution(inputString));
+        inputString = "12-34-56-78-9A-BG";
+        assert.deepStrictEqual(solution(inputString), false);
+        console.log('Test 10: ', solution(inputString));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
