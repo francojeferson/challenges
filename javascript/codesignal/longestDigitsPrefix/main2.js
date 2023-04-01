@@ -13,29 +13,33 @@ function solution(inputString) {
 
 const assert = require('assert');
 function testSolution() {
-    let inputString = "123aa1";
-    assert.deepStrictEqual(solution(inputString), "123");
-    console.log('Test 1: ', solution(inputString));
+    try {
+        let inputString = "123aa1";
+        assert.deepStrictEqual(solution(inputString), "123");
+        console.log('Test 1: ', solution(inputString));
 
-    inputString = "0123456789";
-    assert.deepStrictEqual(solution(inputString), "0123456789");
-    console.log('Test 2: ', solution(inputString));
+        inputString = "0123456789";
+        assert.deepStrictEqual(solution(inputString), "0123456789");
+        console.log('Test 2: ', solution(inputString));
 
-    inputString = "  3) always check for whitespaces";
-    assert.deepStrictEqual(solution(inputString), "");
-    console.log('Test 3: ', solution(inputString));
+        inputString = "  3) always check for whitespaces";
+        assert.deepStrictEqual(solution(inputString), "");
+        console.log('Test 3: ', solution(inputString));
 
-    inputString = "12abc34";
-    assert.deepStrictEqual(solution(inputString), "12");
-    console.log('Test 4: ', solution(inputString));
+        inputString = "12abc34";
+        assert.deepStrictEqual(solution(inputString), "12");
+        console.log('Test 4: ', solution(inputString));
 
-    inputString = "the output is 42";
-    assert.deepStrictEqual(solution(inputString), "");
-    console.log('Test 5: ', solution(inputString));
+        inputString = "the output is 42";
+        assert.deepStrictEqual(solution(inputString), "");
+        console.log('Test 5: ', solution(inputString));
 
-    inputString = "aaaaaaa";
-    assert.deepStrictEqual(solution(inputString), "");
-    console.log('Test 6: ', solution(inputString));
+        inputString = "aaaaaaa";
+        assert.deepStrictEqual(solution(inputString), "");
+        console.log('Test 6: ', solution(inputString));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
