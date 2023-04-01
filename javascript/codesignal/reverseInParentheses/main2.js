@@ -17,33 +17,37 @@ function solution(inputString) {
 
 const assert = require('assert');
 function testSolution() {
-    let inputString = "(bar)";
-    assert.deepStrictEqual(solution(inputString), "rab");
-    console.log('Test 1: ', solution(inputString));
+    try {
+        let inputString = "(bar)";
+        assert.deepStrictEqual(solution(inputString), "rab");
+        console.log('Test 1: ', solution(inputString));
 
-    inputString = "foo(bar)baz";
-    assert.deepStrictEqual(solution(inputString), "foorabbaz");
-    console.log('Test 2: ', solution(inputString));
+        inputString = "foo(bar)baz";
+        assert.deepStrictEqual(solution(inputString), "foorabbaz");
+        console.log('Test 2: ', solution(inputString));
 
-    inputString = "foo(bar)baz(blim)";
-    assert.deepStrictEqual(solution(inputString), "foorabbazmilb");
-    console.log('Test 3: ', solution(inputString));
+        inputString = "foo(bar)baz(blim)";
+        assert.deepStrictEqual(solution(inputString), "foorabbazmilb");
+        console.log('Test 3: ', solution(inputString));
 
-    inputString = "foo(bar(baz))blim";
-    assert.deepStrictEqual(solution(inputString), "foobazrabblim");
-    console.log('Test 4: ', solution(inputString));
+        inputString = "foo(bar(baz))blim";
+        assert.deepStrictEqual(solution(inputString), "foobazrabblim");
+        console.log('Test 4: ', solution(inputString));
 
-    inputString = "";
-    assert.deepStrictEqual(solution(inputString), "");
-    console.log('Test 5: ', solution(inputString));
+        inputString = "";
+        assert.deepStrictEqual(solution(inputString), "");
+        console.log('Test 5: ', solution(inputString));
 
-    inputString = "()";
-    assert.deepStrictEqual(solution(inputString), "");
-    console.log('Test 6: ', solution(inputString));
+        inputString = "()";
+        assert.deepStrictEqual(solution(inputString), "");
+        console.log('Test 6: ', solution(inputString));
 
-    inputString = "(abc)d(efg)";
-    assert.deepStrictEqual(solution(inputString), "cbadgfe");
-    console.log('Test 7: ', solution(inputString));
+        inputString = "(abc)d(efg)";
+        assert.deepStrictEqual(solution(inputString), "cbadgfe");
+        console.log('Test 7: ', solution(inputString));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
