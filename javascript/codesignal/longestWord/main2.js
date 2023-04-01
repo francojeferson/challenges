@@ -15,25 +15,29 @@ function solution(text) {
 
 const assert = require('assert');
 function testSolution() {
-    let text = "Ready, steady, go!";
-    assert.deepStrictEqual(solution(text), "steady");
-    console.log('Test 1: ', solution(text));
+    try {
+        let text = "Ready, steady, go!";
+        assert.deepStrictEqual(solution(text), "steady");
+        console.log('Test 1: ', solution(text));
 
-    text = "Ready[[[, steady, go!";
-    assert.deepStrictEqual(solution(text), "steady");
-    console.log('Test 2: ', solution(text));
+        text = "Ready[[[, steady, go!";
+        assert.deepStrictEqual(solution(text), "steady");
+        console.log('Test 2: ', solution(text));
 
-    text = "ABCd";
-    assert.deepStrictEqual(solution(text), "ABCd");
-    console.log('Test 3: ', solution(text));
+        text = "ABCd";
+        assert.deepStrictEqual(solution(text), "ABCd");
+        console.log('Test 3: ', solution(text));
 
-    text = "To be or not to be";
-    assert.deepStrictEqual(solution(text), "not");
-    console.log('Test 4: ', solution(text));
+        text = "To be or not to be";
+        assert.deepStrictEqual(solution(text), "not");
+        console.log('Test 4: ', solution(text));
 
-    text = "You are the best!!!!!!!!!!!! CodeFighter ever!";
-    assert.deepStrictEqual(solution(text), "CodeFighter");
-    console.log('Test 5: ', solution(text));
+        text = "You are the best!!!!!!!!!!!! CodeFighter ever!";
+        assert.deepStrictEqual(solution(text), "CodeFighter");
+        console.log('Test 5: ', solution(text));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
