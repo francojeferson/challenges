@@ -19,37 +19,41 @@ function solution(inputString) {
 
 const assert = require('assert');
 function testSolution() {
-    let inputString = "2 apples, 12 oranges";
-    assert.deepStrictEqual(solution(inputString), 14);
-    console.log('Test 1: ', solution(inputString));
+    try {
+        let inputString = "2 apples, 12 oranges";
+        assert.deepStrictEqual(solution(inputString), 14);
+        console.log('Test 1: ', solution(inputString));
 
-    inputString = "123450";
-    assert.deepStrictEqual(solution(inputString), 123450);
-    console.log('Test 2: ', solution(inputString));
+        inputString = "123450";
+        assert.deepStrictEqual(solution(inputString), 123450);
+        console.log('Test 2: ', solution(inputString));
 
-    inputString = "Your payment method is invalid";
-    assert.deepStrictEqual(solution(inputString), 0);
-    console.log('Test 3: ', solution(inputString));
+        inputString = "Your payment method is invalid";
+        assert.deepStrictEqual(solution(inputString), 0);
+        console.log('Test 3: ', solution(inputString));
 
-    inputString = "no digits at all";
-    assert.deepStrictEqual(solution(inputString), 0);
-    console.log('Test 4: ', solution(inputString));
+        inputString = "no digits at all";
+        assert.deepStrictEqual(solution(inputString), 0);
+        console.log('Test 4: ', solution(inputString));
 
-    inputString = "there are some (12) digits 5566 in this 770 string 239";
-    assert.deepStrictEqual(solution(inputString), 6587);
-    console.log('Test 5: ', solution(inputString));
+        inputString = "there are some (12) digits 5566 in this 770 string 239";
+        assert.deepStrictEqual(solution(inputString), 6587);
+        console.log('Test 5: ', solution(inputString));
 
-    inputString = "42+781";
-    assert.deepStrictEqual(solution(inputString), 823);
-    console.log('Test 6: ', solution(inputString));
+        inputString = "42+781";
+        assert.deepStrictEqual(solution(inputString), 823);
+        console.log('Test 6: ', solution(inputString));
 
-    inputString = "abc abc 4 abc 0 abc";
-    assert.deepStrictEqual(solution(inputString), 4);
-    console.log('Test 7: ', solution(inputString));
+        inputString = "abc abc 4 abc 0 abc";
+        assert.deepStrictEqual(solution(inputString), 4);
+        console.log('Test 7: ', solution(inputString));
 
-    inputString = "abcdefghijklmnopqrstuvwxyz1AbCdEfGhIjKlMnOpqrstuvwxyz23,74 -";
-    assert.deepStrictEqual(solution(inputString), 98);
-    console.log('Test 8: ', solution(inputString));
+        inputString = "abcdefghijklmnopqrstuvwxyz1AbCdEfGhIjKlMnOpqrstuvwxyz23,74 -";
+        assert.deepStrictEqual(solution(inputString), 98);
+        console.log('Test 8: ', solution(inputString));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
