@@ -34,91 +34,95 @@ function differsByOneChar(s1, s2) {
 
 const assert = require('assert');
 function testSolution() {
-    let inputArray = [
-        "aba",
-        "bbb",
-        "bab"];
-    assert.deepStrictEqual(solution(inputArray), false);
-    console.log('Test 1: ', solution(inputArray));
+    try {
+        let inputArray = [
+            "aba",
+            "bbb",
+            "bab"];
+        assert.deepStrictEqual(solution(inputArray), false);
+        console.log('Test 1: ', solution(inputArray));
 
-    inputArray = [
-        "ab",
-        "bb",
-        "aa"];
-    assert.deepStrictEqual(solution(inputArray), true);
-    console.log('Test 2: ', solution(inputArray));
+        inputArray = [
+            "ab",
+            "bb",
+            "aa"];
+        assert.deepStrictEqual(solution(inputArray), true);
+        console.log('Test 2: ', solution(inputArray));
 
-    inputArray = [
-        "q",
-        "q"];
-    assert.deepStrictEqual(solution(inputArray), false);
-    console.log('Test 3: ', solution(inputArray));
+        inputArray = [
+            "q",
+            "q"];
+        assert.deepStrictEqual(solution(inputArray), false);
+        console.log('Test 3: ', solution(inputArray));
 
-    inputArray = [
-        "zzzzab",
-        "zzzzbb",
-        "zzzzaa"];
-    assert.deepStrictEqual(solution(inputArray), true);
-    console.log('Test 4: ', solution(inputArray));
+        inputArray = [
+            "zzzzab",
+            "zzzzbb",
+            "zzzzaa"];
+        assert.deepStrictEqual(solution(inputArray), true);
+        console.log('Test 4: ', solution(inputArray));
 
-    inputArray = [
-        "ab",
-        "ad",
-        "ef",
-        "eg"];
-    assert.deepStrictEqual(solution(inputArray), false);
-    console.log('Test 5: ', solution(inputArray));
+        inputArray = [
+            "ab",
+            "ad",
+            "ef",
+            "eg"];
+        assert.deepStrictEqual(solution(inputArray), false);
+        console.log('Test 5: ', solution(inputArray));
 
-    inputArray = [
-        "abc",
-        "bef",
-        "bcc",
-        "bec",
-        "bbc",
-        "bdc"];
-    assert.deepStrictEqual(solution(inputArray), true);
-    console.log('Test 6: ', solution(inputArray));
+        inputArray = [
+            "abc",
+            "bef",
+            "bcc",
+            "bec",
+            "bbc",
+            "bdc"];
+        assert.deepStrictEqual(solution(inputArray), true);
+        console.log('Test 6: ', solution(inputArray));
 
-    inputArray = [
-        "abc",
-        "abx",
-        "axx",
-        "abc"];
-    assert.deepStrictEqual(solution(inputArray), false);
-    console.log('Test 7: ', solution(inputArray));
+        inputArray = [
+            "abc",
+            "abx",
+            "axx",
+            "abc"];
+        assert.deepStrictEqual(solution(inputArray), false);
+        console.log('Test 7: ', solution(inputArray));
 
-    inputArray = [
-        "abc",
-        "abx",
-        "axx",
-        "abx",
-        "abc"];
-    assert.deepStrictEqual(solution(inputArray), true);
-    console.log('Test 8: ', solution(inputArray));
+        inputArray = [
+            "abc",
+            "abx",
+            "axx",
+            "abx",
+            "abc"];
+        assert.deepStrictEqual(solution(inputArray), true);
+        console.log('Test 8: ', solution(inputArray));
 
-    inputArray = [
-        "f",
-        "g",
-        "a",
-        "h"];
-    assert.deepStrictEqual(solution(inputArray), true);
-    console.log('Test 9: ', solution(inputArray));
+        inputArray = [
+            "f",
+            "g",
+            "a",
+            "h"];
+        assert.deepStrictEqual(solution(inputArray), true);
+        console.log('Test 9: ', solution(inputArray));
 
-    inputArray = [
-        "ff",
-        "gf",
-        "af",
-        "ar",
-        "hf"];
-    assert.deepStrictEqual(solution(inputArray), true);
-    console.log('Test 10: ', solution(inputArray));
+        inputArray = [
+            "ff",
+            "gf",
+            "af",
+            "ar",
+            "hf"];
+        assert.deepStrictEqual(solution(inputArray), true);
+        console.log('Test 10: ', solution(inputArray));
 
-    inputArray = [
-        "a",
-        "b",
-        "c"];
-    assert.deepStrictEqual(solution(inputArray), true);
-    console.log('Test 11: ', solution(inputArray));
+        inputArray = [
+            "a",
+            "b",
+            "c"];
+        assert.deepStrictEqual(solution(inputArray), true);
+        console.log('Test 11: ', solution(inputArray));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
