@@ -16,67 +16,71 @@ const solution = matrix => matrix.map((row, y) => row.map((col, x) => directions
 
 const assert = require('assert');
 function testSolution() {
-    let matrix = [
-        [true, false, false],
-        [false, true, false],
-        [false, false, false]];
-    assert.deepStrictEqual(solution(matrix), [
-        [1, 2, 1],
-        [2, 1, 1],
-        [1, 1, 1]]);
-    console.log('Test 1: ', solution(matrix));
+    try {
+        let matrix = [
+            [true, false, false],
+            [false, true, false],
+            [false, false, false]];
+        assert.deepStrictEqual(solution(matrix), [
+            [1, 2, 1],
+            [2, 1, 1],
+            [1, 1, 1]]);
+        console.log('Test 1: ', solution(matrix));
 
-    matrix = [
-        [false, false, false],
-        [false, false, false]];
-    assert.deepStrictEqual(solution(matrix), [
-        [0, 0, 0],
-        [0, 0, 0]]);
-    console.log('Test 2: ', solution(matrix));
+        matrix = [
+            [false, false, false],
+            [false, false, false]];
+        assert.deepStrictEqual(solution(matrix), [
+            [0, 0, 0],
+            [0, 0, 0]]);
+        console.log('Test 2: ', solution(matrix));
 
-    matrix = [
-        [true, false, false, true],
-        [false, false, true, false],
-        [true, true, false, true]];
-    assert.deepStrictEqual(solution(matrix), [
-        [0, 2, 2, 1],
-        [3, 4, 3, 3],
-        [1, 2, 3, 1]]);
-    console.log('Test 3: ', solution(matrix));
+        matrix = [
+            [true, false, false, true],
+            [false, false, true, false],
+            [true, true, false, true]];
+        assert.deepStrictEqual(solution(matrix), [
+            [0, 2, 2, 1],
+            [3, 4, 3, 3],
+            [1, 2, 3, 1]]);
+        console.log('Test 3: ', solution(matrix));
 
-    matrix = [
-        [true, true, true],
-        [true, true, true],
-        [true, true, true]];
-    assert.deepStrictEqual(solution(matrix), [
-        [3, 5, 3],
-        [5, 8, 5],
-        [3, 5, 3]]);
-    console.log('Test 4: ', solution(matrix));
+        matrix = [
+            [true, true, true],
+            [true, true, true],
+            [true, true, true]];
+        assert.deepStrictEqual(solution(matrix), [
+            [3, 5, 3],
+            [5, 8, 5],
+            [3, 5, 3]]);
+        console.log('Test 4: ', solution(matrix));
 
-    matrix = [
-        [false, true, true, false],
-        [true, true, false, true],
-        [false, false, true, false]];
-    assert.deepStrictEqual(solution(matrix), [
-        [3, 3, 3, 2],
-        [2, 4, 5, 2],
-        [2, 3, 2, 2]]);
-    console.log('Test 5: ', solution(matrix));
+        matrix = [
+            [false, true, true, false],
+            [true, true, false, true],
+            [false, false, true, false]];
+        assert.deepStrictEqual(solution(matrix), [
+            [3, 3, 3, 2],
+            [2, 4, 5, 2],
+            [2, 3, 2, 2]]);
+        console.log('Test 5: ', solution(matrix));
 
-    matrix = [
-        [true, false],
-        [true, false],
-        [false, true],
-        [false, false],
-        [false, false]];
-    assert.deepStrictEqual(solution(matrix), [
-        [1, 2],
-        [2, 3],
-        [2, 1],
-        [1, 1],
-        [0, 0]]);
-    console.log('Test 6: ', solution(matrix));
+        matrix = [
+            [true, false],
+            [true, false],
+            [false, true],
+            [false, false],
+            [false, false]];
+        assert.deepStrictEqual(solution(matrix), [
+            [1, 2],
+            [2, 3],
+            [2, 1],
+            [1, 1],
+            [0, 0]]);
+        console.log('Test 6: ', solution(matrix));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
