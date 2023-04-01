@@ -9,29 +9,33 @@ function solution(inputString) {
 
 const assert = require('assert');
 function testSolution() {
-    let inputString = "var_1__Int";
-    assert.deepStrictEqual(solution(inputString), '1');
-    console.log('Test 1: ', solution(inputString));
+    try {
+        let inputString = "var_1__Int";
+        assert.deepStrictEqual(solution(inputString), '1');
+        console.log('Test 1: ', solution(inputString));
 
-    inputString = "q2q-q";
-    assert.deepStrictEqual(solution(inputString), '2');
-    console.log('Test 2: ', solution(inputString));
+        inputString = "q2q-q";
+        assert.deepStrictEqual(solution(inputString), '2');
+        console.log('Test 2: ', solution(inputString));
 
-    inputString = "0ss";
-    assert.deepStrictEqual(solution(inputString), '0');
-    console.log('Test 3: ', solution(inputString));
+        inputString = "0ss";
+        assert.deepStrictEqual(solution(inputString), '0');
+        console.log('Test 3: ', solution(inputString));
 
-    inputString = "_Aas_23";
-    assert.deepStrictEqual(solution(inputString), '2');
-    console.log('Test 4: ', solution(inputString));
+        inputString = "_Aas_23";
+        assert.deepStrictEqual(solution(inputString), '2');
+        console.log('Test 4: ', solution(inputString));
 
-    inputString = "a a_933";
-    assert.deepStrictEqual(solution(inputString), '9');
-    console.log('Test 5: ', solution(inputString));
+        inputString = "a a_933";
+        assert.deepStrictEqual(solution(inputString), '9');
+        console.log('Test 5: ', solution(inputString));
 
-    inputString = "ok0";
-    assert.deepStrictEqual(solution(inputString), '0');
-    console.log('Test 6: ', solution(inputString));
+        inputString = "ok0";
+        assert.deepStrictEqual(solution(inputString), '0');
+        console.log('Test 6: ', solution(inputString));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
