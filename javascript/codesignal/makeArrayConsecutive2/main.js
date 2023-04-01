@@ -23,25 +23,29 @@ function solution(statues) {
 
 const assert = require('assert');
 function testSolution() {
-    let statues = [6, 2, 3, 8];
-    assert.deepStrictEqual(solution(statues), 3);
-    console.log('Test 1: ', solution(statues));
+    try {
+        let statues = [6, 2, 3, 8];
+        assert.deepStrictEqual(solution(statues), 3);
+        console.log('Test 1: ', solution(statues));
 
-    statues = [0, 3];
-    assert.deepStrictEqual(solution(statues), 2);
-    console.log('Test 2: ', solution(statues));
+        statues = [0, 3];
+        assert.deepStrictEqual(solution(statues), 2);
+        console.log('Test 2: ', solution(statues));
 
-    statues = [5, 4, 6];
-    assert.deepStrictEqual(solution(statues), 0);
-    console.log('Test 3: ', solution(statues));
+        statues = [5, 4, 6];
+        assert.deepStrictEqual(solution(statues), 0);
+        console.log('Test 3: ', solution(statues));
 
-    statues = [6, 3];
-    assert.deepStrictEqual(solution(statues), 2);
-    console.log('Test 4: ', solution(statues));
+        statues = [6, 3];
+        assert.deepStrictEqual(solution(statues), 2);
+        console.log('Test 4: ', solution(statues));
 
-    statues = [1];
-    assert.deepStrictEqual(solution(statues), 0);
-    console.log('Test 5: ', solution(statues));
+        statues = [1];
+        assert.deepStrictEqual(solution(statues), 0);
+        console.log('Test 5: ', solution(statues));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
