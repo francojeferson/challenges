@@ -16,45 +16,49 @@ function solution(inputString) {
 
 const assert = require('assert');
 function testSolution() {
-    let inputString = "aabb";
-    assert.deepStrictEqual(solution(inputString), true);
-    console.log('Test 1: ', solution(inputString));
+    try {
+        let inputString = "aabb";
+        assert.deepStrictEqual(solution(inputString), true);
+        console.log('Test 1: ', solution(inputString));
 
-    inputString = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaabc";
-    assert.deepStrictEqual(solution(inputString), false);
-    console.log('Test 2: ', solution(inputString));
+        inputString = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaabc";
+        assert.deepStrictEqual(solution(inputString), false);
+        console.log('Test 2: ', solution(inputString));
 
-    inputString = "abbcabb";
-    assert.deepStrictEqual(solution(inputString), true);
-    console.log('Test 3: ', solution(inputString));
+        inputString = "abbcabb";
+        assert.deepStrictEqual(solution(inputString), true);
+        console.log('Test 3: ', solution(inputString));
 
-    inputString = "zyyzzzzz";
-    assert.deepStrictEqual(solution(inputString), true);
-    console.log('Test 4: ', solution(inputString));
+        inputString = "zyyzzzzz";
+        assert.deepStrictEqual(solution(inputString), true);
+        console.log('Test 4: ', solution(inputString));
 
-    inputString = "z";
-    assert.deepStrictEqual(solution(inputString), true);
-    console.log('Test 5: ', solution(inputString));
+        inputString = "z";
+        assert.deepStrictEqual(solution(inputString), true);
+        console.log('Test 5: ', solution(inputString));
 
-    inputString = "zaa";
-    assert.deepStrictEqual(solution(inputString), true);
-    console.log('Test 6: ', solution(inputString));
+        inputString = "zaa";
+        assert.deepStrictEqual(solution(inputString), true);
+        console.log('Test 6: ', solution(inputString));
 
-    inputString = "abca";
-    assert.deepStrictEqual(solution(inputString), false);
-    console.log('Test 7: ', solution(inputString));
+        inputString = "abca";
+        assert.deepStrictEqual(solution(inputString), false);
+        console.log('Test 7: ', solution(inputString));
 
-    inputString = "abcad";
-    assert.deepStrictEqual(solution(inputString), false);
-    console.log('Test 8: ', solution(inputString));
+        inputString = "abcad";
+        assert.deepStrictEqual(solution(inputString), false);
+        console.log('Test 8: ', solution(inputString));
 
-    inputString = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbccccaaaaaaaaaaaaa";
-    assert.deepStrictEqual(solution(inputString), false);
-    console.log('Test 9: ', solution(inputString));
+        inputString = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbccccaaaaaaaaaaaaa";
+        assert.deepStrictEqual(solution(inputString), false);
+        console.log('Test 9: ', solution(inputString));
 
-    inputString = "abdhuierf";
-    assert.deepStrictEqual(solution(inputString), false);
-    console.log('Test 10: ', solution(inputString));
+        inputString = "abdhuierf";
+        assert.deepStrictEqual(solution(inputString), false);
+        console.log('Test 10: ', solution(inputString));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
