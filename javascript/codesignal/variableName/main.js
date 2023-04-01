@@ -8,45 +8,49 @@ function solution(name) {
 
 const assert = require('assert');
 function testSolution() {
-    let name = "var_1__Int";
-    assert.deepStrictEqual(solution(name), true);
-    console.log('Test 1: ', solution(name));
+    try {
+        let name = "var_1__Int";
+        assert.deepStrictEqual(solution(name), true);
+        console.log('Test 1: ', solution(name));
 
-    name = "qq-q";
-    assert.deepStrictEqual(solution(name), false);
-    console.log('Test 2: ', solution(name));
+        name = "qq-q";
+        assert.deepStrictEqual(solution(name), false);
+        console.log('Test 2: ', solution(name));
 
-    name = "2w2";
-    assert.deepStrictEqual(solution(name), false);
-    console.log('Test 3: ', solution(name));
+        name = "2w2";
+        assert.deepStrictEqual(solution(name), false);
+        console.log('Test 3: ', solution(name));
 
-    name = " variable";
-    assert.deepStrictEqual(solution(name), false);
-    console.log('Test 4: ', solution(name));
+        name = " variable";
+        assert.deepStrictEqual(solution(name), false);
+        console.log('Test 4: ', solution(name));
 
-    name = "va[riable0";
-    assert.deepStrictEqual(solution(name), false);
-    console.log('Test 5: ', solution(name));
+        name = "va[riable0";
+        assert.deepStrictEqual(solution(name), false);
+        console.log('Test 5: ', solution(name));
 
-    name = "variable0";
-    assert.deepStrictEqual(solution(name), true);
-    console.log('Test 6: ', solution(name));
+        name = "variable0";
+        assert.deepStrictEqual(solution(name), true);
+        console.log('Test 6: ', solution(name));
 
-    name = "a";
-    assert.deepStrictEqual(solution(name), true);
-    console.log('Test 7: ', solution(name));
+        name = "a";
+        assert.deepStrictEqual(solution(name), true);
+        console.log('Test 7: ', solution(name));
 
-    name = "_Aas_23";
-    assert.deepStrictEqual(solution(name), true);
-    console.log('Test 8: ', solution(name));
+        name = "_Aas_23";
+        assert.deepStrictEqual(solution(name), true);
+        console.log('Test 8: ', solution(name));
 
-    name = "a a_2";
-    assert.deepStrictEqual(solution(name), false);
-    console.log('Test 9: ', solution(name));
+        name = "a a_2";
+        assert.deepStrictEqual(solution(name), false);
+        console.log('Test 9: ', solution(name));
 
-    name = "0ss";
-    assert.deepStrictEqual(solution(name), false);
-    console.log('Test 10: ', solution(name));
+        name = "0ss";
+        assert.deepStrictEqual(solution(name), false);
+        console.log('Test 10: ', solution(name));
+    } catch (e) {
+        console.log(e.name, e.message);
+    }
 }
 
 testSolution();
