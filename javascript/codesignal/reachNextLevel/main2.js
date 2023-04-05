@@ -1,5 +1,6 @@
 // This code defines a function called "solution" that takes in three parameters: "experience", "threshold", and "reward". The function checks if the sum of "experience" and "reward" is greater than or equal to "threshold". If it is, the function returns true. If it is not, the function returns false. Essentially, this code checks whether a player has earned enough experience points to receive a certain reward based on a given threshold.
 
+// solution by big_brosh
 const solution = (experience, threshold, reward) => experience + reward >= threshold;
 
 const assert = require('assert');
